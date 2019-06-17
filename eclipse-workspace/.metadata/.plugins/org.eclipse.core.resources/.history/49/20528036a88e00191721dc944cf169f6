@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="css/local.css">
+		<link type="text/css" rel="stylesheet" href="css/admin-form.css">
+		<!-- Bootstrap core CSS-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<!--Glyphicons-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/glyph_css/glyph_bootstrap.css">
+		
+		<meta charset="UTF-8">
+		<title>Register Event</title>
+		
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="navtitle-area">
+				<label class="navbar-brand" href="#">Event Registration</label>
+			</div>
+			<ul class="navbar-nav navbtn-area">
+				<li class="nav-item active">
+					<a class="btn nav-btn nav-link" href="/registerEvent">
+						<span class="glyphicon glyphicon-list"></span> List of Events
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="mainbody-InsertEvent">
+<!-- 			<th:block th:include="messageValidation"></th:block> -->
+			<form class="container " method="post">
+			<div class="form-group">
+				<div class="form-row">
+					<div class="col-md-6">
+						<div class="form-label-group">
+							<input type="password" id="userpasswordInsert" name="usuariosenhaInsert" class="form-control"
+								placeholder="Senha" required />
+							<label for="userpasswordInsert">Senha</label>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-label-group">
+							<input type="text" id="userconfirmpasswordInsert" name="usuarioconfirmarsenhaInsert" class="form-control"
+							placeholder="Name" required />
+							<label for="userconfirmpasswordInsert">Confirmar Senha</label>
+							<input type="password" id="hiddenuserconfirmpasswordInsert" name="hiddenusuarioconfirmarsenhaInsert"hidden />
+						</div>
+					</div>
+				</div>
+			</div>
+			Name:<input type="text" value="" name="name" />
+				<div class="row">
+	 				<div class="col s5">
+						Place:<input type="text" value="" name="place" />
+					</div>
+					<div class="input-field col s3">
+						Date:<input type="date" value="" name="date" />
+					</div>
+					<div class="input-field col s4">
+						Time:<input type="text" value="" name="time" id="timeinput" />
+					</div>
+				</div>
+				<div class="div-submitButton">
+					<button type="submit" class="waves-effect waves-light btn">Register Event</button>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){ registerInputMasks(); })
+	</script>
+</html>

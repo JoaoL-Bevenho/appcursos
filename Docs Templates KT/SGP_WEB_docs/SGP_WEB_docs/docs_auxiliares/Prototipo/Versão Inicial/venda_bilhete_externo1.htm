@@ -1,0 +1,459 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SGP WEB</title>
+	<link rel="stylesheet" href="css/sgpweb.css">
+	
+	<script language="javascript">
+		vetFCA  = new Array("São João Del Rei","Tiradentes").sort();
+		vetEFVM = new Array("Vitória", "Governador Valadares", "Ipatinga", "Nova Era", "Itabira", "Costa Lacerda", "Belo Horizonte").sort();
+		vetEFC  = new Array("Anjo da Guarda", "Arari", "Vitória do Mearim", "Santa Ines", "Alto Alegre", "Mineirinho", "Auzilandia", "Altamira", "Presa de Porco", "Nova Vida", "Açailandia", "São Pedro Água Branca", "Marabá").sort();
+
+		function limparEstacoes(local){
+			for(i=document.getElementById("origem").options.length; i >= 1 ; i--){
+				if ((local == 0) || (local==1)){			
+					document.getElementById("origem").remove(i);
+				}
+				if ((local == 0) || (local==2)){							
+					document.getElementById("destino").remove(i);
+				}
+			}	
+		}
+
+		function preencherrEstacoes(vet, local){
+			for(i=0;i < vet.length; i++){
+				if ((local == 0) || (local==1)){
+					document.getElementById("origem").options[i+1]  = Option(vet[i],i);
+				}
+				if ((local == 0) || (local==2)){				
+					document.getElementById("destino").options[i+1] = Option(vet[i],i);
+				}
+			}
+		}
+				
+		function escolherEstacoes(sender, local){
+			if (local == null){local = 0}
+			switch (sender.value){
+				case 'FCA'  : 
+					limparEstacoes(local);
+					preencherrEstacoes(vetFCA,local);
+					break;
+				case 'EFVM' : 
+					limparEstacoes(local);
+					preencherrEstacoes(vetEFVM,local);
+
+					break;
+				case 'EFC'  : 
+					limparEstacoes(local);		
+					preencherrEstacoes(vetEFC,local);
+					break;
+			}
+		}
+		
+		function escolherOrigem(sender){
+			if ((sender.value == document.getElementById("destino").options[document.getElementById("destino").selectedIndex].value) && (sender.value != "")){
+				escolherEstacoes(document.getElementById("ferrovia"),2);							
+				document.getElementById("destino").selectedIndex = 0;				
+			}
+			else{
+				var i = document.getElementById("destino").selectedIndex;
+				escolherEstacoes(document.getElementById("ferrovia"),2);				
+				document.getElementById("destino").remove(document.getElementById("origem").selectedIndex);
+				document.getElementById("destino").selectedIndex = i;
+			}
+		}
+
+		function selecionarIdaVolta(sender){
+			if (!sender.checked){
+				limparEstacoes(2)				
+			}
+			else{
+				escolherEstacoes(document.getElementById("ferrovia"),2);
+			}			
+		}
+		function consultar(param){
+			document.getElementById("consulta").style.display = param;
+			document.getElementById("comprar").style.display = param;
+		}
+		
+		function exibeDetalhe(div){
+			document.getElementById(div).style.left = tempX - 300;
+			document.getElementById(div).style.top = tempY - 100;
+			document.getElementById(div).style.display = 'inline';			
+		}
+		
+		function ocultarDetalhe(div){
+			document.getElementById(div).style.display = 'none';			
+		}
+
+		var tempX = 0
+		var tempY = 0
+
+
+		function getMouseXY(e) {
+			  if (IE) { 
+					tempX = event.clientX + document.body.scrollLeft
+					tempY = event.clientY + document.body.scrollTop
+			  } else {
+					tempX = e.pageX
+					tempY = e.pageY
+			  }  
+			  if (tempX < 0){tempX = 0}
+			  if (tempY < 0){tempY = 0}  
+			  return true
+		}
+
+		function cancelar(){
+			if(confirm('Deseja realmente cancelar a venda?')){
+				window.location = 'venda_bilhete_externo1.htm';
+			}
+		}
+//-->
+	</script>	
+    <style type="text/css">
+<!--
+.style1 {font-size: 12px}
+.style4 {font-size: 12}
+.style5 {font-size: 9px}
+#detalhe1 {	position:absolute;
+	left:744px;
+	top:205px;
+	width:280px;
+	height:100px;
+	z-index:1;
+}
+#detalhe2 {	position:absolute;
+	width:280px;
+	height:115px;
+	z-index:2;
+	left: 810px;
+	top: 193px;
+}
+.style6 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+}
+-->
+    </style>
+</head>
+
+<body>
+
+<script>
+	var IE = document.all?true:false
+	if (!IE) document.captureEvents(Event.MOUSEMOVE)
+	document.onmousemove = getMouseXY;
+</script>
+<form name="form">
+  <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+	  <tr >
+		<td align="left" valign="middle" colspan="3">&nbsp;</td>
+	  </tr>   
+      <tr>
+      <td width="73%" height="30" align="left" valign="middle" class="linhaHeader"><div align="left" class="style1"><u>Venda de passagens >> Clientes Externos &gt;&gt; Escolha de Passagens </u></div></td>
+      <td width="13%" nowrap="nowrap" class="linhaHeader style5"><div align="right">Outras vendas: </div></td>
+      <td width="14%" nowrap="nowrap" class="linhaHeader"><div align="right"><span class="style5"><a href="venda_bilhete_funcionario1.htm">Funcionários/Aposentados</a> <br />
+            <a href="venda_bilhete_nremunerado1.htm">N&atilde;o Remunerada</a></span></div></td>
+    </tr>
+    <tr>
+      <td align="left" valign="middle" colspan="3"><hr /></td>
+    </tr>
+  </table>
+<table width="80%" border="0" align="center" cellpadding="3" cellspacing="0"  class="texto">
+	  <tr>
+		<td width="11%" nowrap="nowrap" class="textoDestacado">Reserva</td>
+		<td width="44%"><input name="codReserva" type="text" class="textoDestacado" id="codReserva" tabindex="1" /></td>
+		<td width="45%" class="linhaHeader"><div align="left" class="style6">
+		  Quantidade de Passagem    </div></td>
+	  </tr>
+	  <tr>
+		<td nowrap="nowrap" class="textoDestacado">Ferrovia</td>
+		<td><select name="ferrovia" class="textoDestacado" style="width:50%" tabindex="2" onchange="escolherEstacoes(this)">
+          <option value="">Ferrovia</option>
+          <option value="FCA">FCA</option>
+          <option value="EFVM">EFVM</option>
+          <option value="EFC">EFC</option>
+        </select></td>
+		<td rowspan="6" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<td width="2%">&nbsp;</td>
+			<td width="48%" nowrap="nowrap" class="textoDestacado">Adulto</td>
+			<td width="50%"><input name="qtdTicketAdulto" type="text" id="qtdTicketAdlt" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td nowrap="nowrap" class="textoDestacado">Estudante</td>
+			<td><input name="qtdTicketAdulto" type="text" id="qtdTicketEstd" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td nowrap="nowrap" class="textoDestacado">Maior de 60 anos </td>
+			<td><input name="qtdTicketAdulto3" type="text" id="qtdTicketM60" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td nowrap="nowrap" class="textoDestacado">Portador de Defici&ecirc;ncia F&iacute;sica </td>
+			<td><input name="qtdTicketAdulto4" type="text" id="qtdTicketDef" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td nowrap="nowrap" class="textoDestacado">Policial Fardado </td>
+			<td><input name="qtdTicketAdulto5" type="text" id="qtdTicketPol" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td nowrap="nowrap" class="textoDestacado">Menores at&eacute; 11 anos </td>
+			<td><input name="qtdTicketAdulto6" type="text" id="qtdTicket610" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+		  </tr>
+		  <tr>
+		    <td>&nbsp;</td>
+		    <td nowrap="nowrap" class="textoDestacado">Crian&ccedil;as de Colo </td>
+		    <td><input name="qtdTicketAdulto72" type="text" id="qtdTicketAdulto7" size="8" maxlength="3" value="0" class="textoDestacado"/></td>
+	      </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td colspan="2" valign="middle" nowrap="nowrap" class="textoDestacado"> <label>
+			  <input type="checkbox" name="checkbox" value="checkbox" />
+			</label>
+		    Autoriza&ccedil;&atilde;o para Menores</td>
+		  </tr>
+		</table></td>
+	  </tr>
+	  <tr>
+		<td nowrap="nowrap" class="textoDestacado">Trem</td>
+		<td>
+			<select name="trem" class="textoDestacado" style="width:50%" tabindex="3">
+				<option value="">&nbsp;</option>
+				<option value="P1">P1</option>
+				<option value="P2">P2</option>			
+				<option value="P3">P3</option>									
+		  </select>	</td>
+	  </tr>
+	  
+	  <tr>
+	
+		<td nowrap="nowrap" class="textoDestacado">Origem</td>
+		<td>
+			<select name="origem" class="textoDestacado" id="origem" style="width:50%" tabindex="5" onchange="escolherOrigem(this)">
+				<option value="">Origem</option>		
+		  </select>	</td>
+	  </tr>
+	  <tr>
+		<td nowrap="nowrap" class="textoDestacado">Destino</td>
+		<td>
+			<select name="destino" class="textoDestacado" id="destino" style="width:50%" tabindex="6">
+				<option value="">Destino</option>			
+		  </select>	</td>
+	  </tr>
+	  <tr>
+		<td nowrap="nowrap" class="textoDestacado">Data</td>
+		<td><select name="diaIda" class="textoDestacado" tabindex="7">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19" selected="selected">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+		  &nbsp;
+			<select name="mesIda" class="textoDestacado" tabindex="8">
+				<option value="01" selected="selected">Setembro 2007</option>
+				<option value="02">Outubro 2007</option>			
+				<option value="03">Novembro 2007</option>
+				<option value="04">Dezembro 2007</option>			
+				<option value="05">Janeiro 2008</option>
+				<option value="06">Fevereiro 2008</option>			
+				<option value="07">Março 2008</option>
+				<option value="08">Abril 2008</option>			
+				<option value="09">Maio 2008</option>
+				<option value="10">Junho 2008</option>			
+				<option value="11">Julho 2008</option>
+				<option value="12">Agosto 2008</option>						
+		</select>	</td>
+	  </tr>
+	  
+	  <tr>
+		<td nowrap="nowrap" class="textoDestacado">Classe</td>
+		<td><select name="tpPassagem" class="textoDestacado">
+				<option value="">Classe</option>
+				<option value="">Econômico</option>
+				<option value="">Executivo</option>
+			</select>		</td>
+	  </tr>
+	  
+	  <tr>
+		<td colspan="3" nowrap="nowrap"><hr /></td>
+	  </tr>
+	  <tr>
+		<td colspan="3" align="center" nowrap="nowrap"><input type="image" name="imageField" src="img/bt_consultar.gif" onclick="consultar('inline');return false" />
+		  &nbsp;&nbsp;&nbsp;
+		  <input type="image" name="imageField2" src="img/bt_limpar.gif" onclick="form.reset();consultar('none');return false"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		  <div id="comprar"  style="display:none;">
+		  <img name="imageField4"  src="img/bt_comprar.gif" onclick="javascript:window.location = 'venda_bilhete_externo2.htm'"/>
+&nbsp;&nbsp;&nbsp;
+		  </div>
+	    </td>
+	  </tr>
+	  <tr>
+		<td colspan="3" align="center" nowrap="nowrap"><hr /></td>
+	  </tr>
+	</table>
+<div class="mandatoryCenter" id="detalhe2" onclick="ocultarDetalhe('detalhe2')" style="display:none;">
+  <table width="97%" height="100%" border="0" cellpadding="0" cellspacing="0" onclick="ocultarDetalhe('detalhe2')">
+    <tr class="linhaHeader">
+      <td nowrap="nowrap"><div align="left"><strong>Descri&ccedil;&atilde;o</strong></div></td>
+      <td nowrap="nowrap"><div align="center"><strong>QTD</strong></div></td>
+      <td nowrap="nowrap"><div align="right"><strong>Valor Un. </strong></div></td>
+      <td nowrap="nowrap"><div align="center"><strong>Total </strong></div></td>
+    </tr>
+    <tr>
+      <td width="44%" nowrap="nowrap"><div align="left">Adulto</div></td>
+      <td width="13%" nowrap="nowrap"><div align="center">2</div></td>
+      <td width="23%" nowrap="nowrap"><div align="right">25,00 R$</div></td>
+      <td width="20%" nowrap="nowrap"><div align="right">50,00 R$</div></td>
+    </tr>
+    <tr>
+      <td nowrap="nowrap"><div align="left">Estudante</div></td>
+      <td nowrap="nowrap"><div align="center">1</div></td>
+      <td nowrap="nowrap"><div align="right">12,50 R$</div></td>
+      <td nowrap="nowrap"><div align="right">12,50 R$</div></td>
+    </tr>
+    <tr>
+      <td colspan="4" nowrap="nowrap"><hr /></td>
+    </tr>
+    <tr>
+      <td colspan="3" nowrap="nowrap"><div align="left">Total</div></td>
+      <td nowrap="nowrap"><div align="right">62,50 R$</div></td>
+    </tr>
+  </table>
+</div>
+<div class="mandatoryCenter" id="detalhe1" onclick="ocultarDetalhe('detalhe1')" style="display:none;">
+  <table width="97%" height="100%" border="0" cellpadding="0" cellspacing="0" onclick="ocultarDetalhe('detalhe1')">
+    <tr class="linhaHeader">
+      <td nowrap="nowrap"><div align="left"><strong>Descri&ccedil;&atilde;o</strong></div></td>
+      <td nowrap="nowrap"><div align="center"><strong>QTD</strong></div></td>
+      <td nowrap="nowrap"><div align="right"><strong>Valor Un. </strong></div></td>
+      <td nowrap="nowrap"><div align="center"><strong>Total </strong></div></td>
+    </tr>
+    <tr>
+      <td width="44%" nowrap="nowrap"><div align="left">Adulto</div></td>
+      <td width="13%" nowrap="nowrap"><div align="center">2</div></td>
+      <td width="23%" nowrap="nowrap"><div align="right">17,50 R$</div></td>
+      <td width="20%" nowrap="nowrap"><div align="right">35,00 R$</div></td>
+    </tr>
+    <tr>
+      <td nowrap="nowrap"><div align="left">Estudante</div></td>
+      <td nowrap="nowrap"><div align="center">1</div></td>
+      <td nowrap="nowrap"><div align="right">8,75 R$</div></td>
+      <td nowrap="nowrap"><div align="right">8,75 R$</div></td>
+    </tr>
+    <tr>
+      <td colspan="4" nowrap="nowrap"><hr /></td>
+    </tr>
+    <tr>
+      <td colspan="3" nowrap="nowrap"><div align="left">Total</div></td>
+      <td nowrap="nowrap"><div align="right">43,75 R$</div></td>
+    </tr>
+  </table>
+</div>
+
+<div id="consulta" style="display:none;">
+
+
+<div style="height:165px; width:80%; overflow-y:scroll; left:10%; position:absolute; ">
+  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="left" valign="middle" class="linhaHeader" height="30"><div align="left" class="style1">Passagens</div></td>
+    </tr>
+    <tr>
+      <td align="left" valign="middle"><hr /></td>
+    </tr>
+
+  </table>
+  <table width="97%"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr class="tableHeader">
+        <td width="4%" rowspan="2" style="border-right-style:dashed;border-right-width:1px;"><div align="center"></div></td>
+        <td rowspan="2" style="border-right-style:dashed;border-right-width:1px;"><div align="center" class="style4">Id Trem </div></td>
+        <td colspan="2" style="border-right-style:dashed;border-right-width:1px;"><div align="center" class="style4">Partida</div></td>
+        <td colspan="3" rowspan="2" style="border-right-style:dashed;border-right-width:1px;"><div align="center" class="style4">Chegada</div>
+          (Programada / Prevista)</td>
+        <td rowspan="2" style="border-right-style:dashed;border-right-width:1px;"><div align="center" >Classe</div></td>
+        <td width="14%" rowspan="2" style="border-right-style:dashed;border-right-width:1px;">Valores</td>
+        <td width="7%" rowspan="2">Detalhes</td>
+      </tr>
+      <tr class="tableHeader">
+        <td colspan="2" style="border-right-style:dashed;border-right-width:1px;">(Programada / Prevista)</td>
+      </tr>
+      <tr class="linhaImpar">
+        <td width="4%" align="center" valign="middle" style="border-right-style:dashed;border-right-width:1px;"><input name="opIda" type="radio" value="radiobutton" /></td>
+        <td width="5%"  style="border-right-style:dashed;border-right-width:1px;">P1</td>
+        <td colspan="2"  style="border-right-style:dashed;border-right-width:1px;"><strong>Ipatinga (14:30 / 14:50hrs)</strong></td>
+        <td colspan="3"  style="border-right-style:dashed;border-right-width:1px;"><strong>Vit&oacute;ria (16:30 / 16:45hrs)</strong></td>
+        <td width="14%"  style="border-right-style:dashed;border-right-width:1px;">Econ&ocirc;mica</td>
+        <td  style="border-right-style:dashed;border-right-width:1px;"><strong>43,75 R$</strong></td>
+        <td  ><img src="img/detalhe.gif" alt="Detalhes do trecho" width="16" height="16" onclick="exibeDetalhe('detalhe1')" /></td>
+      </tr>
+      <tr class="linhaPar">
+        <td width="4%" align="center" valign="middle" style="border-right-style:dashed;border-right-width:1px;"><input name="opIda" type="radio" value="radiobutton" /></td>
+        <td width="5%"  style="border-right-style:dashed;border-right-width:1px;">P1</td>
+        <td colspan="2"  style="border-right-style:dashed;border-right-width:1px;"><strong>Ipatinga (14:30 / 14:50hrs)</strong> </td>
+        <td colspan="3"  style="border-right-style:dashed;border-right-width:1px;"><strong>Vit&oacute;ria (16:30 / 16:45hrs)</strong></td>
+        <td width="14%"  style="border-right-style:dashed;border-right-width:1px;">Executiva</td>
+        <td  style="border-right-style:dashed;border-right-width:1px;"><strong>62,50 R$</strong></td>
+        <td  ><img src="img/detalhe.gif" alt="Detalhes do trecho" width="16" height="16" onclick="exibeDetalhe('detalhe2')"/></td>
+      </tr>
+      <tr class="linhaImpar">
+        <td width="4%" align="center" valign="middle" style="border-right-style:dashed;border-right-width:1px;"><input name="opIda" type="radio" value="radiobutton" /></td>
+        <td width="5%"  style="border-right-style:dashed;border-right-width:1px;">P2</td>
+        <td colspan="2"  style="border-right-style:dashed;border-right-width:1px;"><strong>Ipatinga (15:30 / 15:50hrs)</strong></td>
+        <td colspan="3"  style="border-right-style:dashed;border-right-width:1px;"><strong>Vit&oacute;ria (17:30 / 17:45hrs)</strong></td>
+        <td width="14%"  style="border-right-style:dashed;border-right-width:1px;">Econ&ocirc;mica</td>
+        <td style="border-right-style:dashed;border-right-width:1px;"><strong>43,75 R$</strong></td>
+        <td><img src="img/detalhe.gif" alt="Detalhes do trecho" width="16" height="16" onclick="exibeDetalhe('detalhe1')"/></td>
+      </tr>
+      <tr class="linhaPar">
+        <td width="4%" align="center" valign="middle" style="border-right-style:dashed;border-right-width:1px;"><input name="opIda" type="radio" value="radiobutton" /></td>
+        <td width="5%"  style="border-right-style:dashed;border-right-width:1px;">P2</td>
+        <td colspan="2"  style="border-right-style:dashed;border-right-width:1px;"><strong>Ipatinga (15:30 / 15:50hrs)</strong></td>
+        <td colspan="3"  style="border-right-style:dashed;border-right-width:1px;"><strong>Vit&oacute;ria (17:30 / 17:45hrs)</strong></td>
+        <td width="14%"  style="border-right-style:dashed;border-right-width:1px;">Executiva</td>
+        <td  style="border-right-style:dashed;border-right-width:1px;"><strong>62,50 R$</strong></td>
+        <td  ><img src="img/detalhe.gif" alt="Detalhes do trecho" width="16" height="16" onclick="exibeDetalhe('detalhe2')"/></td>
+      </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

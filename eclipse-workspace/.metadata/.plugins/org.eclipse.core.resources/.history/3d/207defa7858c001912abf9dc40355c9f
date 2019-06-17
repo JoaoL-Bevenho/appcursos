@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="message-modal"
+			class="modal modal-message-overwrite modal-fixed-footer modal-fixed-footer-overwrite">
+			<form method="post">
+				<div id="message-header" class="modal-header">
+					<h5>
+						<b>ERROR</b>
+					</h5>
+				</div>
+				<div class="modal-content modal-content-overwrite">
+					Name: <input type="text" value="" name="nameGuest" /> CPF: <input
+						type="text" value="" name="cpf" id="cpfinput" />
+				</div>
+				<div class="modal-footer">
+					<button
+						class="modal-action modal-close btn waves-effect waves-light btn">Ok</button>
+				</div>
+			</form>
+		</div>
+		<div class="modal fade" id="alertModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content modal-content-overwrite">
+					<div class="modal-header modal-header-overwrite error-msg">
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<h5 class="modal-title" id="exampleModalLabel">Mensagem de Alerta</h5>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-label-group">
+								<br /> Clica no botão abaixo para continuar.
+							</div>
+						</div>
+					</div>
+					<form method="POST">
+						<div class="modal-footer">
+							<input type="submit" class="btn btn-primary btn-block btn-primary-overwrite" id="alertSubmit" /> <input type="text" id="hiddenalertSubmit"
+								name="hiddenalertaSubmit" value="Ok" hidden />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

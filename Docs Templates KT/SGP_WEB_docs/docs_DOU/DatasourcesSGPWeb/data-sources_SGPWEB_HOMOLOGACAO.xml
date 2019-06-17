@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<data-sources>
+	<managed-data-source connection-pool-name="SGPWEB VPN Connection Pool" jndi-name="DS_SGPWEB1" name="SGPWEB_DS_VPN_VALE"/>
+   <connection-pool name="SGPWEB VPN Connection Pool">
+      <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="PJSGPWEB" password="wn8u7tav" url="jdbc:Oracle:thin:@//hombdor14:1525/hvte"/>
+   </connection-pool>
+</data-sources>
+

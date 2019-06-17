@@ -1,0 +1,5740 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.2.0311.2600"
+    charSet    	0)
+
+(object Class_Category "2. Modelo de Casos de Uso"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"449FEC2D0311"
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class_Category "2. Casos de Uso"
+	    quid       	"414DCDC5035E"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class_Category "2.0. Segurança"
+		    quid       	"414DCDD10013"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Logar no SGP Web"
+			    quid       	"414DCD8400C8"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0C31B036B"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+				    quidu      	"46AFE21D02CE")))
+			(object Association "$UNNAMED$0"
+			    quid       	"4725E2FC0221"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$1"
+				    quid       	"4725E2FD004C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.0. Segurança::Logar no SGP Web"
+				    quidu      	"414DCD8400C8"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$2"
+				    quid       	"4725E2FD004E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$3"
+			    quid       	"4725E311029B"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$4"
+				    quid       	"4725E3120124"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.0. Segurança::Logar no SGP Web"
+				    quidu      	"414DCD8400C8"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$5"
+				    quid       	"4725E3120126"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Segurança"
+			    quid       	"44AB9F6A0136"
+			    title      	"Segurança"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	150
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR" @1
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1456, 960)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@1
+					location   	(1456, 1120)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"SEGUR")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46AFE21D02CE"
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor" @2
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(368, 640)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@2
+					location   	(368, 800)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Vendedor")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E2C700F2"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.0. Segurança::Logar no SGP Web" @3
+				    location   	(912, 960)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@3
+					location   	(912, 1098)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Logar no SGP Web")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DCD8400C8"
+				    height     	118)
+				(object DependencyView "" @4
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0C31B036B"
+				    client     	@3
+				    supplier   	@1
+				    line_style 	0)
+				(object AssociationViewNew "$UNNAMED$0" @5
+				    location   	(618, 786)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E2FC0221"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$1" @6
+					    Parent_View 	@5
+					    location   	(250, 290)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E2FD004C"
+					    client     	@5
+					    supplier   	@3
+					    line_style 	0)
+					(object RoleView "$UNNAMED$2" @7
+					    Parent_View 	@5
+					    location   	(250, 290)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E2FD004E"
+					    client     	@5
+					    supplier   	@2
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @8
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(368, 1264)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@8
+					location   	(368, 1424)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$3" @9
+				    location   	(581, 1142)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E311029B"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$4" @10
+					    Parent_View 	@9
+					    location   	(213, -122)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3120124"
+					    client     	@9
+					    supplier   	@3
+					    line_style 	0)
+					(object RoleView "$UNNAMED$5" @11
+					    Parent_View 	@9
+					    location   	(213, -122)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3120126"
+					    client     	@9
+					    supplier   	@8
+					    line_style 	0)))))
+			(object UseCaseDiagram "Segurança (Pck)"
+			    quid       	"46B0D7AF029F"
+			    title      	"Segurança (Pck)"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos" @12
+				    location   	(448, 400)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@12
+					location   	(238, 316)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	420
+					justify    	0
+					label      	"2.1. Cadastros Básicos")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44B024340145"
+				    width      	432
+				    height     	180)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens" @13
+				    location   	(448, 704)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@13
+					location   	(238, 620)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	420
+					justify    	0
+					label      	"2.2. Adm. Trens")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BC2B01A5"
+				    width      	432
+				    height     	180)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial" @14
+				    location   	(448, 1008)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@14
+					location   	(238, 924)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	420
+					justify    	0
+					label      	"2.3. Adm. Comercial")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BC47008C"
+				    width      	432
+				    height     	180)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens" @15
+				    location   	(960, 176)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@15
+					location   	(750, 92)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	420
+					justify    	0
+					label      	"2.4. Passagens")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BC5B0177"
+				    width      	432
+				    height     	180)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira" @16
+				    location   	(1488, 704)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@16
+					location   	(1278, 620)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	420
+					justify    	0
+					label      	"2.6. Interface Financeira")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BC6E0148"
+				    width      	432
+				    height     	180)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.7. Relatórios" @17
+				    location   	(1504, 1008)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@17
+					location   	(1294, 924)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	420
+					justify    	0
+					label      	"2.7. Relatórios")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BC81036B"
+				    width      	432
+				    height     	180)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR" @18
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(960, 640)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@18
+					location   	(960, 800)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"SEGUR")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46AFE21D02CE"
+				    autoResize 	TRUE)
+				(object DependencyView "" @19
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D7F602BF"
+				    client     	@12
+				    supplier   	@18
+				    line_style 	0)
+				(object DependencyView "" @20
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D7F902CE"
+				    client     	@13
+				    supplier   	@18
+				    line_style 	0)
+				(object DependencyView "" @21
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D7FC0290"
+				    client     	@14
+				    supplier   	@18
+				    line_style 	0)
+				(object DependencyView "" @22
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D7FF00AB"
+				    client     	@15
+				    supplier   	@18
+				    line_style 	0)
+				(object DependencyView "" @23
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D8010167"
+				    client     	@16
+				    supplier   	@18
+				    line_style 	0)
+				(object DependencyView "" @24
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D80303A9"
+				    client     	@17
+				    supplier   	@18
+				    line_style 	0)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF" @25
+				    location   	(1488, 320)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@25
+					location   	(1295, 236)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	386
+					justify    	0
+					label      	"2.5. ECF")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBEAB0228"
+				    width      	398
+				    height     	180)
+				(object DependencyView "" @26
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DC1FB02A8"
+				    client     	@25
+				    supplier   	@18
+				    line_style 	0)
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.8. Bagagem e Encomenda" @27
+				    location   	(957, 1312)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@27
+					location   	(764, 1227)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	386
+					justify    	0
+					label      	"2.8. Bagagem e Encomenda")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"49F0CF700000"
+				    width      	398
+				    height     	182)
+				(object DependencyView "" @28
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0D1D90271"
+				    client     	@27
+				    supplier   	@18
+				    line_style 	0)))))
+		(object Class_Category "2.1. Cadastros Básicos"
+		    quid       	"44B024340145"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"46B0D7F602BF"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Manter Classes de Passagens"
+			    quid       	"44B024A301D1")
+			(object UseCase "Manter Vendedor"
+			    quid       	"46B0BD69003E"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB29E0093"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft"
+				    quidu      	"46B0CDCF0148")))
+			(object UseCase "Manter Parâmetros ACT"
+			    quid       	"46B0BD7601C5"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0CEF9034B"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft"
+				    quidu      	"46B0CDCF0148")
+				(object Dependency_Relationship
+				    quid       	"46B0CEFC0157"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")
+				(object Dependency_Relationship
+				    quid       	"499DB75900B5"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Classes de Passagens"
+				    quidu      	"44B024A301D1")))
+			(object UseCase "Manter Parâmetros de Sistema"
+			    quid       	"46B0BD8B005D")
+			(object UseCase "Manter Passageiro Ferrovia"
+			    quid       	"46B3866E004E")
+			(object UseCase "Manter Ponto de Venda"
+			    quid       	"499DABF50140"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB60F02A8"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Manter Carro Padrão"
+			    quid       	"499DADE20088"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB6950030"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Classes de Passagens"
+				    quidu      	"44B024A301D1")))
+			(object UseCase "Manter Contrato Conta Corrente"
+			    quid       	"499DAE3F0221"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB6B90062"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Classes de Passagens"
+				    quidu      	"44B024A301D1")))
+			(object UseCase "Manter Parâmetro Rota por Ferrovia"
+			    quid       	"499DAE5602BC"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB2DF0311"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Manter Tipos de Passagem"
+			    quid       	"499DAE8D036D")
+			(object UseCase "Manter Formato de Saída da Passagem - Matricial ou ECF"
+			    quid       	"499DAEAD0138")
+			(object UseCase "Manter Mensagem"
+			    quid       	"499DB09600F6")
+			(object UseCase "Manter Autorizador Passagem"
+			    quid       	"499DB0B100F1"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB6480120"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft"
+				    quidu      	"46B0CDCF0148")))
+			(object UseCase "Manter Autorização Cortesia"
+			    quid       	"499DB0E00065"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DB72D01CF"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Classes de Passagens"
+				    quidu      	"44B024A301D1")
+				(object Dependency_Relationship
+				    quid       	"499DB8E90380"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Manter Motivo Cancelamento"
+			    quid       	"49F0CDC6006D")
+			(object UseCase "Manter Modelo de Impressora"
+			    quid       	"4C5038E600AB")
+			(object UseCase "Manter Equipamento Emissor de Cupom Fiscal"
+			    quid       	"4C5038F30167")
+			(object Association "$UNNAMED$6"
+			    quid       	"4725E3C9019F"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$7"
+				    quid       	"4725E3CA0018"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Parâmetros ACT"
+				    quidu      	"46B0BD7601C5"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$8"
+				    quid       	"4725E3CA0028"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$9"
+			    quid       	"4725E3CC0131"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$10"
+				    quid       	"4725E3CC0344"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Passageiro Ferrovia"
+				    quidu      	"46B3866E004E"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$11"
+				    quid       	"4725E3CC0346"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$12"
+			    quid       	"4725E3CE0075"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$13"
+				    quid       	"4725E3CE01FB"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Classes de Passagens"
+				    quidu      	"44B024A301D1"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$14"
+				    quid       	"4725E3CE01FD"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$15"
+			    quid       	"4725E3D20073"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$16"
+				    quid       	"4725E3D20296"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Parâmetros de Sistema"
+				    quidu      	"46B0BD8B005D"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$17"
+				    quid       	"4725E3D20298"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$18"
+			    quid       	"4725E3D30351"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$19"
+				    quid       	"4725E3D4012E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Vendedor"
+				    quidu      	"46B0BD69003E"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$20"
+				    quid       	"4725E3D40130"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$21"
+			    quid       	"499DB06A030C"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$22"
+				    quid       	"499DB06B02BB"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$23"
+				    quid       	"499DB06B02BD"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Tipos de Passagem"
+				    quidu      	"499DAE8D036D")))
+			(object Association "$UNNAMED$24"
+			    quid       	"499DB07000F5"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$25"
+				    quid       	"499DB0700335"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Tipos de Passagem"
+				    quidu      	"499DAE8D036D"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$26"
+				    quid       	"499DB0700337"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$27"
+			    quid       	"499DB11D031D"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$28"
+				    quid       	"499DB11E0108"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Ponto de Venda"
+				    quidu      	"499DABF50140"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$29"
+				    quid       	"499DB11E010A"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$30"
+			    quid       	"499DB24000BD"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$31"
+				    quid       	"499DB2400261"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Carro Padrão"
+				    quidu      	"499DADE20088"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$32"
+				    quid       	"499DB2400263"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$33"
+			    quid       	"499DB244015C"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$34"
+				    quid       	"499DB24403BC"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Contrato Conta Corrente"
+				    quidu      	"499DAE3F0221"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$35"
+				    quid       	"499DB24403BE"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$36"
+			    quid       	"499DB2460397"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$37"
+				    quid       	"499DB247022E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Parâmetro Rota por Ferrovia"
+				    quidu      	"499DAE5602BC"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$38"
+				    quid       	"499DB2470230"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$39"
+			    quid       	"499DB24A00CE"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$40"
+				    quid       	"499DB24A031E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Mensagem"
+				    quidu      	"499DB09600F6"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$41"
+				    quid       	"499DB24A0320"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$42"
+			    quid       	"499DB24C0357"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$43"
+				    quid       	"499DB24D01BF"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Autorizador Passagem"
+				    quidu      	"499DB0B100F1"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$44"
+				    quid       	"499DB24D01C1"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$45"
+			    quid       	"499DB24F0091"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$46"
+				    quid       	"499DB24F038C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Autorização Cortesia"
+				    quidu      	"499DB0E00065"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$47"
+				    quid       	"499DB24F038E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$48"
+			    quid       	"499DB25E016E"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$49"
+				    quid       	"499DB25E0361"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Formato de Saída da Passagem - Matricial ou ECF"
+				    quidu      	"499DAEAD0138"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$50"
+				    quid       	"499DB25E0363"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$51"
+			    quid       	"49F0CDE90242"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$52"
+				    quid       	"49F0CDEA00CB"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Motivo Cancelamento"
+				    quidu      	"49F0CDC6006D"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$53"
+				    quid       	"49F0CDEA00CD"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$54"
+			    quid       	"4C50392301B5"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$55"
+				    quid       	"4C503924006D"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Modelo de Impressora"
+				    quidu      	"4C5038E600AB"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$56"
+				    quid       	"4C503924006F"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$57"
+			    quid       	"4C5039270157"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$58"
+				    quid       	"4C5039280000"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Equipamento Emissor de Cupom Fiscal"
+				    quidu      	"4C5038F30167"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$59"
+				    quid       	"4C5039280002"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Cadastros Básicos"
+			    quid       	"44B0244D0259"
+			    title      	"Cadastros Básicos"
+			    zoom       	95
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	99
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft" @29
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1152, 112)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@29
+					location   	(1152, 272)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Peoplesoft")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CDCF0148"
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @30
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(2048, 320)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@30
+					location   	(2048, 480)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Formato de Saída da Passagem - Matricial ou ECF" @31
+				    location   	(2730, 1008)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@31
+					location   	(2730, 1146)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Formato de Saída da Passagem - Matricial ou ECF")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DAEAD0138"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor" @32
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(2730, 384)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@32
+					location   	(2730, 544)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Vendedor")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E2C700F2"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$48" @33
+				    location   	(2730, 761)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB25E016E"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$49" @34
+					    Parent_View 	@33
+					    location   	(138, 345)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB25E0361"
+					    client     	@33
+					    supplier   	@31
+					    line_style 	0)
+					(object RoleView "$UNNAMED$50" @35
+					    Parent_View 	@33
+					    location   	(138, 345)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB25E0363"
+					    client     	@33
+					    supplier   	@32
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @36
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(2752, 1536)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@36
+					location   	(2752, 1696)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Parâmetros ACT" @37
+				    location   	(720, 1728)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@37
+					location   	(720, 1866)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Parâmetros ACT")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BD7601C5")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Classes de Passagens" @38
+				    location   	(1888, 2192)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@38
+					location   	(1888, 2330)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Classes de Passagens")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44B024A301D1"
+				    height     	118)
+				(object DependencyView "" @39
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB75900B5"
+				    client     	@37
+				    supplier   	@38
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Vendedor" @40
+				    location   	(1184, 432)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@40
+					location   	(1184, 570)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Vendedor")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BD69003E")
+				(object DependencyView "" @41
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB29E0093"
+				    client     	@40
+				    supplier   	@29
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Parâmetros de Sistema" @42
+				    location   	(2128, 1104)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@42
+					location   	(2128, 1242)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Parâmetros de Sistema")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BD8B005D")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Passageiro Ferrovia" @43
+				    location   	(1760, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@43
+					location   	(1760, 794)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Passageiro Ferrovia")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B3866E004E")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Tipos de Passagem" @44
+				    location   	(544, 1520)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@44
+					location   	(544, 1658)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Tipos de Passagem")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DAE8D036D"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Ponto de Venda" @45
+				    location   	(1552, 272)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@45
+					location   	(1552, 410)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Ponto de Venda")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DABF50140"
+				    height     	118)
+				(object DependencyView "" @46
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB60F02A8"
+				    client     	@45
+				    supplier   	@30
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Carro Padrão" @47
+				    location   	(1696, 1472)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@47
+					location   	(1696, 1610)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Carro Padrão")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DADE20088"
+				    height     	118)
+				(object DependencyView "" @48
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB6950030"
+				    client     	@47
+				    supplier   	@38
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Contrato Conta Corrente" @49
+				    location   	(1216, 1584)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@49
+					location   	(1216, 1722)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Contrato Conta Corrente")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DAE3F0221"
+				    height     	118)
+				(object DependencyView "" @50
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB6B90062"
+				    client     	@49
+				    supplier   	@38
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Parâmetro Rota por Ferrovia" @51
+				    location   	(2112, 816)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@51
+					location   	(2112, 954)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Parâmetro Rota por Ferrovia")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DAE5602BC"
+				    height     	118)
+				(object DependencyView "" @52
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB2DF0311"
+				    client     	@51
+				    supplier   	@30
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Mensagem" @53
+				    location   	(512, 1296)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@53
+					location   	(512, 1434)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Mensagem")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DB09600F6"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Autorizador Passagem" @54
+				    location   	(672, 208)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@54
+					location   	(672, 346)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Autorizador Passagem")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DB0B100F1"
+				    height     	118)
+				(object DependencyView "" @55
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB6480120"
+				    client     	@54
+				    supplier   	@29
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Autorização Cortesia" @56
+				    location   	(2160, 1376)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@56
+					location   	(2160, 1514)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Autorização Cortesia")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DB0E00065"
+				    height     	118)
+				(object DependencyView "" @57
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB72D01CF"
+				    client     	@56
+				    supplier   	@38
+				    line_style 	0)
+				(object DependencyView "" @58
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB8E90380"
+				    client     	@56
+				    supplier   	@36
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Motivo Cancelamento" @59
+				    location   	(400, 1056)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@59
+					location   	(400, 1194)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Motivo Cancelamento")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"49F0CDC6006D"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Modelo de Impressora" @60
+				    location   	(448, 480)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@60
+					location   	(448, 618)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Modelo de Impressora")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4C5038E600AB")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.1. Cadastros Básicos::Manter Equipamento Emissor de Cupom Fiscal" @61
+				    location   	(416, 736)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@61
+					location   	(416, 874)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Equipamento Emissor de Cupom Fiscal")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4C5038F30167")
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @62
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1296, 1088)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@62
+					location   	(1296, 1248)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$6" @63
+				    location   	(965, 1451)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E3C9019F"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$7" @64
+					    Parent_View 	@63
+					    location   	(101, 379)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3CA0018"
+					    client     	@63
+					    supplier   	@37
+					    line_style 	0)
+					(object RoleView "$UNNAMED$8" @65
+					    Parent_View 	@63
+					    location   	(101, 379)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3CA0028"
+					    client     	@63
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$12" @66
+				    location   	(1634, 1721)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E3CE0075"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$13" @67
+					    Parent_View 	@66
+					    location   	(770, 649)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3CE01FB"
+					    client     	@66
+					    supplier   	@38
+					    line_style 	0)
+					(object RoleView "$UNNAMED$14" @68
+					    Parent_View 	@66
+					    location   	(770, 649)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3CE01FD"
+					    client     	@66
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$18" @69
+				    location   	(1244, 803)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E3D30351"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$19" @70
+					    Parent_View 	@69
+					    location   	(380, -269)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3D4012E"
+					    client     	@69
+					    supplier   	@40
+					    line_style 	0)
+					(object RoleView "$UNNAMED$20" @71
+					    Parent_View 	@69
+					    location   	(380, -269)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3D40130"
+					    client     	@69
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$15" @72
+				    location   	(1685, 1094)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E3D20073"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$16" @73
+					    Parent_View 	@72
+					    location   	(821, 22)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3D20296"
+					    client     	@72
+					    supplier   	@42
+					    line_style 	0)
+					(object RoleView "$UNNAMED$17" @74
+					    Parent_View 	@72
+					    location   	(821, 22)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3D20298"
+					    client     	@72
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$9" @75
+				    location   	(1466, 927)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4725E3CC0131"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$10" @76
+					    Parent_View 	@75
+					    location   	(602, -145)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3CC0344"
+					    client     	@75
+					    supplier   	@43
+					    line_style 	0)
+					(object RoleView "$UNNAMED$11" @77
+					    Parent_View 	@75
+					    location   	(602, -145)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4725E3CC0346"
+					    client     	@75
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$24" @78
+				    location   	(937, 1290)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB07000F5"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$25" @79
+					    Parent_View 	@78
+					    location   	(73, 218)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB0700335"
+					    client     	@78
+					    supplier   	@44
+					    line_style 	0)
+					(object RoleView "$UNNAMED$26" @80
+					    Parent_View 	@78
+					    location   	(73, 218)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB0700337"
+					    client     	@78
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$27" @81
+				    location   	(1407, 723)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB11D031D"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$28" @82
+					    Parent_View 	@81
+					    location   	(543, -349)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB11E0108"
+					    client     	@81
+					    supplier   	@45
+					    line_style 	0)
+					(object RoleView "$UNNAMED$29" @83
+					    Parent_View 	@81
+					    location   	(543, -349)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB11E010A"
+					    client     	@81
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$30" @84
+				    location   	(1494, 1278)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB24000BD"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$31" @85
+					    Parent_View 	@84
+					    location   	(198, 190)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB2400261"
+					    client     	@84
+					    supplier   	@47
+					    line_style 	0)
+					(object RoleView "$UNNAMED$32" @86
+					    Parent_View 	@84
+					    location   	(198, 190)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB2400263"
+					    client     	@84
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$33" @87
+				    location   	(1242, 1401)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB244015C"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$34" @88
+					    Parent_View 	@87
+					    location   	(-54, 313)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24403BC"
+					    client     	@87
+					    supplier   	@49
+					    line_style 	0)
+					(object RoleView "$UNNAMED$35" @89
+					    Parent_View 	@87
+					    location   	(-54, 313)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24403BE"
+					    client     	@87
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$36" @90
+				    location   	(1600, 983)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB2460397"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$37" @91
+					    Parent_View 	@90
+					    location   	(304, -105)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB247022E"
+					    client     	@90
+					    supplier   	@51
+					    line_style 	0)
+					(object RoleView "$UNNAMED$38" @92
+					    Parent_View 	@90
+					    location   	(304, -105)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB2470230"
+					    client     	@90
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$39" @93
+				    location   	(927, 1182)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB24A00CE"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$40" @94
+					    Parent_View 	@93
+					    location   	(-369, 94)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24A031E"
+					    client     	@93
+					    supplier   	@53
+					    line_style 	0)
+					(object RoleView "$UNNAMED$41" @95
+					    Parent_View 	@93
+					    location   	(-369, 94)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24A0320"
+					    client     	@93
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$42" @96
+				    location   	(1013, 690)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB24C0357"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$43" @97
+					    Parent_View 	@96
+					    location   	(-283, -398)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24D01BF"
+					    client     	@96
+					    supplier   	@54
+					    line_style 	0)
+					(object RoleView "$UNNAMED$44" @98
+					    Parent_View 	@96
+					    location   	(-283, -398)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24D01C1"
+					    client     	@96
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$45" @99
+				    location   	(1700, 1220)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DB24F0091"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$46" @100
+					    Parent_View 	@99
+					    location   	(404, 132)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24F038C"
+					    client     	@99
+					    supplier   	@56
+					    line_style 	0)
+					(object RoleView "$UNNAMED$47" @101
+					    Parent_View 	@99
+					    location   	(404, 132)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DB24F038E"
+					    client     	@99
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$51" @102
+				    location   	(872, 1070)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0CDE90242"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$52" @103
+					    Parent_View 	@102
+					    location   	(-424, -18)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CDEA00CB"
+					    client     	@102
+					    supplier   	@59
+					    line_style 	0)
+					(object RoleView "$UNNAMED$53" @104
+					    Parent_View 	@102
+					    location   	(-424, -18)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CDEA00CD"
+					    client     	@102
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$54" @105
+				    location   	(960, 845)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4C50392301B5"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$55" @106
+					    Parent_View 	@105
+					    location   	(-336, -243)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C503924006D"
+					    client     	@105
+					    supplier   	@60
+					    line_style 	0)
+					(object RoleView "$UNNAMED$56" @107
+					    Parent_View 	@105
+					    location   	(-336, -243)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C503924006F"
+					    client     	@105
+					    supplier   	@62
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$57" @108
+				    location   	(977, 958)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4C5039270157"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$58" @109
+					    Parent_View 	@108
+					    location   	(-319, -130)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C5039280000"
+					    client     	@108
+					    supplier   	@61
+					    line_style 	0)
+					(object RoleView "$UNNAMED$59" @110
+					    Parent_View 	@108
+					    location   	(-319, -130)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C5039280002"
+					    client     	@108
+					    supplier   	@62
+					    line_style 	0)))))))
+		(object Class_Category "2.2. Adm. Trens"
+		    quid       	"46B0BC2B01A5"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"46B0D37500FA"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+			    quidu      	"46B0CD74005D")
+			(object Dependency_Relationship
+			    quid       	"46B0D7F902CE"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE")
+			(object Dependency_Relationship
+			    quid       	"499DC270002D"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG"
+			    quidu      	"499DB34A0263"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Manter Formação Padrão"
+			    attributes 	(list Attribute_Set
+				(object Attribute
+				    tool       	"RequisitePro"
+				    name       	"ReqProProjectPath"
+				    value      	""))
+			    quid       	"46B0BDB9029F"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DBAA002A1"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Horário Padrão"
+				    quidu      	"46B0BDFC01B5")
+				(object Dependency_Relationship
+				    quid       	"499DBAE602CC"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Ocupação de Assento"
+				    quidu      	"499DBABB03B4")))
+			(object UseCase "Manter Horário Padrão"
+			    attributes 	(list Attribute_Set
+				(object Attribute
+				    tool       	"RequisitePro"
+				    name       	"ReqProProjectPath"
+				    value      	""))
+			    quid       	"46B0BDFC01B5"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DBA8000FE"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Manter Formação"
+			    attributes 	(list Attribute_Set
+				(object Attribute
+				    tool       	"RequisitePro"
+				    name       	"ReqProProjectPath"
+				    value      	""))
+			    quid       	"46B0BEB40177"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0D2C60109"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Formação Padrão"
+				    quidu      	"46B0BDB9029F")
+				(object Dependency_Relationship
+				    quid       	"499DBA4A0108"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG"
+				    quidu      	"499DB34A0263")
+				(object Dependency_Relationship
+				    quid       	"499DBA9902C2"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Horário Padrão"
+				    quidu      	"46B0BDFC01B5")
+				(object Dependency_Relationship
+				    quid       	"499DBAEA00D0"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Ocupação de Assento"
+				    quidu      	"499DBABB03B4")))
+			(object UseCase "Manter Ocupação de Assento"
+			    attributes 	(list Attribute_Set
+				(object Attribute
+				    tool       	"RequisitePro"
+				    name       	"ReqProProjectPath"
+				    value      	""))
+			    quid       	"499DBABB03B4"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DBB1201B3"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object Association "$UNNAMED$60"
+			    quid       	"47261550010A"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$61"
+				    quid       	"4726155002CF"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Horário Padrão"
+				    quidu      	"46B0BDFC01B5"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$62"
+				    quid       	"4726155002D1"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$63"
+			    quid       	"47261559010A"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$64"
+				    quid       	"4726155902EF"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Formação Padrão"
+				    quidu      	"46B0BDB9029F"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$65"
+				    quid       	"4726155902F1"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$66"
+			    quid       	"4726155B007E"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$67"
+				    quid       	"4726155B02B0"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Formação"
+				    quidu      	"46B0BEB40177"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$68"
+				    quid       	"4726155B02B2"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$69"
+			    quid       	"499DBADA00B9"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$70"
+				    quid       	"499DBADA02EA"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Ocupação de Assento"
+				    quidu      	"499DBABB03B4"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$71"
+				    quid       	"499DBADA02EC"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Adm. Trens"
+			    quid       	"46B0C3C700BB"
+			    title      	"Adm. Trens"
+			    zoom       	95
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	211
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG" @111
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(224, 976)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@111
+					location   	(224, 1136)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"UNILOG")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"499DB34A0263"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @112
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1568, 288)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@112
+					location   	(1568, 448)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Formação Padrão" @113
+				    location   	(1584, 1264)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@113
+					location   	(1584, 1402)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Formação Padrão")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BDB9029F")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Horário Padrão" @114
+				    location   	(1036, 416)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@114
+					location   	(1036, 554)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Horário Padrão")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BDFC01B5")
+				(object DependencyView "" @115
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBA8000FE"
+				    client     	@114
+				    supplier   	@112
+				    line_style 	0)
+				(object DependencyView "" @116
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBAA002A1"
+				    client     	@113
+				    supplier   	@114
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Formação" @117
+				    location   	(560, 1264)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@117
+					location   	(560, 1402)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Formação")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BEB40177")
+				(object DependencyView "" @118
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D2C60109"
+				    client     	@117
+				    supplier   	@113
+				    line_style 	0)
+				(object DependencyView "" @119
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBA4A0108"
+				    client     	@117
+				    supplier   	@111
+				    line_style 	0)
+				(object DependencyView "" @120
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBA9902C2"
+				    client     	@117
+				    supplier   	@114
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens::Manter Ocupação de Assento" @121
+				    location   	(1046, 1584)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@121
+					location   	(1046, 1722)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Ocupação de Assento")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBABB03B4"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @122
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1040, 848)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@122
+					location   	(1040, 1008)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$63" @123
+				    location   	(1339, 1075)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"47261559010A"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$64" @124
+					    Parent_View 	@123
+					    location   	(283, 195)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726155902EF"
+					    client     	@123
+					    supplier   	@113
+					    line_style 	0)
+					(object RoleView "$UNNAMED$65" @125
+					    Parent_View 	@123
+					    location   	(283, 195)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726155902F1"
+					    client     	@123
+					    supplier   	@122
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$60" @126
+				    location   	(1036, 675)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"47261550010A"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$61" @127
+					    Parent_View 	@126
+					    location   	(-20, -205)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726155002CF"
+					    client     	@126
+					    supplier   	@114
+					    line_style 	0)
+					(object RoleView "$UNNAMED$62" @128
+					    Parent_View 	@126
+					    location   	(-20, -205)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726155002D1"
+					    client     	@126
+					    supplier   	@122
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$66" @129
+				    location   	(765, 1083)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4726155B007E"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$67" @130
+					    Parent_View 	@129
+					    location   	(-291, 203)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726155B02B0"
+					    client     	@129
+					    supplier   	@117
+					    line_style 	0)
+					(object RoleView "$UNNAMED$68" @131
+					    Parent_View 	@129
+					    location   	(-291, 203)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726155B02B2"
+					    client     	@129
+					    supplier   	@122
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$69" @132
+				    location   	(1041, 1307)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBADA00B9"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$70" @133
+					    Parent_View 	@132
+					    location   	(1, 459)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBADA02EA"
+					    client     	@132
+					    supplier   	@121
+					    line_style 	0)
+					(object RoleView "$UNNAMED$71" @134
+					    Parent_View 	@132
+					    location   	(1, 459)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBADA02EC"
+					    client     	@132
+					    supplier   	@122
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @135
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1696, 1760)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@135
+					location   	(1696, 1920)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @136
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBB1201B3"
+				    client     	@121
+				    supplier   	@135
+				    line_style 	0)))
+			(object UseCaseDiagram "Adm. Trens (Pck)"
+			    quid       	"46B0D35102BF"
+			    title      	"Adm. Trens (Pck)"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.2. Adm. Trens" @137
+				    location   	(560, 416)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@137
+					location   	(348, 332)
+					fill_color 	13434879
+					nlines     	2
+					max_width  	424
+					justify    	0
+					label      	"2.2. Adm. Trens")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BC2B01A5"
+				    width      	436
+				    height     	180)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @138
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1136, 416)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@138
+					location   	(1136, 576)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    autoResize 	TRUE)
+				(object DependencyView "" @139
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D37500FA"
+				    client     	@137
+				    supplier   	@138
+				    line_style 	0)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG" @140
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(560, 832)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@140
+					location   	(560, 992)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"UNILOG")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"499DB34A0263"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @141
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DC270002D"
+				    client     	@137
+				    supplier   	@140
+				    line_style 	0)))))
+		(object Class_Category "2.3. Adm. Comercial"
+		    quid       	"46B0BC47008C"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"46B0D7FC0290"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Manter Tabela de Preços de Passagem"
+			    quid       	"46B0BF9F0138"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0D5B7031C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SITRANVM Comercial"
+				    quidu      	"46B0CD890109")
+				(object Dependency_Relationship
+				    quid       	"499DBCC3022A"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Manter Faixas de Chancelas"
+			    quid       	"46B0BFE40222")
+			(object UseCase "Manter Desconto Passagem"
+			    quid       	"499DBC7A00A0")
+			(object Association "$UNNAMED$72"
+			    quid       	"472615D2015A"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$73"
+				    quid       	"472615D2034E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial::Manter Faixas de Chancelas"
+				    quidu      	"46B0BFE40222"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$74"
+				    quid       	"472615D20350"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$75"
+			    quid       	"472615D60002"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$76"
+				    quid       	"472615D60225"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial::Manter Tabela de Preços de Passagem"
+				    quidu      	"46B0BF9F0138"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$77"
+				    quid       	"472615D60227"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$78"
+			    quid       	"499DBC9700A6"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$79"
+				    quid       	"499DBC97026A"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial::Manter Desconto Passagem"
+				    quidu      	"499DBC7A00A0"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$80"
+				    quid       	"499DBC97026C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Adm. Comercial"
+			    quid       	"46B0C3D30138"
+			    title      	"Adm. Comercial"
+			    zoom       	95
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::SITRANVM Comercial" @142
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(480, 1024)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@142
+					location   	(480, 1184)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"SITRANVM Comercial")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD890109"
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial::Manter Faixas de Chancelas" @143
+				    location   	(1344, 512)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@143
+					location   	(1344, 650)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Faixas de Chancelas")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BFE40222")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial::Manter Tabela de Preços de Passagem" @144
+				    location   	(944, 1344)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@144
+					location   	(944, 1482)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Tabela de Preços de Passagem")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0BF9F0138")
+				(object DependencyView "" @145
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D5B7031C"
+				    client     	@144
+				    supplier   	@142
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.3. Adm. Comercial::Manter Desconto Passagem" @146
+				    location   	(1808, 1328)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@146
+					location   	(1808, 1466)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Manter Desconto Passagem")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBC7A00A0"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @147
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1344, 928)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@147
+					location   	(1344, 1088)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$72" @148
+				    location   	(1344, 763)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"472615D2015A"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$73" @149
+					    Parent_View 	@148
+					    location   	(1136, -5)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"472615D2034E"
+					    client     	@148
+					    supplier   	@143
+					    line_style 	0)
+					(object RoleView "$UNNAMED$74" @150
+					    Parent_View 	@148
+					    location   	(1136, -5)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"472615D20350"
+					    client     	@148
+					    supplier   	@147
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$75" @151
+				    location   	(1104, 1174)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"472615D60002"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$76" @152
+					    Parent_View 	@151
+					    location   	(896, 406)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"472615D60225"
+					    client     	@151
+					    supplier   	@144
+					    line_style 	0)
+					(object RoleView "$UNNAMED$77" @153
+					    Parent_View 	@151
+					    location   	(896, 406)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"472615D60227"
+					    client     	@151
+					    supplier   	@147
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$78" @154
+				    location   	(1607, 1154)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBC9700A6"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$79" @155
+					    Parent_View 	@154
+					    location   	(263, 226)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBC97026A"
+					    client     	@154
+					    supplier   	@146
+					    line_style 	0)
+					(object RoleView "$UNNAMED$80" @156
+					    Parent_View 	@154
+					    location   	(263, 226)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBC97026C"
+					    client     	@154
+					    supplier   	@147
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @157
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(464, 1760)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@157
+					location   	(464, 1920)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @158
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBCC3022A"
+				    client     	@144
+				    supplier   	@157
+				    line_style 	0)))))
+		(object Class_Category "2.4. Passagens"
+		    quid       	"46B0BC5B0177"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"46B0D7FF00AB"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Vender Passagem no Ponto de Venda"
+			    quid       	"46B0C00A004E"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0D6B4006D"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")
+				(object Dependency_Relationship
+				    quid       	"46B0D76F0119"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft"
+				    quidu      	"46B0CDCF0148")
+				(object Dependency_Relationship
+				    quid       	"499DBE520068"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG"
+				    quidu      	"499DB34A0263")))
+			(object UseCase "Receber Dados do PDA"
+			    quid       	"46B0C0C702CE"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0D69D032C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::PDA"
+				    quidu      	"46B0C858035B")))
+			(object UseCase "Cadastrar Passagem no Ponto de Venda"
+			    quid       	"499DBD2B0329"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"499DBE290245"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object Association "$UNNAMED$81"
+			    quid       	"46B0C89501F4"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$82"
+				    quid       	"46B0C89601D4"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::PDA"
+				    quidu      	"46B0C858035B"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$83"
+				    quid       	"46B0C89601D6"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Receber Dados do PDA"
+				    quidu      	"46B0C0C702CE")))
+			(object Association "$UNNAMED$84"
+			    quid       	"46B0C9270167"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$85"
+				    quid       	"46B0C928006D"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Receber Dados do PDA"
+				    quidu      	"46B0C0C702CE"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$86"
+				    quid       	"46B0C928006F"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::PDA"
+				    quidu      	"46B0C858035B")))
+			(object Association "$UNNAMED$87"
+			    quid       	"472617520382"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$88"
+				    quid       	"4726175302A7"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Receber Dados do PDA"
+				    quidu      	"46B0C0C702CE"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$89"
+				    quid       	"4726175302A9"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$90"
+			    quid       	"499DBE210258"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$91"
+				    quid       	"499DBE220006"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Cadastrar Passagem no Ponto de Venda"
+				    quidu      	"499DBD2B0329"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$92"
+				    quid       	"499DBE220008"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$93"
+			    quid       	"499DBE240001"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$94"
+				    quid       	"499DBE240222"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Cadastrar Passagem no Ponto de Venda"
+				    quidu      	"499DBD2B0329"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$95"
+				    quid       	"499DBE240224"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$96"
+			    quid       	"499DBE340084"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$97"
+				    quid       	"499DBE3402A6"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Vender Passagem no Ponto de Venda"
+				    quidu      	"46B0C00A004E"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$98"
+				    quid       	"499DBE3402A8"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Passagens"
+			    quid       	"46B0C3E00128"
+			    title      	"Passagens"
+			    zoom       	85
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::PDA" @159
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(736, 1760)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@159
+					location   	(736, 1920)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"PDA")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0C858035B"
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @160
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(336, 1040)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@160
+					location   	(336, 1200)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft" @161
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1000, 288)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@161
+					location   	(1000, 448)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Peoplesoft")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CDCF0148"
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Receber Dados do PDA" @162
+				    location   	(1072, 1840)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@162
+					location   	(1072, 1978)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Receber Dados do PDA")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C0C702CE")
+				(object DependencyView "" @163
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D69D032C"
+				    client     	@162
+				    supplier   	@159
+				    line_style 	0)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @164
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1648, 1712)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@164
+					location   	(1648, 1872)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$87" @165
+				    location   	(1383, 1767)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"472617520382"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$88" @166
+					    Parent_View 	@165
+					    location   	(455, 631)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726175302A7"
+					    client     	@165
+					    supplier   	@162
+					    line_style 	0)
+					(object RoleView "$UNNAMED$89" @167
+					    Parent_View 	@165
+					    location   	(455, 631)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4726175302A9"
+					    client     	@165
+					    supplier   	@164
+					    line_style 	0)))
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Cadastrar Passagem no Ponto de Venda" @168
+				    location   	(976, 1152)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@168
+					location   	(976, 1290)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Cadastrar Passagem no Ponto de Venda")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBD2B0329"
+				    height     	118)
+				(object AssociationViewNew "$UNNAMED$90" @169
+				    location   	(1398, 1502)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBE210258"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$91" @170
+					    Parent_View 	@169
+					    location   	(-250, -210)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBE220006"
+					    client     	@169
+					    supplier   	@168
+					    line_style 	0)
+					(object RoleView "$UNNAMED$92" @171
+					    Parent_View 	@169
+					    location   	(-250, -210)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBE220008"
+					    client     	@169
+					    supplier   	@164
+					    line_style 	0)))
+				(object DependencyView "" @172
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBE290245"
+				    client     	@168
+				    supplier   	@160
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Vender Passagem no Ponto de Venda" @173
+				    location   	(992, 736)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@173
+					location   	(992, 874)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Vender Passagem no Ponto de Venda")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C00A004E")
+				(object DependencyView "" @174
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D6B4006D"
+				    client     	@173
+				    supplier   	@160
+				    line_style 	0)
+				(object DependencyView "" @175
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0D76F0119"
+				    client     	@173
+				    supplier   	@161
+				    line_style 	0)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor" @176
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1632, 1008)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@176
+					location   	(1632, 1168)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Vendedor")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E2C700F2"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$93" @177
+				    location   	(1327, 1071)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBE240001"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$94" @178
+					    Parent_View 	@177
+					    location   	(-305, -17)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBE240222"
+					    client     	@177
+					    supplier   	@168
+					    line_style 	0)
+					(object RoleView "$UNNAMED$95" @179
+					    Parent_View 	@177
+					    location   	(-305, -17)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBE240224"
+					    client     	@177
+					    supplier   	@176
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$96" @180
+				    location   	(1442, 925)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBE340084"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$97" @181
+					    Parent_View 	@180
+					    location   	(-190, -163)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBE3402A6"
+					    client     	@180
+					    supplier   	@173
+					    line_style 	0)
+					(object RoleView "$UNNAMED$98" @182
+					    Parent_View 	@180
+					    location   	(-190, -163)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBE3402A8"
+					    client     	@180
+					    supplier   	@176
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG" @183
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1728, 640)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@183
+					location   	(1728, 800)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"UNILOG")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"499DB34A0263"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @184
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBE520068"
+				    client     	@173
+				    supplier   	@183
+				    line_style 	0)))))
+		(object Class_Category "2.6. Interface Financeira"
+		    quid       	"46B0BC6E0148"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"46B0D8010167"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Solicitar Emissão de NFF"
+			    quid       	"46B0C1090203"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0DC90002E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::TCFL"
+				    quidu      	"46B0CD7F0251")
+				(object Dependency_Relationship
+				    quid       	"499DC1040234"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Solicitar Emissão de Fatura Conta Corrente"
+			    quid       	"46B0C11B038A"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0DC96001F"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::TCFL"
+				    quidu      	"46B0CD7F0251")
+				(object Dependency_Relationship
+				    quid       	"499DC10C01A3"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")))
+			(object UseCase "Cancelar NFF"
+			    quid       	"46B0C12D0128"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"46B0DCA70128"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::TCFL"
+				    quidu      	"46B0CD7F0251")))
+			(object UseCase "Cancelar Fatura Conta Corrente"
+			    quid       	"499DC0AE007C")
+			(object Association "$UNNAMED$99"
+			    quid       	"47261A7E03C8"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$100"
+				    quid       	"47261A7F01C5"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Solicitar Emissão de NFF"
+				    quidu      	"46B0C1090203"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$101"
+				    quid       	"47261A7F01C7"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$102"
+			    quid       	"47261A8002AF"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$103"
+				    quid       	"47261A81005D"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Solicitar Emissão de Fatura Conta Corrente"
+				    quidu      	"46B0C11B038A"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$104"
+				    quid       	"47261A81005F"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$105"
+			    quid       	"47261A820196"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$106"
+				    quid       	"47261A82034B"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Cancelar NFF"
+				    quidu      	"46B0C12D0128"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$107"
+				    quid       	"47261A82034D"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$108"
+			    quid       	"499DC0BF012C"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$109"
+				    quid       	"499DC0BF0292"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Cancelar Fatura Conta Corrente"
+				    quidu      	"499DC0AE007C"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$110"
+				    quid       	"499DC0BF02A2"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Interface Financeira"
+			    quid       	"46B0C3EB0271"
+			    title      	"Interface Financeira"
+			    zoom       	95
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::TCFL" @185
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1952, 1008)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@185
+					location   	(1952, 1168)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"TCFL")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD7F0251"
+				    autoResize 	TRUE)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Solicitar Emissão de NFF" @186
+				    location   	(992, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@186
+					location   	(992, 794)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Solicitar Emissão de NFF")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C1090203"
+				    height     	118)
+				(object DependencyView "" @187
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0DC90002E"
+				    client     	@186
+				    supplier   	@185
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Solicitar Emissão de Fatura Conta Corrente" @188
+				    location   	(1152, 976)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@188
+					location   	(1152, 1114)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Solicitar Emissão de Fatura Conta Corrente")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C11B038A"
+				    height     	118)
+				(object DependencyView "" @189
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0DC96001F"
+				    client     	@188
+				    supplier   	@185
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Cancelar NFF" @190
+				    location   	(1168, 1392)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@190
+					location   	(1168, 1530)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Cancelar NFF")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C12D0128"
+				    height     	118)
+				(object DependencyView "" @191
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"46B0DCA70128"
+				    client     	@190
+				    supplier   	@185
+				    line_style 	0)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.6. Interface Financeira::Cancelar Fatura Conta Corrente" @192
+				    location   	(928, 1648)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@192
+					location   	(928, 1786)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Cancelar Fatura Conta Corrente")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DC0AE007C"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @193
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(448, 1152)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@193
+					location   	(448, 1312)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$99" @194
+				    location   	(656, 959)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"47261A7E03C8"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$100" @195
+					    Parent_View 	@194
+					    location   	(432, 319)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261A7F01C5"
+					    client     	@194
+					    supplier   	@186
+					    line_style 	0)
+					(object RoleView "$UNNAMED$101" @196
+					    Parent_View 	@194
+					    location   	(432, 319)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261A7F01C7"
+					    client     	@194
+					    supplier   	@193
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$102" @197
+				    location   	(671, 1092)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"47261A8002AF"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$103" @198
+					    Parent_View 	@197
+					    location   	(447, 452)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261A81005D"
+					    client     	@197
+					    supplier   	@188
+					    line_style 	0)
+					(object RoleView "$UNNAMED$104" @199
+					    Parent_View 	@197
+					    location   	(447, 452)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261A81005F"
+					    client     	@197
+					    supplier   	@193
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$105" @200
+				    location   	(781, 1261)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"47261A820196"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$106" @201
+					    Parent_View 	@200
+					    location   	(557, 621)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261A82034B"
+					    client     	@200
+					    supplier   	@190
+					    line_style 	0)
+					(object RoleView "$UNNAMED$107" @202
+					    Parent_View 	@200
+					    location   	(557, 621)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261A82034D"
+					    client     	@200
+					    supplier   	@193
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$108" @203
+				    location   	(723, 1437)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DC0BF012C"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$109" @204
+					    Parent_View 	@203
+					    location   	(515, 797)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DC0BF0292"
+					    client     	@203
+					    supplier   	@192
+					    line_style 	0)
+					(object RoleView "$UNNAMED$110" @205
+					    Parent_View 	@203
+					    location   	(515, 797)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DC0BF02A2"
+					    client     	@203
+					    supplier   	@193
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @206
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1840, 496)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@206
+					location   	(1840, 656)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @207
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DC1040234"
+				    client     	@186
+				    supplier   	@206
+				    line_style 	0)
+				(object DependencyView "" @208
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DC10C01A3"
+				    client     	@188
+				    supplier   	@206
+				    line_style 	0)))))
+		(object Class_Category "2.7. Relatórios"
+		    quid       	"46B0BC81036B"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"46B0D80303A9"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Emitir Relatório"
+			    quid       	"46B0C38203B9")
+			(object Association "$UNNAMED$111"
+			    quid       	"47261B0B0127"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$112"
+				    quid       	"47261B0B03C7"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.7. Relatórios::Emitir Relatório"
+				    quidu      	"46B0C38203B9"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$113"
+				    quid       	"47261B0B03D7"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Relatórios"
+			    quid       	"46B0C3FD0251"
+			    title      	"Relatórios"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.7. Relatórios::Emitir Relatório" @209
+				    location   	(1408, 560)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@209
+					location   	(1408, 698)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Emitir Relatório")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C38203B9"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @210
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(816, 560)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@210
+					location   	(816, 720)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$111" @211
+				    location   	(1085, 560)
+				    font       	(object Font
+					size       	10
+					face       	"Trebuchet MS"
+					charSet    	126
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"47261B0B0127"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$112" @212
+					    Parent_View 	@211
+					    location   	(845, 48)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261B0B03C7"
+					    client     	@211
+					    supplier   	@209
+					    line_style 	0)
+					(object RoleView "$UNNAMED$113" @213
+					    Parent_View 	@211
+					    location   	(845, 48)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"47261B0B03D7"
+					    client     	@211
+					    supplier   	@210
+					    line_style 	0)))))))
+		(object Class_Category "2.5. ECF"
+		    quid       	"499DBEAB0228"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"499DC1FB02A8"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Adicionar Alíquota"
+			    quid       	"499DBF4901B6")
+			(object UseCase "Emitir Leitura da Memoria Fiscal por Data"
+			    quid       	"499DBF650382")
+			(object UseCase "Cancelar Último Cupom Fiscal"
+			    quid       	"499DBF6C0056")
+			(object UseCase "Emitir Leitura X"
+			    quid       	"499DBF700396")
+			(object UseCase "Emitir Redução Z"
+			    quid       	"499DBF7401A9")
+			(object UseCase "ECF Embarcado - Exportar Dados"
+			    quid       	"49F0CE9C03B9")
+			(object UseCase "ECF Embarcado - Importar Dados"
+			    quid       	"49F0CEA1006D")
+			(object Association "$UNNAMED$114"
+			    quid       	"499DBFC400C2"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$115"
+				    quid       	"499DBFC40286"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Adicionar Alíquota"
+				    quidu      	"499DBF4901B6"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$116"
+				    quid       	"499DBFC40288"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador"
+				    quidu      	"4725E28F02DF")))
+			(object Association "$UNNAMED$117"
+			    quid       	"499DBFF503C0"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$118"
+				    quid       	"499DBFF601AB"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Emitir Leitura da Memoria Fiscal por Data"
+				    quidu      	"499DBF650382"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$119"
+				    quid       	"499DBFF601AD"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$120"
+			    quid       	"499DBFF80271"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$121"
+				    quid       	"499DBFF9004D"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Cancelar Último Cupom Fiscal"
+				    quidu      	"499DBF6C0056"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$122"
+				    quid       	"499DBFF9004F"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$123"
+			    quid       	"499DBFFB000A"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$124"
+				    quid       	"499DBFFB01DD"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Emitir Redução Z"
+				    quidu      	"499DBF7401A9"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$125"
+				    quid       	"499DBFFB01DF"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$126"
+			    quid       	"499DBFFD0043"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$127"
+				    quid       	"499DBFFD01F7"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Emitir Leitura X"
+				    quidu      	"499DBF700396"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$128"
+				    quid       	"499DBFFD01F9"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$129"
+			    quid       	"49F0CF3C02AF"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$130"
+				    quid       	"49F0CF3D008C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::ECF Embarcado - Exportar Dados"
+				    quidu      	"49F0CE9C03B9"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$131"
+				    quid       	"49F0CF3D008E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$132"
+			    quid       	"49F0CF3E030D"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$133"
+				    quid       	"49F0CF3F0119"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::ECF Embarcado - Importar Dados"
+				    quidu      	"49F0CEA1006D"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$134"
+				    quid       	"49F0CF3F011B"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2")))
+			(object Association "$UNNAMED$135"
+			    quid       	"49F0CF47038A"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$136"
+				    quid       	"49F0CF480186"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$137"
+				    quid       	"49F0CF480196"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::ECF Embarcado - Importar Dados"
+				    quidu      	"49F0CEA1006D"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "ECF"
+			    quid       	"499DBF3B0025"
+			    title      	"ECF"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Adicionar Alíquota" @214
+				    location   	(1856, 1344)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@214
+					location   	(1856, 1482)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Adicionar Alíquota")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBF4901B6"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Administrador" @215
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1856, 640)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@215
+					location   	(1856, 800)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Administrador")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E28F02DF"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$114" @216
+				    location   	(1856, 1087)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBFC400C2"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$115" @217
+					    Parent_View 	@216
+					    location   	(1184, 783)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFC40286"
+					    client     	@216
+					    supplier   	@214
+					    line_style 	0)
+					(object RoleView "$UNNAMED$116" @218
+					    Parent_View 	@216
+					    location   	(1184, 783)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFC40288"
+					    client     	@216
+					    supplier   	@215
+					    line_style 	0)))
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Emitir Leitura da Memoria Fiscal por Data" @219
+				    location   	(1264, 480)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@219
+					location   	(1264, 618)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Emitir Leitura da Memoria Fiscal por Data")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBF650382"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Cancelar Último Cupom Fiscal" @220
+				    location   	(416, 496)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@220
+					location   	(416, 634)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Cancelar Último Cupom Fiscal")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBF6C0056"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Emitir Redução Z" @221
+				    location   	(256, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@221
+					location   	(256, 1082)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Emitir Redução Z")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBF7401A9"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::Emitir Leitura X" @222
+				    location   	(1264, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@222
+					location   	(1264, 1082)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Emitir Leitura X")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"499DBF700396"
+				    height     	118)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::ECF Embarcado - Exportar Dados" @223
+				    location   	(416, 1472)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@223
+					location   	(416, 1610)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"ECF Embarcado - Exportar Dados")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"49F0CE9C03B9"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor" @224
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(800, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@224
+					location   	(800, 1104)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Vendedor")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E2C700F2"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$117" @225
+				    location   	(963, 778)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBFF503C0"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$118" @226
+					    Parent_View 	@225
+					    location   	(163, -166)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFF601AB"
+					    client     	@225
+					    supplier   	@219
+					    line_style 	0)
+					(object RoleView "$UNNAMED$119" @227
+					    Parent_View 	@225
+					    location   	(163, -166)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFF601AD"
+					    client     	@225
+					    supplier   	@224
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$120" @228
+				    location   	(649, 768)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBFF80271"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$121" @229
+					    Parent_View 	@228
+					    location   	(-151, -176)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFF9004D"
+					    client     	@228
+					    supplier   	@220
+					    line_style 	0)
+					(object RoleView "$UNNAMED$122" @230
+					    Parent_View 	@228
+					    location   	(-151, -176)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFF9004F"
+					    client     	@228
+					    supplier   	@224
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$123" @231
+				    location   	(552, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBFFB000A"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$124" @232
+					    Parent_View 	@231
+					    location   	(-248, 0)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFFB01DD"
+					    client     	@231
+					    supplier   	@221
+					    line_style 	0)
+					(object RoleView "$UNNAMED$125" @233
+					    Parent_View 	@231
+					    location   	(-248, 0)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFFB01DF"
+					    client     	@231
+					    supplier   	@224
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$126" @234
+				    location   	(1005, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"499DBFFD0043"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$127" @235
+					    Parent_View 	@234
+					    location   	(205, 0)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFFD01F7"
+					    client     	@234
+					    supplier   	@222
+					    line_style 	0)
+					(object RoleView "$UNNAMED$128" @236
+					    Parent_View 	@234
+					    location   	(205, 0)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"499DBFFD01F9"
+					    client     	@234
+					    supplier   	@224
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$129" @237
+				    location   	(582, 1241)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0CF3C02AF"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$130" @238
+					    Parent_View 	@237
+					    location   	(-218, 297)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CF3D008C"
+					    client     	@237
+					    supplier   	@223
+					    line_style 	0)
+					(object RoleView "$UNNAMED$131" @239
+					    Parent_View 	@237
+					    location   	(-218, 297)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CF3D008E"
+					    client     	@237
+					    supplier   	@224
+					    line_style 	0)))
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.5. ECF::ECF Embarcado - Importar Dados" @240
+				    location   	(1136, 1472)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@240
+					location   	(1136, 1610)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"ECF Embarcado - Importar Dados")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"49F0CEA1006D"
+				    height     	118)
+				(object AssociationViewNew "$UNNAMED$132" @241
+				    location   	(993, 1250)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0CF3E030D"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$133" @242
+					    Parent_View 	@241
+					    location   	(193, 306)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CF3F0119"
+					    client     	@241
+					    supplier   	@240
+					    line_style 	0)
+					(object RoleView "$UNNAMED$134" @243
+					    Parent_View 	@241
+					    location   	(193, 306)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CF3F011B"
+					    client     	@241
+					    supplier   	@224
+					    line_style 	0)))
+				(object AssociationViewNew "$UNNAMED$135" @244
+				    location   	(993, 1250)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0CF47038A"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$136" @245
+					    Parent_View 	@244
+					    location   	(-143, -222)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CF480186"
+					    client     	@244
+					    supplier   	@224
+					    line_style 	0)
+					(object RoleView "$UNNAMED$137" @246
+					    Parent_View 	@244
+					    location   	(-143, -222)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CF480196"
+					    client     	@244
+					    supplier   	@240
+					    line_style 	0)))))))
+		(object Class_Category "2.8. Bagagem e Encomenda"
+		    quid       	"49F0CF700000"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"49F0D1D90271"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR"
+			    quidu      	"46AFE21D02CE"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "NewClass"
+			    quid       	"49F0CFD1005D"
+			    stereotype 	"Actor")
+			(object UseCase "Cadastrar Bagagem e Encomenda"
+			    quid       	"49F0CFBE002E"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"49F0D04101A5"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária"
+				    quidu      	"46B0CD74005D")
+				(object Dependency_Relationship
+				    quid       	"49F0D044002E"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG"
+				    quidu      	"499DB34A0263")
+				(object Dependency_Relationship
+				    quid       	"49F0D164008C"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Balança Eletrônica"
+				    quidu      	"49F0D12F01C5")))
+			(object Association "$UNNAMED$138"
+			    quid       	"49F0CFF10251"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$139"
+				    quid       	"49F0CFF20186"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.8. Bagagem e Encomenda::Cadastrar Bagagem e Encomenda"
+				    quidu      	"49F0CFBE002E"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$140"
+				    quid       	"49F0CFF20188"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor"
+				    quidu      	"4725E2C700F2"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Bagagem e Encomenda"
+			    quid       	"49F0CF9400EA"
+			    title      	"Bagagem e Encomenda"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	676
+			    items      	(list diagram_item_list
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.8. Bagagem e Encomenda::Cadastrar Bagagem e Encomenda" @247
+				    location   	(1104, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@247
+					location   	(1104, 1082)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Cadastrar Bagagem e Encomenda")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"49F0CFBE002E"
+				    height     	118)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Vendedor" @248
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(464, 940)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@248
+					location   	(464, 1100)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Vendedor")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4725E2C700F2"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$138" @249
+				    location   	(757, 940)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0CFF10251"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$139" @250
+					    Parent_View 	@249
+					    location   	(293, -20)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CFF20186"
+					    client     	@249
+					    supplier   	@247
+					    line_style 	0)
+					(object RoleView "$UNNAMED$140" @251
+					    Parent_View 	@249
+					    location   	(293, -20)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"49F0CFF20188"
+					    client     	@249
+					    supplier   	@248
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @252
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1680, 944)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@252
+					location   	(1680, 1104)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Malha Ferroviária")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"46B0CD74005D"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG" @253
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1536, 1392)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@253
+					location   	(1536, 1552)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"UNILOG")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"499DB34A0263"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @254
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0D04101A5"
+				    client     	@247
+				    supplier   	@252
+				    line_style 	0)
+				(object DependencyView "" @255
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0D044002E"
+				    client     	@247
+				    supplier   	@253
+				    line_style 	0)
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Balança Eletrônica" @256
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1552, 448)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@256
+					location   	(1552, 608)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Balança Eletrônica")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"49F0D12F01C5"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @257
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"49F0D164008C"
+				    client     	@247
+				    supplier   	@256
+				    line_style 	0)))))
+		(object Class_Category "2.9. Exportação de Dados para SPED"
+		    quid       	"4C5029FC0167"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "Exportar Dados para SPED"
+			    quid       	"4C5037DC0280"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"4C5038620251"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Integração"
+				    quidu      	"4C50295701C5")))
+			(object UseCase "Executar Rotina de Exportação SPED"
+			    quid       	"4C50388501A5"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"4C5038CB03A9"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Synchro"
+				    quidu      	"4C502993033C")))
+			(object Association "$UNNAMED$141"
+			    quid       	"4C503835005D"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$142"
+				    quid       	"4C503835029F"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.9. Exportação de Dados para SPED::Exportar Dados para SPED"
+				    quidu      	"4C5037DC0280"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$143"
+				    quid       	"4C50383502A1"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Rotina de Exportação SPED"
+				    quidu      	"4C502A5D00CB")))
+			(object Association "$UNNAMED$144"
+			    quid       	"4C5038A300CB"
+			    roles      	(list role_list
+				(object Role "$UNNAMED$145"
+				    quid       	"4C5038A50138"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.9. Exportação de Dados para SPED::Executar Rotina de Exportação SPED"
+				    quidu      	"4C50388501A5"
+				    is_navigable 	TRUE)
+				(object Role "$UNNAMED$146"
+				    quid       	"4C5038A5013A"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Integração"
+				    quidu      	"4C50295701C5"))))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Exportar Dados para SPED"
+			    quid       	"4C502A3A02FD"
+			    title      	"Exportar Dados para SPED"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.9. Exportação de Dados para SPED::Exportar Dados para SPED" @258
+				    location   	(576, 160)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@258
+					location   	(576, 298)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Exportar Dados para SPED")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4C5037DC0280")
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Rotina de Exportação SPED" @259
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(176, 160)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@259
+					location   	(176, 320)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Rotina de Exportação SPED")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4C502A5D00CB"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object AssociationViewNew "$UNNAMED$141" @260
+				    location   	(349, 160)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4C503835005D"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$142" @261
+					    Parent_View 	@260
+					    location   	(-83, -448)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C503835029F"
+					    client     	@260
+					    supplier   	@258
+					    line_style 	0)
+					(object RoleView "$UNNAMED$143" @262
+					    Parent_View 	@260
+					    location   	(-83, -448)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C50383502A1"
+					    client     	@260
+					    supplier   	@259
+					    line_style 	0)))
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.9. Exportação de Dados para SPED::Executar Rotina de Exportação SPED" @263
+				    location   	(528, 640)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@263
+					location   	(528, 778)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Executar Rotina de Exportação SPED")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4C50388501A5")
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Integração" @264
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1248, 160)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@264
+					location   	(1248, 320)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Integração")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4C50295701C5"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @265
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4C5038620251"
+				    client     	@258
+				    supplier   	@264
+				    line_style 	0)
+				(object AssociationViewNew "$UNNAMED$144" @266
+				    location   	(898, 389)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4C5038A300CB"
+				    roleview_list 	(list RoleViews
+					(object RoleView "$UNNAMED$145" @267
+					    Parent_View 	@266
+					    location   	(-318, 229)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C5038A50138"
+					    client     	@266
+					    supplier   	@263
+					    line_style 	0)
+					(object RoleView "$UNNAMED$146" @268
+					    Parent_View 	@266
+					    location   	(-318, 229)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    quidu      	"4C5038A5013A"
+					    client     	@266
+					    supplier   	@264
+					    line_style 	0)))
+				(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Synchro" @269
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1296, 640)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@269
+					location   	(1296, 800)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	325
+					justify    	0
+					label      	"Synchro")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    quidu      	"4C502993033C"
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object DependencyView "" @270
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4C5038CB03A9"
+				    client     	@263
+				    supplier   	@269
+				    line_style 	0))))))
+	    logical_presentations 	(list unit_reference_list
+		(object UseCaseDiagram "Main"
+		    quid       	"471CFDDC01C2"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	6
+		    items      	(list diagram_item_list))))
+	(object Class_Category "1. Atores"
+	    quid       	"414DCDB303AA"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class "Usuário"
+		    quid       	"414DD4650133"
+		    documentation 	"Usuário dos serviços do SGP (trem, despacho, etc)"
+		    stereotype 	"Actor")
+		(object Class "SEGUR"
+		    quid       	"46AFE21D02CE"
+		    documentation 	"Componente de Segurança Corporativo da Vale, Responsável pelo controle de  autenticação de acessos e autorização em funcionalidades de outros sistemas."
+		    stereotype 	"Actor")
+		(object Class "PDA"
+		    quid       	"46B0C858035B"
+		    documentation 	"Coletor de dados de venda de passagem"
+		    stereotype 	"Actor")
+		(object Class "Malha Ferroviária"
+		    quid       	"46B0CD74005D"
+		    documentation 	"Sistema que contém toda a malha ferroviária, registrando todas as suas vias férreas, trechos, cruzamentos, pátios, planimetria e altimetria."
+		    stereotype 	"Actor")
+		(object Class "TCFL"
+		    quid       	"46B0CD7F0251"
+		    documentation 	"Sistema para controle de envio de solicitações/estorno de faturamento"
+		    stereotype 	"Actor")
+		(object Class "SITRANVM Comercial"
+		    quid       	"46B0CD890109"
+		    documentation 	"Sistema corporativo comercial, responsável por informações de preços de passagens"
+		    stereotype 	"Actor")
+		(object Class "Peoplesoft"
+		    quid       	"46B0CDCF0148"
+		    documentation 	"Sistema de Informações de Pessoal (RH), responsável por prover informações de empregados e dependentes da Vale."
+		    stereotype 	"Actor")
+		(object Class "Cliente"
+		    quid       	"46FD54230016"
+		    documentation 	"Passageiro do Trem"
+		    stereotype 	"Actor")
+		(object Class "Administrador"
+		    quid       	"4725E28F02DF"
+		    documentation 	"Administrador do SGP"
+		    stereotype 	"Actor")
+		(object Class "Vendedor"
+		    quid       	"4725E2C700F2"
+		    documentation 	"Vendedor dos serviços de transporte"
+		    stereotype 	"Actor")
+		(object Class "Front End Venda OnLine"
+		    quid       	"4729D29602F4"
+		    stereotype 	"Actor")
+		(object Class "UNILOG"
+		    quid       	"499DB34A0263"
+		    documentation 	"Ferramenta de gestão e controle para a operação ferroviária que funciona integrado com outros sistemas através de interfaces, fornecendo informações para o planejamento e gerenciamento, aumentando a sua produtividade e confiabilidade através do uso da automação"
+		    stereotype 	"Actor")
+		(object Class "Balança Eletrônica"
+		    quid       	"49F0D12F01C5"
+		    stereotype 	"Actor")
+		(object Class "Integração"
+		    quid       	"4C50295701C5"
+		    documentation 	"Responsável pelo envio dos dados de cupons fiscais para o Synchro"
+		    stereotype 	"Actor")
+		(object Class "Synchro"
+		    quid       	"4C502993033C"
+		    documentation 	"Sistema responsável pelo envio dos dados referentes aos cupons fiscais emitidos pelo SGP Web para o SPED,"
+		    stereotype 	"Actor")
+		(object Class "Rotina de Exportação SPED"
+		    quid       	"4C502A5D00CB"
+		    stereotype 	"Actor"))
+	    logical_presentations 	(list unit_reference_list
+		(object UseCaseDiagram "Main"
+		    quid       	"44B023BD01B2"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Usuário" @271
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    ShowOperationSignature 	TRUE
+			    location   	(240, 368)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@271
+				location   	(240, 528)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"Usuário")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"414DD4650133"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::PDA" @272
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(560, 352)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@272
+				location   	(560, 512)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"PDA")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46B0C858035B"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::SEGUR" @273
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(880, 336)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@273
+				location   	(880, 496)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"SEGUR")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46AFE21D02CE"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Peoplesoft" @274
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(240, 752)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@274
+				location   	(240, 912)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"Peoplesoft")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46B0CDCF0148"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::SITRANVM Comercial" @275
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(560, 736)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@275
+				location   	(560, 896)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"SITRANVM Comercial")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46B0CD890109"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::TCFL" @276
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(864, 736)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@276
+				location   	(864, 896)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"TCFL")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46B0CD7F0251"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Malha Ferroviária" @277
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(1152, 736)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@277
+				location   	(1152, 896)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"Malha Ferroviária")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46B0CD74005D"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Cliente" @278
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(1184, 352)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@278
+				location   	(1184, 512)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"Cliente")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"46FD54230016"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::UNILOG" @279
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(1504, 768)
+			    font       	(object Font
+				size       	9
+				face       	"Trebuchet MS"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@279
+				location   	(1504, 928)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"UNILOG")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"499DB34A0263"
+			    annotation 	8
+			    autoResize 	TRUE)
+			(object ClassView "Class" "Use Case View::2. Modelo de Casos de Uso::1. Atores::Balança Eletrônica" @280
+			    ShowCompartmentStereotypes 	TRUE
+			    IncludeAttribute 	TRUE
+			    IncludeOperation 	TRUE
+			    location   	(1488, 400)
+			    font       	(object Font
+				size       	9
+				face       	"Trebuchet MS"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@280
+				location   	(1488, 560)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	325
+				justify    	0
+				label      	"Balança Eletrônica")
+			    icon       	"Actor"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"49F0D12F01C5"
+			    annotation 	8
+			    autoResize 	TRUE))))))
+    logical_presentations 	(list unit_reference_list
+	(object UseCaseDiagram "Main"
+	    quid       	"414DC65E03A8"
+	    title      	"Main"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	0
+	    items      	(list diagram_item_list
+		(object CategoryView "Use Case View::2. Modelo de Casos de Uso::1. Atores" @281
+		    location   	(592, 464)
+		    font       	(object Font
+			size       	10
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@281
+			location   	(405, 380)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	374
+			justify    	0
+			label      	"1. Atores")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"414DCDB303AA"
+		    width      	387
+		    height     	181)
+		(object CategoryView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso" @282
+		    location   	(592, 752)
+		    font       	(object Font
+			size       	10
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@282
+			location   	(408, 668)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	368
+			justify    	0
+			label      	"2. Casos de Uso")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"414DCDC5035E"
+		    width      	381
+		    height     	181)))))

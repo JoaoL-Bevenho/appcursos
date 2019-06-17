@@ -1,0 +1,4535 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.2.0311.2600"
+    charSet    	0)
+
+(object Class_Category "2. Modelo de Análise"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"414DC69202FF"
+    documentation 	"O modelo de Análise não faz parte do design mínimo padrão da Ci&T."
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class_Category "Despacho"
+	    quid       	"44B022EE015A"
+	    stereotype 	"component"
+	    visible_categories 	(list visibility_relationship_list
+		(object Visibility_Relationship
+		    quid       	"46FBF6440353"
+		    supplier   	"Logical View::2. Modelo de Análise::Faturamento"
+		    quidu      	"46FBF598025C")
+		(object Visibility_Relationship
+		    quid       	"46FC029900EF"
+		    supplier   	"Logical View::2. Modelo de Análise::Faturamento"
+		    quidu      	"46FBF598025C")
+		(object Visibility_Relationship
+		    quid       	"46FD3858025C"
+		    supplier   	"Logical View::2. Modelo de Análise::Usuário"
+		    quidu      	"46FD381F0336")
+		(object Visibility_Relationship
+		    quid       	"471F84CD03D1"
+		    supplier   	"Logical View::2. Modelo de Análise::Segurança"
+		    quidu      	"471F833801B6")
+		(object Visibility_Relationship
+		    quid       	"471F9B260210"
+		    supplier   	"Logical View::2. Modelo de Análise::Passagem"
+		    quidu      	"471F9B05012D"))
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list)
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Main"
+		    quid       	"44B022FC013C"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list))))
+	(object Class_Category "Faturamento"
+	    quid       	"46FBF598025C"
+	    stereotype 	"component"
+	    visible_categories 	(list visibility_relationship_list
+		(object Visibility_Relationship
+		    quid       	"46FC02FC008A"
+		    supplier   	"Logical View::2. Modelo de Análise::Despacho"
+		    quidu      	"44B022EE015A")
+		(object Visibility_Relationship
+		    quid       	"472089FA02C3"
+		    supplier   	"Logical View::2. Modelo de Análise::Passagem"
+		    quidu      	"471F9B05012D"))
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list)
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Main"
+		    quid       	"46FBF96A00D5"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list))))
+	(object Class_Category "Passagem On-line"
+	    quid       	"46FBF5A400C5"
+	    stereotype 	"component"
+	    visible_categories 	(list visibility_relationship_list
+		(object Visibility_Relationship
+		    quid       	"46FD3DCA019A"
+		    supplier   	"Logical View::2. Modelo de Análise::Usuário"
+		    quidu      	"46FD381F0336")
+		(object Visibility_Relationship
+		    quid       	"471F9B22038A"
+		    supplier   	"Logical View::2. Modelo de Análise::Passagem"
+		    quidu      	"471F9B05012D"))
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object UseCase "UCA - Realização Vender Passagem OnLine"
+		    quid       	"4729D1B50209"
+		    stereotype 	"use-case realization"
+		    logical_models 	(list unit_reference_list
+			(object Mechanism @1
+			    logical_models 	(list unit_reference_list
+				(object Object "$UNNAMED$0"
+				    quid       	"4729D2A20311"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D37A015A"
+					    supplier   	"$UNNAMED$1"
+					    quidu      	"4729D2FC008A"
+					    messages   	(list Messages
+						(object Message "pesquisar trem"
+						    quid       	"4729D37A015B"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1"
+						    ordinal    	0
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Front End Venda OnLine"
+				    quidu      	"4729D29602F4"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$1"
+				    quid       	"4729D2FC008A"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D35801E7"
+					    supplier   	"$UNNAMED$2"
+					    quidu      	"4729D31D0104"
+					    messages   	(list Messages
+						(object Message "pesquisar trem"
+						    quid       	"4729D35801E8"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1"
+						    ordinal    	1
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::2. Modelo de Análise::Passagem On-line::Controls::Serviços Venda Passagem OnLine"
+				    quidu      	"4729D2E70164"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$2"
+				    quid       	"4729D31D0104"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D39A01C8"
+					    supplier   	"$UNNAMED$3"
+					    quidu      	"4729D32D022C"
+					    messages   	(list Messages
+						(object Message "recuperar"
+						    quid       	"4729D39A01C9"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.1"
+						    ordinal    	2
+						    quidu      	"000000000000"
+						    creation   	FALSE)))
+					(object Link
+					    quid       	"4729D39F01BC"
+					    supplier   	"$UNNAMED$4"
+					    quidu      	"4729D32F003E"
+					    messages   	(list Messages
+						(object Message "recuperar"
+						    quid       	"4729D39F01BD"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.2"
+						    ordinal    	3
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Controls::Serviços Venda Passagem"
+				    quidu      	"471F9E6401F0"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$3"
+				    quid       	"4729D32D022C"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Trem"
+				    quidu      	"471F9F670185"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$4"
+				    quid       	"4729D32F003E"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Preço"
+				    quidu      	"471FA21302E9"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)))
+			(object Mechanism @2
+			    logical_models 	(list unit_reference_list
+				(object Object "$UNNAMED$5"
+				    quid       	"4729D3BF01BD"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D4A200A4"
+					    supplier   	"$UNNAMED$6"
+					    quidu      	"4729D3E00342"
+					    messages   	(list Messages
+						(object Message "pesquisa assentos disponíveis"
+						    quid       	"4729D4A200A5"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1"
+						    ordinal    	0
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Front End Venda OnLine"
+				    quidu      	"4729D29602F4"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$6"
+				    quid       	"4729D3E00342"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D4A8032A"
+					    supplier   	"$UNNAMED$7"
+					    quidu      	"4729D3EC004E"
+					    messages   	(list Messages
+						(object Message "pesquisa assentos disponíveis"
+						    quid       	"4729D4A8032B"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1"
+						    ordinal    	1
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::2. Modelo de Análise::Passagem On-line::Controls::Serviços Venda Passagem OnLine"
+				    quidu      	"4729D2E70164"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$7"
+				    quid       	"4729D3EC004E"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D4BC008D"
+					    supplier   	"$UNNAMED$8"
+					    quidu      	"4729D4530369"
+					    messages   	(list Messages
+						(object Message "recupera assentos"
+						    quid       	"4729D4BC008E"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.1"
+						    ordinal    	2
+						    quidu      	"000000000000"
+						    creation   	FALSE)))
+					(object Link
+					    quid       	"4729D4C10028"
+					    supplier   	"$UNNAMED$9"
+					    quidu      	"4729D45503D4"
+					    messages   	(list Messages
+						(object Message "recupera assentos ocupados"
+						    quid       	"4729D4C10029"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.2"
+						    ordinal    	3
+						    quidu      	"000000000000"
+						    creation   	FALSE)))
+					(object Link
+					    quid       	"4729D4D200E9"
+					    supplier   	"$UNNAMED$10"
+					    quidu      	"4729D45B011C"
+					    messages   	(list Messages
+						(object Message "recupera reservas trem"
+						    quid       	"4729D4D200EA"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.3"
+						    ordinal    	4
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Controls::Serviços Venda Passagem"
+				    quidu      	"471F9E6401F0"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$8"
+				    quid       	"4729D4530369"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Trem"
+				    quidu      	"471F9F670185"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$9"
+				    quid       	"4729D45503D4"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Bilhete"
+				    quidu      	"471F9F6B0175"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$10"
+				    quid       	"4729D45B011C"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Reserva"
+				    quidu      	"4729D42C027A"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)))
+			(object Mechanism @3
+			    logical_models 	(list unit_reference_list
+				(object Object "$UNNAMED$11"
+				    quid       	"4729D598037B"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D5B30014"
+					    supplier   	"$UNNAMED$12"
+					    quidu      	"4729D5B0019C"
+					    messages   	(list Messages
+						(object Message "emite bilhete"
+						    quid       	"4729D5B30015"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1"
+						    ordinal    	0
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Front End Venda OnLine"
+				    quidu      	"4729D29602F4"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$12"
+				    quid       	"4729D5B0019C"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D5D6014D"
+					    supplier   	"$UNNAMED$13"
+					    quidu      	"4729D5D202F5"
+					    messages   	(list Messages
+						(object Message "emite bilhete"
+						    quid       	"4729D5D6014E"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1"
+						    ordinal    	1
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::2. Modelo de Análise::Passagem On-line::Controls::Serviços Venda Passagem OnLine"
+				    quidu      	"4729D2E70164"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$13"
+				    quid       	"4729D5D202F5"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4729D72F0323"
+					    supplier   	"$UNNAMED$14"
+					    quidu      	"4729D72602E5"
+					    messages   	(list Messages
+						(object Message "grava"
+						    quid       	"4729D72F0324"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.1"
+						    ordinal    	2
+						    quidu      	"000000000000"
+						    creation   	FALSE)))
+					(object Link
+					    quid       	"4729D7320267"
+					    supplier   	"$UNNAMED$15"
+					    quidu      	"4729D7290101"
+					    messages   	(list Messages
+						(object Message "grava"
+						    quid       	"4729D7320268"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1.2"
+						    ordinal    	3
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Controls::Serviços Venda Passagem"
+				    quidu      	"471F9E6401F0"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$14"
+				    quid       	"4729D72602E5"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Passageiro"
+				    quidu      	"471F9F7203E5"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$15"
+				    quid       	"4729D7290101"
+				    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Bilhete"
+				    quidu      	"471F9F6B0175"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE))))
+		    logical_presentations 	(list unit_reference_list
+			(object InteractionDiagram "Fluxo Basico - parte 1"
+			    mechanism_ref 	@1
+			    quid       	"4729D1D90306"
+			    title      	"Fluxo Basico - parte 1"
+			    zoom       	95
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object InterObjView "$UNNAMED$0" @4
+				    location   	(256, 240)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@4
+					location   	(256, 268)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	360
+					justify    	0
+					label      	"")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D2A20311"
+				    width      	378
+				    height     	788
+				    icon_height 	162
+				    icon_width 	120
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @5
+					location   	(256, 480)
+					line_color 	3342489
+					InterObjView 	@4
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$1" @6
+				    location   	(976, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@6
+					location   	(976, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	471
+					justify    	0
+					label      	"")
+				    icon       	"control"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D2FC008A"
+				    width      	524
+				    height     	804
+				    icon_height 	164
+				    icon_width 	157
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @7
+					location   	(976, 480)
+					line_color 	3342489
+					InterObjView 	@6
+					height     	195
+					y_coord    	105
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$2" @8
+				    location   	(1808, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@8
+					location   	(1808, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	471
+					justify    	0
+					label      	"")
+				    icon       	"control"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D31D0104"
+				    width      	514
+				    height     	804
+				    icon_height 	164
+				    icon_width 	157
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @9
+					location   	(1808, 592)
+					line_color 	3342489
+					InterObjView 	@8
+					height     	346
+					y_coord    	256
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$3" @10
+				    location   	(2288, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@10
+					location   	(2288, 253)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D32D022C"
+				    width      	154
+				    height     	804
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @11
+					location   	(2288, 688)
+					line_color 	3342489
+					InterObjView 	@10
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$4" @12
+				    location   	(2656, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@12
+					location   	(2656, 253)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D32F003E"
+				    width      	154
+				    height     	804
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @13
+					location   	(2656, 848)
+					line_color 	3342489
+					InterObjView 	@12
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterMessView "pesquisar trem" @14
+				    location   	(16, 585)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @15
+					Parent_View 	@14
+					location   	(1391, 541)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D35801E8"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	271
+					justify    	0
+					label      	"pesquisar trem"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@6
+				    supplier   	@8
+				    Focus_Src  	@7
+				    Focus_Entry 	@9
+				    origin     	(991, 585)
+				    terminus   	(1792, 585)
+				    ordinal    	1)
+				(object InterMessView "pesquisar trem" @16
+				    location   	(16, 480)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @17
+					Parent_View 	@16
+					location   	(615, 436)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D37A015B"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	271
+					justify    	0
+					label      	"pesquisar trem"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@4
+				    supplier   	@6
+				    Focus_Src  	@5
+				    Focus_Entry 	@7
+				    origin     	(271, 480)
+				    terminus   	(960, 480)
+				    ordinal    	0)
+				(object InterMessView "recuperar" @18
+				    location   	(16, 690)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @19
+					Parent_View 	@18
+					location   	(2047, 646)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D39A01C9"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	184
+					justify    	0
+					label      	"recuperar"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@8
+				    supplier   	@10
+				    Focus_Src  	@9
+				    Focus_Entry 	@11
+				    origin     	(1823, 690)
+				    terminus   	(2272, 690)
+				    ordinal    	2)
+				(object InterMessView "recuperar" @20
+				    location   	(16, 848)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @21
+					Parent_View 	@20
+					location   	(2231, 804)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D39F01BD"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	184
+					justify    	0
+					label      	"recuperar"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@8
+				    supplier   	@12
+				    Focus_Src  	@9
+				    Focus_Entry 	@13
+				    origin     	(1823, 848)
+				    terminus   	(2640, 848)
+				    ordinal    	3)))
+			(object InteractionDiagram "Fluxo Basico - parte 2"
+			    mechanism_ref 	@2
+			    quid       	"4729D3B203CF"
+			    title      	"Fluxo Basico - parte 2"
+			    zoom       	85
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object InterObjView "$UNNAMED$5" @22
+				    location   	(256, 240)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@22
+					location   	(256, 268)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	360
+					justify    	0
+					label      	"")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D3BF01BD"
+				    width      	378
+				    height     	932
+				    icon_height 	162
+				    icon_width 	120
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @23
+					location   	(256, 448)
+					line_color 	3342489
+					InterObjView 	@22
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$6" @24
+				    location   	(976, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@24
+					location   	(976, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	471
+					justify    	0
+					label      	"")
+				    icon       	"control"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D3E00342"
+				    width      	524
+				    height     	948
+				    icon_height 	164
+				    icon_width 	157
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @25
+					location   	(976, 448)
+					line_color 	3342489
+					InterObjView 	@24
+					height     	195
+					y_coord    	105
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$7" @26
+				    location   	(1808, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@26
+					location   	(1808, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	471
+					justify    	0
+					label      	"")
+				    icon       	"control"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D3EC004E"
+				    width      	514
+				    height     	948
+				    icon_height 	164
+				    icon_width 	157
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @27
+					location   	(1808, 560)
+					line_color 	3342489
+					InterObjView 	@26
+					height     	522
+					y_coord    	432
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$8" @28
+				    location   	(2288, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@28
+					location   	(2288, 253)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D4530369"
+				    width      	154
+				    height     	948
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @29
+					location   	(2288, 656)
+					line_color 	3342489
+					InterObjView 	@28
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$9" @30
+				    location   	(2656, 240)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@30
+					location   	(2656, 269)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D45503D4"
+				    width      	154
+				    height     	932
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @31
+					location   	(2656, 832)
+					line_color 	3342489
+					InterObjView 	@30
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$10" @32
+				    location   	(3024, 240)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@32
+					location   	(3024, 269)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D45B011C"
+				    width      	154
+				    height     	932
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @33
+					location   	(3024, 992)
+					line_color 	3342489
+					InterObjView 	@32
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterMessView "pesquisa assentos disponíveis" @34
+				    location   	(16, 448)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @35
+					Parent_View 	@34
+					location   	(615, 404)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D4A200A5"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	521
+					justify    	0
+					label      	"pesquisa assentos disponíveis"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@22
+				    supplier   	@24
+				    Focus_Src  	@23
+				    Focus_Entry 	@25
+				    origin     	(271, 448)
+				    terminus   	(960, 448)
+				    ordinal    	0)
+				(object InterMessView "pesquisa assentos disponíveis" @36
+				    location   	(16, 553)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @37
+					Parent_View 	@36
+					location   	(1391, 509)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D4A8032B"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	521
+					justify    	0
+					label      	"pesquisa assentos disponíveis"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@24
+				    supplier   	@26
+				    Focus_Src  	@25
+				    Focus_Entry 	@27
+				    origin     	(991, 553)
+				    terminus   	(1792, 553)
+				    ordinal    	1)
+				(object InterMessView "recupera assentos" @38
+				    location   	(16, 658)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @39
+					Parent_View 	@38
+					location   	(2047, 614)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D4BC008E"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	325
+					justify    	0
+					label      	"recupera assentos"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@26
+				    supplier   	@28
+				    Focus_Src  	@27
+				    Focus_Entry 	@29
+				    origin     	(1823, 658)
+				    terminus   	(2272, 658)
+				    ordinal    	2)
+				(object InterMessView "recupera assentos ocupados" @40
+				    location   	(16, 832)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @41
+					Parent_View 	@40
+					location   	(2231, 788)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D4C10029"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	496
+					justify    	0
+					label      	"recupera assentos ocupados"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@26
+				    supplier   	@30
+				    Focus_Src  	@27
+				    Focus_Entry 	@31
+				    origin     	(1823, 832)
+				    terminus   	(2640, 832)
+				    ordinal    	3)
+				(object InterMessView "recupera reservas trem" @42
+				    location   	(16, 992)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @43
+					Parent_View 	@42
+					location   	(2415, 948)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D4D200EA"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	438
+					justify    	0
+					label      	"recupera reservas trem"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@26
+				    supplier   	@32
+				    Focus_Src  	@27
+				    Focus_Entry 	@33
+				    origin     	(1823, 992)
+				    terminus   	(3008, 992)
+				    ordinal    	4)))
+			(object InteractionDiagram "Fluxo Basico - parte 3"
+			    mechanism_ref 	@3
+			    quid       	"4729D58D0331"
+			    title      	"Fluxo Basico - parte 3"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	25
+			    items      	(list diagram_item_list
+				(object InterObjView "$UNNAMED$11" @44
+				    location   	(176, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@44
+					location   	(176, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	360
+					justify    	0
+					label      	"")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D598037B"
+				    width      	268
+				    height     	820
+				    icon_height 	162
+				    icon_width 	120
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @45
+					location   	(176, 480)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					line_color 	3342489
+					InterObjView 	@44
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$12" @46
+				    location   	(576, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@46
+					location   	(576, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	471
+					justify    	0
+					label      	"")
+				    icon       	"control"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D5B0019C"
+				    width      	157
+				    height     	820
+				    icon_height 	164
+				    icon_width 	157
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @47
+					location   	(576, 480)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					line_color 	3342489
+					InterObjView 	@46
+					height     	195
+					y_coord    	105
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$13" @48
+				    location   	(1088, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@48
+					location   	(1088, 252)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	471
+					justify    	0
+					label      	"")
+				    icon       	"control"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D5D202F5"
+				    width      	157
+				    height     	820
+				    icon_height 	164
+				    icon_width 	157
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @49
+					location   	(1088, 592)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					line_color 	3342489
+					InterObjView 	@48
+					height     	362
+					y_coord    	272
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$14" @50
+				    location   	(1440, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@50
+					location   	(1440, 253)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D72602E5"
+				    width      	154
+				    height     	820
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @51
+					location   	(1440, 688)
+					line_color 	3342489
+					InterObjView 	@50
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$15" @52
+				    location   	(1728, 224)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@52
+					location   	(1728, 253)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	462
+					justify    	0
+					label      	"")
+				    icon       	"entity"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4729D7290101"
+				    width      	154
+				    height     	820
+				    icon_height 	153
+				    icon_width 	154
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @53
+					location   	(1728, 864)
+					line_color 	3342489
+					InterObjView 	@52
+					height     	90
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterMessView "emite bilhete" @54
+				    location   	(16, 480)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @55
+					Parent_View 	@54
+					location   	(375, 436)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D5B30015"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	241
+					justify    	0
+					label      	"emite bilhete"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@44
+				    supplier   	@46
+				    Focus_Src  	@45
+				    Focus_Entry 	@47
+				    origin     	(191, 480)
+				    terminus   	(560, 480)
+				    ordinal    	0)
+				(object InterMessView "emite bilhete" @56
+				    location   	(16, 585)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @57
+					Parent_View 	@56
+					location   	(831, 541)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D5D6014E"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	241
+					justify    	0
+					label      	"emite bilhete"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@46
+				    supplier   	@48
+				    Focus_Src  	@47
+				    Focus_Entry 	@49
+				    origin     	(591, 585)
+				    terminus   	(1072, 585)
+				    ordinal    	1)
+				(object InterMessView "grava" @58
+				    location   	(16, 690)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @59
+					Parent_View 	@58
+					location   	(1263, 646)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D72F0324"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	88
+					justify    	0
+					label      	"grava"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@48
+				    supplier   	@50
+				    Focus_Src  	@49
+				    Focus_Entry 	@51
+				    origin     	(1103, 690)
+				    terminus   	(1424, 690)
+				    ordinal    	2)
+				(object InterMessView "grava" @60
+				    location   	(16, 864)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @61
+					Parent_View 	@60
+					location   	(1407, 820)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4729D7320268"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	88
+					justify    	0
+					label      	"grava"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@48
+				    supplier   	@52
+				    Focus_Src  	@49
+				    Focus_Entry 	@53
+				    origin     	(1103, 864)
+				    terminus   	(1712, 864)
+				    ordinal    	3)))))
+		(object Class_Category "Controls"
+		    quid       	"4729D2DE0279"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "Serviços Venda Passagem OnLine"
+			    quid       	"4729D2E70164"
+			    stereotype 	"control"))
+		    logical_presentations 	(list unit_reference_list)))
+	    logical_presentations 	(list unit_reference_list
+		(object UseCaseDiagram "Rastreabilidade"
+		    quid       	"4729D213021F"
+		    title      	"Rastreabilidade"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object UseCaseView "Logical View::2. Modelo de Análise::Passagem On-line::UCA - Realização Vender Passagem OnLine" @62
+			    location   	(384, 320)
+			    font       	(object Font
+				size       	9
+				face       	"Trebuchet MS"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@62
+				location   	(384, 461)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	648
+				justify    	0
+				label      	"UCA - Realização Vender Passagem OnLine")
+			    icon       	"use-case realization"
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"4729D1B50209")))))
+	(object Class_Category "Segurança"
+	    quid       	"471F833801B6"
+	    stereotype 	"component"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list)
+	    logical_presentations 	(list unit_reference_list))
+	(object Class_Category "Usuário"
+	    quid       	"46FD381F0336"
+	    stereotype 	"component"
+	    visible_categories 	(list visibility_relationship_list
+		(object Visibility_Relationship
+		    quid       	"471F84D80288"
+		    supplier   	"Logical View::2. Modelo de Análise::Segurança"
+		    quidu      	"471F833801B6"))
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list)
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Main"
+		    quid       	"499D78420131"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list))))
+	(object Class_Category "Passagem"
+	    quid       	"471F9B05012D"
+	    stereotype 	"component"
+	    visible_categories 	(list visibility_relationship_list
+		(object Visibility_Relationship
+		    quid       	"471F9B290105"
+		    supplier   	"Logical View::2. Modelo de Análise::Usuário"
+		    quidu      	"46FD381F0336")
+		(object Visibility_Relationship
+		    quid       	"47208A4D0085"
+		    supplier   	"Logical View::2. Modelo de Análise::Segurança"
+		    quidu      	"471F833801B6"))
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class_Category "Venda de Passagem"
+		    quid       	"471F9BC902BB"
+		    visible_categories 	(list visibility_relationship_list
+			(object Visibility_Relationship
+			    quid       	"471F9F4202B2"
+			    supplier   	"Logical View::2. Modelo de Análise::Passagem::Formaçao de Trem"
+			    quidu      	"471F9BDF02FD"))
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object UseCase "UCA - Realização Vender Passagem"
+			    quid       	"471FA15E0089"
+			    stereotype 	"use-case realization"
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"471FA839027C"
+				    stereotype 	"realize"
+				    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Vender Passagem no Ponto de Venda"
+				    quidu      	"46B0C00A004E"))
+			    logical_models 	(list unit_reference_list
+				(object Mechanism @63
+				    logical_models 	(list unit_reference_list
+					(object Object "$UNNAMED$16"
+					    quid       	"471FA1DD003F"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA229022C"
+						    supplier   	"$UNNAMED$17"
+						    quidu      	"471FA1FF028D"
+						    messages   	(list Messages
+							(object Message "consultar trem"
+							    quid       	"471FA229022D"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1"
+							    ordinal    	0
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA2F302D5"
+						    supplier   	"$UNNAMED$17"
+						    quidu      	"471FA1FF028D"
+						    messages   	(list Messages
+							(object Message "consultar assentos disponiveis"
+							    quid       	"471FA2F302D6"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"2"
+							    ordinal    	5
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Usuário"
+					    quidu      	"414DD4650133"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$17"
+					    quid       	"471FA1FF028D"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA262035F"
+						    supplier   	"$UNNAMED$18"
+						    quidu      	"471FA20502BC"
+						    messages   	(list Messages
+							(object Message "pesquisar trem"
+							    quid       	"471FA2620360"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.1"
+							    ordinal    	1
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA2940203"
+						    supplier   	"$UNNAMED$17"
+						    quidu      	"471FA1FF028D"
+						    messages   	(list Messages
+							(object Message "exibir resultados"
+							    quid       	"471FA2940204"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2"
+							    ordinal    	4
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA3120227"
+						    supplier   	"$UNNAMED$19"
+						    quidu      	"471FA3070092"
+						    messages   	(list Messages
+							(object Message "exibir tela assentos disponíveis"
+							    quid       	"471FA3120228"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"2.1"
+							    ordinal    	6
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Boundaries::Form Consultar Trem"
+					    quidu      	"471F9CCE0035"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$18"
+					    quid       	"471FA20502BC"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA26C0061"
+						    supplier   	"$UNNAMED$20"
+						    quidu      	"471FA2080116"
+						    messages   	(list Messages
+							(object Message "recuperar"
+							    quid       	"471FA26C0062"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.1.1"
+							    ordinal    	2
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA27B0254"
+						    supplier   	"$UNNAMED$21"
+						    quidu      	"471FA22300C5"
+						    messages   	(list Messages
+							(object Message "recuperar"
+							    quid       	"471FA27B0255"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.1.2"
+							    ordinal    	3
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Controls::Serviços Venda Passagem"
+					    quidu      	"471F9E6401F0"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$20"
+					    quid       	"471FA2080116"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Trem"
+					    quidu      	"471F9F670185"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$21"
+					    quid       	"471FA22300C5"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Preço"
+					    quidu      	"471FA21302E9"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$19"
+					    quid       	"471FA3070092"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Boundaries::Form Consultar Assento Disponivel"
+					    quidu      	"471F9E070048"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)))
+				(object Mechanism @64
+				    logical_models 	(list unit_reference_list
+					(object Object "$UNNAMED$22"
+					    quid       	"471FA3670135"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA3960094"
+						    supplier   	"$UNNAMED$23"
+						    quidu      	"471FA36B029C"
+						    messages   	(list Messages
+							(object Message "seleciona assento"
+							    quid       	"471FA4C8003A"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"3"
+							    ordinal    	5
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Usuário"
+					    quidu      	"414DD4650133"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$23"
+					    quid       	"471FA36B029C"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA3BF0208"
+						    supplier   	"$UNNAMED$24"
+						    quidu      	"471FA37102DA"
+						    messages   	(list Messages
+							(object Message "pesquisa assentos disponíveis"
+							    quid       	"471FA3BF0209"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1"
+							    ordinal    	0
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA3DD01C6"
+						    supplier   	"$UNNAMED$23"
+						    quidu      	"471FA36B029C"
+						    messages   	(list Messages
+							(object Message "exibe resultados"
+							    quid       	"471FA3DD01C7"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"2"
+							    ordinal    	4
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA4F101DD"
+						    supplier   	"$UNNAMED$25"
+						    quidu      	"471FA4E20336"
+						    messages   	(list Messages
+							(object Message "exibir tela de cadastro de passageiro"
+							    quid       	"471FA4F101DE"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"3.1"
+							    ordinal    	6
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Boundaries::Form Consultar Assento Disponivel"
+					    quidu      	"471F9E070048"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$24"
+					    quid       	"471FA37102DA"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA3CE015A"
+						    supplier   	"$UNNAMED$26"
+						    quidu      	"471FA37B00B6"
+						    messages   	(list Messages
+							(object Message "recupera assentos"
+							    quid       	"471FA3CE015B"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.1"
+							    ordinal    	1
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"4729D40B0164"
+						    supplier   	"$UNNAMED$27"
+						    quidu      	"4729D406036E"
+						    messages   	(list Messages
+							(object Message "recupera assentos ocupados"
+							    quid       	"4729D40B0165"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2"
+							    ordinal    	2
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"4729D43D0177"
+						    supplier   	"$UNNAMED$28"
+						    quidu      	"4729D4390074"
+						    messages   	(list Messages
+							(object Message "recupera reservas trem"
+							    quid       	"4729D43D0178"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.3"
+							    ordinal    	3
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Controls::Serviços Venda Passagem"
+					    quidu      	"471F9E6401F0"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$26"
+					    quid       	"471FA37B00B6"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Trem"
+					    quidu      	"471F9F670185"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$25"
+					    quid       	"471FA4E20336"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Boundaries::Form Cadastro Passageiro"
+					    quidu      	"471F9E2500FE"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$27"
+					    quid       	"4729D406036E"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Bilhete"
+					    quidu      	"471F9F6B0175"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$28"
+					    quid       	"4729D4390074"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Reserva"
+					    quidu      	"4729D42C027A"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)))
+				(object Mechanism @65
+				    logical_models 	(list unit_reference_list
+					(object Object "$UNNAMED$29"
+					    quid       	"471FA52100EE"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA5300179"
+						    supplier   	"$UNNAMED$30"
+						    quidu      	"471FA52A017A"
+						    messages   	(list Messages
+							(object Message "preenche formulario"
+							    quid       	"471FA530017A"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1"
+							    ordinal    	0
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::Usuário"
+					    quidu      	"414DD4650133"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$30"
+					    quid       	"471FA52A017A"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA54C031D"
+						    supplier   	"$UNNAMED$31"
+						    quidu      	"471FA54903A9")
+						(object Link
+						    quid       	"471FA625027C"
+						    supplier   	"$UNNAMED$32"
+						    quidu      	"471FA6130174"
+						    messages   	(list Messages
+							(object Message "exibe tela encerramento venda"
+							    quid       	"471FA625027D"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2"
+							    ordinal    	2
+							    quidu      	"000000000000"
+							    creation   	FALSE)
+							(object Message "informa lista passageiros"
+							    quid       	"4729D60E003C"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.1"
+							    ordinal    	1
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Boundaries::Form Cadastro Passageiro"
+					    quidu      	"471F9E2500FE"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$31"
+					    quid       	"471FA54903A9"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA5860114"
+						    supplier   	"$UNNAMED$33"
+						    quidu      	"471FA58100B6"
+						    messages   	(list Messages
+							(object Message "grava"
+							    quid       	"471FA5860115"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2.1.1"
+							    ordinal    	4
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA69A0001"
+						    supplier   	"$UNNAMED$34"
+						    quidu      	"471FA67A0284"
+						    messages   	(list Messages
+							(object Message "grava"
+							    quid       	"471FA6A60261"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2.1.2"
+							    ordinal    	5
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Controls::Serviços Venda Passagem"
+					    quidu      	"471F9E6401F0"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$33"
+					    quid       	"471FA58100B6"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Passageiro"
+					    quidu      	"471F9F7203E5"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$32"
+					    quid       	"471FA6130174"
+					    collaborators 	(list link_list
+						(object Link
+						    quid       	"471FA68602E1"
+						    supplier   	"$UNNAMED$31"
+						    quidu      	"471FA54903A9"
+						    messages   	(list Messages
+							(object Message "emite bilhete"
+							    quid       	"471FA68602E2"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2.1"
+							    ordinal    	3
+							    quidu      	"000000000000"
+							    creation   	FALSE)))
+						(object Link
+						    quid       	"471FA6BB029E"
+						    supplier   	"$UNNAMED$32"
+						    quidu      	"471FA6130174"
+						    messages   	(list Messages
+							(object Message "exibe resultado bilhete"
+							    quid       	"471FA6BB029F"
+							    frequency  	"Aperiodic"
+							    synchronization 	"Simple"
+							    dir        	"FromClientToSupplier"
+							    sequence   	"1.2.2"
+							    ordinal    	6
+							    quidu      	"000000000000"
+							    creation   	FALSE))))
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Boundaries::Tela Encerramento Venda"
+					    quidu      	"471FA5F40204"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE)
+					(object Object "$UNNAMED$34"
+					    quid       	"471FA67A0284"
+					    class      	"Logical View::2. Modelo de Análise::Passagem::Entities::Bilhete"
+					    quidu      	"471F9F6B0175"
+					    persistence 	"Transient"
+					    creationObj 	FALSE
+					    multi      	FALSE))))
+			    logical_presentations 	(list unit_reference_list
+				(object InteractionDiagram "Fluxo Basico - parte 1"
+				    mechanism_ref 	@63
+				    quid       	"471FA1CB0300"
+				    title      	"Fluxo Basico - parte 1"
+				    zoom       	90
+				    max_height 	28350
+				    max_width  	21600
+				    origin_x   	1973
+				    origin_y   	0
+				    items      	(list diagram_item_list
+					(object InterObjView "$UNNAMED$16" @66
+					    location   	(272, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@66
+						location   	(272, 252)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	360
+						justify    	0
+						label      	"")
+					    icon       	"Actor"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA1DD003F"
+					    width      	156
+					    height     	1284
+					    icon_height 	162
+					    icon_width 	120
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @67
+						location   	(272, 400)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@66
+						height     	90
+						y_coord    	0
+						Nested     	FALSE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @68
+						location   	(272, 1216)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@66
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$17" @69
+					    location   	(720, 240)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@69
+						location   	(720, 269)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	687
+						justify    	0
+						label      	"")
+					    icon       	"boundary"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA1FF028D"
+					    width      	229
+					    height     	1268
+					    icon_height 	153
+					    icon_width 	229
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @70
+						location   	(720, 400)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@69
+						height     	684
+						y_coord    	594
+						Nested     	FALSE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @71
+						location   	(720, 1024)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@69
+						height     	90
+						y_coord    	0
+						Nested     	TRUE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @72
+						location   	(720, 1216)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@69
+						height     	196
+						y_coord    	106
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$19" @73
+					    location   	(1328, 240)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@73
+						location   	(1328, 269)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	687
+						justify    	0
+						label      	"")
+					    icon       	"boundary"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA3070092"
+					    width      	229
+					    height     	1268
+					    icon_height 	153
+					    icon_width 	229
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @74
+						location   	(1328, 1328)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@73
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$18" @75
+					    location   	(2160, 256)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@75
+						location   	(2160, 284)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	471
+						justify    	0
+						label      	"")
+					    icon       	"control"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA20502BC"
+					    width      	514
+					    height     	1252
+					    icon_height 	164
+					    icon_width 	157
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @76
+						location   	(2160, 512)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@75
+						height     	426
+						y_coord    	336
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$20" @77
+					    location   	(2640, 256)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@77
+						location   	(2640, 285)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA2080116"
+					    width      	154
+					    height     	1252
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @78
+						location   	(2640, 704)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@77
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$21" @79
+					    location   	(2992, 256)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@79
+						location   	(2992, 285)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA22300C5"
+					    width      	154
+					    height     	1252
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @80
+						location   	(2992, 848)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@79
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterMessView "consultar trem" @81
+					    location   	(16, 400)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @82
+						Parent_View 	@81
+						location   	(495, 356)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA229022D"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	281
+						justify    	0
+						label      	"consultar trem"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@66
+					    supplier   	@69
+					    Focus_Src  	@67
+					    Focus_Entry 	@70
+					    origin     	(287, 400)
+					    terminus   	(704, 400)
+					    ordinal    	0)
+					(object InterMessView "pesquisar trem" @83
+					    location   	(16, 505)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @84
+						Parent_View 	@83
+						location   	(1439, 461)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA2620360"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	264
+						justify    	0
+						label      	"pesquisar trem"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@69
+					    supplier   	@75
+					    Focus_Src  	@70
+					    Focus_Entry 	@76
+					    origin     	(735, 505)
+					    terminus   	(2144, 505)
+					    ordinal    	1)
+					(object InterMessView "recuperar" @85
+					    location   	(16, 704)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @86
+						Parent_View 	@85
+						location   	(2399, 660)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA26C0062"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	184
+						justify    	0
+						label      	"recuperar"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@75
+					    supplier   	@77
+					    Focus_Src  	@76
+					    Focus_Entry 	@78
+					    origin     	(2175, 704)
+					    terminus   	(2624, 704)
+					    ordinal    	2)
+					(object InterMessView "recuperar" @87
+					    location   	(16, 848)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @88
+						Parent_View 	@87
+						location   	(2575, 804)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA27B0255"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	184
+						justify    	0
+						label      	"recuperar"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@75
+					    supplier   	@79
+					    Focus_Src  	@76
+					    Focus_Entry 	@80
+					    origin     	(2175, 848)
+					    terminus   	(2976, 848)
+					    ordinal    	3)
+					(object SelfMessView "exibir resultados" @89
+					    location   	(16, 992)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @90
+						Parent_View 	@89
+						location   	(905, 949)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA2940204"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	317
+						justify    	0
+						label      	"exibir resultados"
+						pctDist    	1.126667
+						height     	44
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@69
+					    supplier   	@69
+					    Focus_Src  	@70
+					    Focus_Entry 	@71
+					    origin     	(736, 992)
+					    terminus   	(886, 992)
+					    ordinal    	4)
+					(object InterMessView "consultar assentos disponiveis" @91
+					    location   	(16, 1216)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @92
+						Parent_View 	@91
+						location   	(495, 1172)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA2F302D6"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	546
+						justify    	0
+						label      	"consultar assentos disponiveis"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@66
+					    supplier   	@69
+					    Focus_Src  	@68
+					    Focus_Entry 	@72
+					    origin     	(287, 1216)
+					    terminus   	(704, 1216)
+					    ordinal    	5)
+					(object InterMessView "exibir tela assentos disponíveis" @93
+					    location   	(16, 1322)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @94
+						Parent_View 	@93
+						location   	(1023, 1278)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA3120228"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	560
+						justify    	0
+						label      	"exibir tela assentos disponíveis"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@69
+					    supplier   	@73
+					    Focus_Src  	@72
+					    Focus_Entry 	@74
+					    origin     	(735, 1322)
+					    terminus   	(1312, 1322)
+					    ordinal    	6)
+					(object NoteView @95
+					    location   	(1728, 112)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@95
+						location   	(1590, 52)
+						fill_color 	13434879
+						nlines     	2
+						max_width  	240
+						label      	"Sequence Diagram: UCA - Realização Vender Passagem / Fluxo Basico - parte 2")
+					    line_color 	3342489
+					    fill_color 	13434879
+					    width      	300
+					    height     	132
+					    quidu      	"471FA35C0174")
+					(object AttachView "" @96
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    client     	@95
+					    supplier   	@73
+					    line_style 	0)))
+				(object InteractionDiagram "Fluxo Basico - parte 2"
+				    mechanism_ref 	@64
+				    quid       	"471FA35C0174"
+				    title      	"Fluxo Basico - parte 2"
+				    zoom       	90
+				    max_height 	28350
+				    max_width  	21600
+				    origin_x   	382
+				    origin_y   	35
+				    items      	(list diagram_item_list
+					(object InterObjView "$UNNAMED$22" @97
+					    location   	(272, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@97
+						location   	(272, 252)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	360
+						justify    	0
+						label      	"")
+					    icon       	"Actor"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA3670135"
+					    width      	156
+					    height     	1343
+					    icon_height 	162
+					    icon_width 	120
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @98
+						location   	(272, 1280)
+						line_color 	3342489
+						InterObjView 	@97
+						height     	92
+						y_coord    	2
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$23" @99
+					    location   	(896, 240)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@99
+						location   	(896, 269)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	687
+						justify    	0
+						label      	"")
+					    icon       	"boundary"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA36B029C"
+					    width      	229
+					    height     	1327
+					    icon_height 	153
+					    icon_width 	229
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @100
+						location   	(896, 480)
+						line_color 	3342489
+						InterObjView 	@99
+						height     	643
+						y_coord    	553
+						Nested     	FALSE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @101
+						location   	(896, 1056)
+						line_color 	3342489
+						InterObjView 	@99
+						height     	90
+						y_coord    	0
+						Nested     	TRUE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @102
+						location   	(896, 1280)
+						line_color 	3342489
+						InterObjView 	@99
+						height     	197
+						y_coord    	107
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$25" @103
+					    location   	(1504, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@103
+						location   	(1504, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	687
+						justify    	0
+						label      	"")
+					    icon       	"boundary"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA4E20336"
+					    width      	229
+					    height     	1343
+					    icon_height 	153
+					    icon_width 	229
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @104
+						location   	(1504, 1376)
+						line_color 	3342489
+						InterObjView 	@103
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$24" @105
+					    location   	(2144, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@105
+						location   	(2144, 252)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	471
+						justify    	0
+						label      	"")
+					    icon       	"control"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA37102DA"
+					    width      	514
+					    height     	1343
+					    icon_height 	164
+					    icon_width 	157
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @106
+						location   	(2144, 480)
+						line_color 	3342489
+						InterObjView 	@105
+						height     	538
+						y_coord    	448
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$26" @107
+					    location   	(2624, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@107
+						location   	(2624, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA37B00B6"
+					    width      	154
+					    height     	1343
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @108
+						location   	(2624, 592)
+						line_color 	3342489
+						InterObjView 	@107
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$27" @109
+					    location   	(2928, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@109
+						location   	(2928, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"4729D406036E"
+					    width      	154
+					    height     	1343
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @110
+						location   	(2928, 784)
+						line_color 	3342489
+						InterObjView 	@109
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$28" @111
+					    location   	(3296, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	TRUE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@111
+						location   	(3296, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"4729D4390074"
+					    width      	154
+					    height     	1343
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @112
+						location   	(3296, 928)
+						line_color 	3342489
+						InterObjView 	@111
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterMessView "pesquisa assentos disponíveis" @113
+					    location   	(16, 480)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @114
+						Parent_View 	@113
+						location   	(1519, 436)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA3BF0209"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	540
+						justify    	0
+						label      	"pesquisa assentos disponíveis"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@99
+					    supplier   	@105
+					    Focus_Src  	@100
+					    Focus_Entry 	@106
+					    origin     	(911, 480)
+					    terminus   	(2128, 480)
+					    ordinal    	0)
+					(object InterMessView "recupera assentos" @115
+					    location   	(16, 585)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @116
+						Parent_View 	@115
+						location   	(2383, 541)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA3CE015B"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	365
+						justify    	0
+						label      	"recupera assentos"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@105
+					    supplier   	@107
+					    Focus_Src  	@106
+					    Focus_Entry 	@108
+					    origin     	(2159, 585)
+					    terminus   	(2608, 585)
+					    ordinal    	1)
+					(object SelfMessView "exibe resultados" @117
+					    location   	(16, 1033)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @118
+						Parent_View 	@117
+						location   	(1081, 989)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA3DD01C7"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	342
+						justify    	0
+						label      	"exibe resultados"
+						pctDist    	1.126667
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@99
+					    supplier   	@99
+					    Focus_Src  	@100
+					    Focus_Entry 	@101
+					    origin     	(912, 1033)
+					    terminus   	(1062, 1033)
+					    ordinal    	4)
+					(object InterMessView "seleciona assento" @119
+					    location   	(16, 1273)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @120
+						Parent_View 	@119
+						location   	(583, 1229)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA4C8003A"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	346
+						justify    	0
+						label      	"seleciona assento"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@97
+					    supplier   	@99
+					    Focus_Src  	@98
+					    Focus_Entry 	@102
+					    origin     	(287, 1273)
+					    terminus   	(880, 1273)
+					    ordinal    	5)
+					(object InterMessView "exibir tela de cadastro de passageiro" @121
+					    location   	(16, 1378)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @122
+						Parent_View 	@121
+						location   	(1199, 1334)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA4F101DE"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	675
+						justify    	0
+						label      	"exibir tela de cadastro de passageiro"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@99
+					    supplier   	@103
+					    Focus_Src  	@102
+					    Focus_Entry 	@104
+					    origin     	(911, 1378)
+					    terminus   	(1488, 1378)
+					    ordinal    	6)
+					(object NoteView @123
+					    location   	(1824, 112)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@123
+						location   	(1686, 52)
+						fill_color 	13434879
+						nlines     	2
+						max_width  	240
+						label      	"Sequence Diagram: UCA - Realização Vender Passagem / Fluxo Basico - parte 3")
+					    line_color 	3342489
+					    fill_color 	13434879
+					    width      	300
+					    height     	132
+					    quidu      	"471FA51503AE")
+					(object AttachView "" @124
+					    stereotype 	TRUE
+					    line_color 	3342489
+					    client     	@123
+					    supplier   	@103
+					    line_style 	0)
+					(object InterMessView "recupera assentos ocupados" @125
+					    location   	(16, 784)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @126
+						Parent_View 	@125
+						location   	(2535, 740)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"4729D40B0165"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	519
+						justify    	0
+						label      	"recupera assentos ocupados"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@105
+					    supplier   	@109
+					    Focus_Src  	@106
+					    Focus_Entry 	@110
+					    origin     	(2159, 784)
+					    terminus   	(2912, 784)
+					    ordinal    	2)
+					(object InterMessView "recupera reservas trem" @127
+					    location   	(16, 928)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @128
+						Parent_View 	@127
+						location   	(2719, 884)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"4729D43D0178"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	412
+						justify    	0
+						label      	"recupera reservas trem"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@105
+					    supplier   	@111
+					    Focus_Src  	@106
+					    Focus_Entry 	@112
+					    origin     	(2159, 928)
+					    terminus   	(3280, 928)
+					    ordinal    	3)))
+				(object InteractionDiagram "Fluxo Basico - parte 3"
+				    mechanism_ref 	@65
+				    quid       	"471FA51503AE"
+				    title      	"Fluxo Basico - parte 3"
+				    zoom       	95
+				    max_height 	28350
+				    max_width  	21600
+				    origin_x   	1375
+				    origin_y   	0
+				    items      	(list diagram_item_list
+					(object InterObjView "$UNNAMED$29" @129
+					    location   	(160, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@129
+						location   	(160, 252)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	360
+						justify    	0
+						label      	"")
+					    icon       	"Actor"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA52100EE"
+					    width      	156
+					    height     	1316
+					    icon_height 	162
+					    icon_width 	120
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @130
+						location   	(160, 496)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@129
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$30" @131
+					    location   	(608, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@131
+						location   	(608, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	687
+						justify    	0
+						label      	"")
+					    icon       	"boundary"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA52A017A"
+					    width      	229
+					    height     	1316
+					    icon_height 	153
+					    icon_width 	229
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @132
+						location   	(608, 496)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@131
+						height     	444
+						y_coord    	354
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$32" @133
+					    location   	(1184, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@133
+						location   	(1184, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	687
+						justify    	0
+						label      	"")
+					    icon       	"boundary"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA6130174"
+					    width      	229
+					    height     	1316
+					    icon_height 	153
+					    icon_width 	229
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @134
+						location   	(1184, 608)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@133
+						height     	90
+						y_coord    	0
+						Nested     	FALSE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @135
+						location   	(1184, 848)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@133
+						height     	579
+						y_coord    	489
+						Nested     	FALSE)
+					    Focus_Of_Control 	(object Focus_Of_Control "" @136
+						location   	(1184, 1360)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@133
+						height     	90
+						y_coord    	0
+						Nested     	TRUE))
+					(object InterObjView "$UNNAMED$31" @137
+					    location   	(1712, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@137
+						location   	(1712, 252)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	471
+						justify    	0
+						label      	"")
+					    icon       	"control"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA54903A9"
+					    width      	514
+					    height     	1316
+					    icon_height 	164
+					    icon_width 	157
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @138
+						location   	(1712, 960)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@137
+						height     	295
+						y_coord    	205
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$33" @139
+					    location   	(2192, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@139
+						location   	(2192, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA58100B6"
+					    width      	154
+					    height     	1316
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @140
+						location   	(2192, 1056)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@139
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterObjView "$UNNAMED$34" @141
+					    location   	(2432, 224)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object ItemLabel
+						Parent_View 	@141
+						location   	(2432, 253)
+						anchor_loc 	1
+						nlines     	2
+						max_width  	462
+						justify    	0
+						label      	"")
+					    icon       	"entity"
+					    icon_style 	"Icon"
+					    line_color 	3342489
+					    fill_color 	13434879
+					    quidu      	"471FA67A0284"
+					    width      	154
+					    height     	1316
+					    icon_height 	153
+					    icon_width 	154
+					    icon_y_offset 	0
+					    annotation 	1
+					    Focus_Of_Control 	(object Focus_Of_Control "" @142
+						location   	(2432, 1168)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						line_color 	3342489
+						InterObjView 	@141
+						height     	90
+						y_coord    	0
+						Nested     	FALSE))
+					(object InterMessView "preenche formulario" @143
+					    location   	(16, 496)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @144
+						Parent_View 	@143
+						location   	(383, 452)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA530017A"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	393
+						justify    	0
+						label      	"preenche formulario"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@129
+					    supplier   	@131
+					    Focus_Src  	@130
+					    Focus_Entry 	@132
+					    origin     	(175, 496)
+					    terminus   	(592, 496)
+					    ordinal    	0)
+					(object InterMessView "grava" @145
+					    location   	(16, 1060)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @146
+						Parent_View 	@145
+						location   	(1951, 1016)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA5860115"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	92
+						justify    	0
+						label      	"grava"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@137
+					    supplier   	@139
+					    Focus_Src  	@138
+					    Focus_Entry 	@140
+					    origin     	(1727, 1060)
+					    terminus   	(2176, 1060)
+					    ordinal    	4)
+					(object InterMessView "exibe tela encerramento venda" @147
+					    location   	(16, 850)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @148
+						Parent_View 	@147
+						location   	(895, 806)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA625027D"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	573
+						justify    	0
+						label      	"exibe tela encerramento venda"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@131
+					    supplier   	@133
+					    Focus_Src  	@132
+					    Focus_Entry 	@135
+					    origin     	(623, 850)
+					    terminus   	(1168, 850)
+					    ordinal    	2)
+					(object InterMessView "emite bilhete" @149
+					    location   	(16, 955)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @150
+						Parent_View 	@149
+						location   	(1447, 911)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA68602E2"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	272
+						justify    	0
+						label      	"emite bilhete"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@133
+					    supplier   	@137
+					    Focus_Src  	@135
+					    Focus_Entry 	@138
+					    origin     	(1199, 955)
+					    terminus   	(1696, 955)
+					    ordinal    	3)
+					(object InterMessView "grava" @151
+					    location   	(16, 1165)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @152
+						Parent_View 	@151
+						location   	(2071, 1121)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA6A60261"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	92
+						justify    	0
+						label      	"grava"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@137
+					    supplier   	@141
+					    Focus_Src  	@138
+					    Focus_Entry 	@142
+					    origin     	(1727, 1165)
+					    terminus   	(2416, 1165)
+					    ordinal    	5)
+					(object SelfMessView "exibe resultado bilhete" @153
+					    location   	(16, 1337)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @154
+						Parent_View 	@153
+						location   	(1417, 1278)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"471FA6BB029F"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	439
+						justify    	0
+						label      	"exibe resultado bilhete"
+						pctDist    	1.453333
+						height     	60
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@133
+					    supplier   	@133
+					    Focus_Src  	@135
+					    Focus_Entry 	@136
+					    origin     	(1200, 1337)
+					    terminus   	(1350, 1337)
+					    ordinal    	6)
+					(object InterMessView "informa lista passageiros" @155
+					    location   	(16, 603)
+					    font       	(object Font
+						size       	9
+						face       	"Trebuchet MS"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    label      	(object SegLabel @156
+						Parent_View 	@155
+						location   	(895, 559)
+						font       	(object Font
+						    size       	9
+						    face       	"Trebuchet MS"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						quidu      	"4729D60E003C"
+						anchor_loc 	1
+						nlines     	1
+						max_width  	438
+						justify    	0
+						label      	"informa lista passageiros"
+						pctDist    	0.500000
+						height     	45
+						orientation 	0)
+					    line_color 	3342489
+					    client     	@131
+					    supplier   	@133
+					    Focus_Src  	@132
+					    Focus_Entry 	@134
+					    origin     	(623, 603)
+					    terminus   	(1168, 603)
+					    ordinal    	1))))))
+		    logical_presentations 	(list unit_reference_list
+			(object ClassDiagram "Main"
+			    quid       	"471F9F33013C"
+			    title      	"Main"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list))
+			(object UseCaseDiagram "Rastreabilidade"
+			    quid       	"471FA7C60390"
+			    title      	"Rastreabilidade"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object UseCaseView "Logical View::2. Modelo de Análise::Passagem::Venda de Passagem::UCA - Realização Vender Passagem" @157
+				    location   	(368, 192)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@157
+					location   	(368, 333)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	648
+					justify    	0
+					label      	"UCA - Realização Vender Passagem")
+				    icon       	"use-case realization"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"471FA15E0089")
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::2.4. Passagens::Vender Passagem no Ponto de Venda" @158
+				    location   	(368, 768)
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@158
+					location   	(368, 906)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"Vender Passagem no Ponto de Venda")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"46B0C00A004E")
+				(object DependencyView "" @159
+				    font       	(object Font
+					size       	9
+					face       	"Trebuchet MS"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	(object SegLabel @160
+					Parent_View 	@159
+					location   	(476, 535)
+					font       	(object Font
+					    size       	9
+					    face       	"Trebuchet MS"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor     	10
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"<<realize>>"
+					pctDist    	0.500000
+					height     	108
+					orientation 	0)
+				    line_color 	3342489
+				    quidu      	"471FA839027C"
+				    client     	@157
+				    supplier   	@158
+				    line_style 	0)))))
+		(object Class_Category "Formaçao de Trem"
+		    quid       	"471F9BDF02FD"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list)
+		    logical_presentations 	(list unit_reference_list
+			(object ClassDiagram "Main"
+			    quid       	"499D78070212"
+			    title      	"Main"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list))))
+		(object Class_Category "Boundaries"
+		    quid       	"471F9C9000B5"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "Form Consultar Trem"
+			    quid       	"471F9CCE0035"
+			    stereotype 	"boundary")
+			(object Class "Form Consultar Assento Disponivel"
+			    quid       	"471F9E070048"
+			    stereotype 	"boundary")
+			(object Class "Form Cadastro Passageiro"
+			    quid       	"471F9E2500FE"
+			    stereotype 	"boundary")
+			(object Class "Tela Encerramento Venda"
+			    quid       	"471FA5F40204"
+			    stereotype 	"boundary"))
+		    logical_presentations 	(list unit_reference_list))
+		(object Class_Category "Controls"
+		    quid       	"471F9C9D01E9"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "Serviços Venda Passagem"
+			    quid       	"471F9E6401F0"
+			    stereotype 	"control"))
+		    logical_presentations 	(list unit_reference_list))
+		(object Class_Category "Entities"
+		    quid       	"471F9CA40310"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "Trem"
+			    quid       	"471F9F670185"
+			    stereotype 	"entity")
+			(object Class "Bilhete"
+			    quid       	"471F9F6B0175"
+			    stereotype 	"entity")
+			(object Class "Passageiro"
+			    quid       	"471F9F7203E5"
+			    stereotype 	"entity")
+			(object Class "Preço"
+			    quid       	"471FA21302E9"
+			    stereotype 	"entity")
+			(object Class "Reserva"
+			    quid       	"4729D42C027A"
+			    stereotype 	"entity"))
+		    logical_presentations 	(list unit_reference_list)))
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Main"
+		    quid       	"471F9BC200BC"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object CategoryView "Logical View::2. Modelo de Análise::Passagem::Venda de Passagem" @161
+			    location   	(432, 448)
+			    font       	(object Font
+				size       	9
+				face       	"Trebuchet MS"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@161
+				location   	(288, 352)
+				fill_color 	13434879
+				nlines     	2
+				max_width  	288
+				justify    	0
+				label      	"Venda de Passagem")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"471F9BC902BB"
+			    width      	300
+			    height     	204)
+			(object CategoryView "Logical View::2. Modelo de Análise::Passagem::Formaçao de Trem" @162
+			    location   	(1056, 448)
+			    font       	(object Font
+				size       	9
+				face       	"Trebuchet MS"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@162
+				location   	(912, 352)
+				fill_color 	13434879
+				nlines     	2
+				max_width  	288
+				justify    	0
+				label      	"Formaçao de Trem")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"471F9BDF02FD"
+			    width      	300
+			    height     	204)
+			(object ImportView "" @163
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"471F9F4202B2"
+			    client     	@161
+			    supplier   	@162
+			    line_style 	0))))))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "Main"
+	    quid       	"414DD0110306"
+	    title      	"Main"
+	    zoom       	95
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	26
+	    items      	(list diagram_item_list
+		(object CategoryView "Logical View::2. Modelo de Análise::Faturamento" @164
+		    location   	(272, 368)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@164
+			location   	(21, 323)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	502
+			justify    	0
+			label      	"Faturamento")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@164
+			location   	(21, 267)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	502
+			justify    	0
+			label      	"<<component>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	15329769
+		    quidu      	"46FBF598025C"
+		    width      	514
+		    height     	214)
+		(object NoteView @165
+		    location   	(1040, 112)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@165
+			location   	(42, 43)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	1960
+			label      	"Diagrama de pacotes para ilustrar os componentes funcionais do sistema e suas relacões de dependência.")
+		    line_color 	3342489
+		    fill_color 	13434879
+		    width      	2020
+		    height     	151)
+		(object CategoryView "Logical View::2. Modelo de Análise::Despacho" @166
+		    location   	(560, 832)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@166
+			location   	(309, 787)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	502
+			justify    	0
+			label      	"Despacho")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@166
+			location   	(309, 731)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	502
+			justify    	0
+			label      	"<<component>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"44B022EE015A"
+		    width      	514
+		    height     	214)
+		(object CategoryView "Logical View::2. Modelo de Análise::Passagem On-line" @167
+		    location   	(1680, 368)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@167
+			location   	(1429, 313)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	502
+			justify    	0
+			label      	"Passagem On-line")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@167
+			location   	(1429, 257)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	502
+			justify    	0
+			label      	"<<component>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	16777096
+		    quidu      	"46FBF5A400C5"
+		    width      	514
+		    height     	234)
+		(object CategoryView "Logical View::2. Modelo de Análise::Usuário" @168
+		    location   	(1248, 832)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@168
+			location   	(997, 787)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	502
+			justify    	0
+			label      	"Usuário")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@168
+			location   	(997, 731)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	502
+			justify    	0
+			label      	"<<component>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"46FD381F0336"
+		    width      	514
+		    height     	214)
+		(object ImportView "" @169
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"46FD3858025C"
+		    client     	@166
+		    supplier   	@168
+		    line_style 	0)
+		(object CategoryView "Logical View::2. Modelo de Análise::Segurança" @170
+		    location   	(928, 1328)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@170
+			location   	(677, 1283)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	502
+			justify    	0
+			label      	"Segurança")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@170
+			location   	(677, 1227)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	502
+			justify    	0
+			label      	"<<component>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	15329769
+		    quidu      	"471F833801B6"
+		    width      	514
+		    height     	214)
+		(object ImportView "" @171
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"471F84CD03D1"
+		    client     	@166
+		    supplier   	@170
+		    line_style 	0)
+		(object ImportView "" @172
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"471F84D80288"
+		    client     	@168
+		    supplier   	@170
+		    line_style 	0)
+		(object ImportView "" @173
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"46FD3DCA019A"
+		    client     	@167
+		    supplier   	@168
+		    line_style 	0)
+		(object CategoryView "Logical View::2. Modelo de Análise::Passagem" @174
+		    location   	(912, 368)
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@174
+			location   	(765, 323)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	294
+			justify    	0
+			label      	"Passagem")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@174
+			location   	(765, 267)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	294
+			justify    	0
+			label      	"<<component>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"471F9B05012D"
+		    width      	306
+		    height     	214)
+		(object ImportView "" @175
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"471F9B22038A"
+		    client     	@167
+		    supplier   	@174
+		    line_style 	0)
+		(object ImportView "" @176
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"471F9B260210"
+		    client     	@166
+		    supplier   	@174
+		    line_style 	0)
+		(object ImportView "" @177
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"471F9B290105"
+		    client     	@174
+		    supplier   	@168
+		    line_style 	0)
+		(object ImportView "" @178
+		    font       	(object Font
+			size       	9
+			face       	"Trebuchet MS"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"46FC02FC008A"
+		    client     	@164
+		    supplier   	@166
+		    line_style 	0)
+		(object ImportView "" @179
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"472089FA02C3"
+		    client     	@164
+		    supplier   	@174
+		    line_style 	0)
+		(object ImportView "" @180
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"47208A4D0085"
+		    client     	@174
+		    supplier   	@170
+		    line_style 	0)))))

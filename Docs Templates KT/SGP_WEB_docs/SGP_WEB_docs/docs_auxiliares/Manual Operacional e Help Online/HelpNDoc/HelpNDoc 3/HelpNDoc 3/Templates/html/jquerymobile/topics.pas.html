@@ -1,0 +1,108 @@
+<%
+var
+	aTopicList: THndTopicsInfoArray;
+	nCurTopic, nHeaderKind, nFooterKind: integer;
+	sTopicHeader, sTopicFooter: string;
+	oEditor: TObject;
+	sPrevId, sNextId: string;
+
+begin
+
+	// Output global CSS content
+	HndGeneratorInfo.CurrentFile := 'css\hnd.css';
+	print(HndProjects.GetProjectCssContent());
+	
+	// Clear search data
+	HndJsSearchEngine.ClearSearchData();
+	
+	// Create the temp editor
+	oEditor := HndEditor.CreateTemporaryEditor();
+	
+	// Each individual topics...
+	aTopicList := HndTopics.GetTopicListVisible(False);
+	for nCurTopic := 0 to length(aTopicList) - 1 do
+	begin
+		// Notify about the topic being generated
+		HndGeneratorInfo.CurrentTopic := aTopicList[nCurTopic].id;
+		// Setup the file name
+		HndGeneratorInfo.CurrentFile := HndTopics.GetTopicHelpId(HndGeneratorInfo.CurrentTopic) + '.html';
+		// Topic header
+		nHeaderKind := HndTopics.GetTopicHeaderKind(HndGeneratorInfo.CurrentTopic);
+		sTopicHeader := HndTopics.GetTopicHeaderTextCalculated(HndGeneratorInfo.CurrentTopic);
+		// Topic footer
+		nFooterKind := HndTopics.GetTopicFooterKind(HndGeneratorInfo.CurrentTopic);
+		sTopicFooter := HndTopics.GetTopicFooterTextCalculated(HndGeneratorInfo.CurrentTopic);
+		// Previous and next topics
+		sPrevId := HndTopics.GetTopicPreviousVisible(HndGeneratorInfo.CurrentTopic);
+		sNextId := HndTopics.GetTopicNextVisible(HndGeneratorInfo.CurrentTopic);
+		
+		// Add Search data
+		HndEditor.Clear(oEditor);
+		HndEditor.InsertTopicContent(oEditor, HndGeneratorInfo.CurrentTopic);
+		HndEditor.ReplaceLibraryItems(oEditor);
+		HndJsSearchEngine.AddSearchData(sTopicHeader, HndGeneratorInfo.CurrentTopic);
+		HndJsSearchEngine.AddSearchData(HndEditor.GetContentAsText(oEditor), HndGeneratorInfo.CurrentTopic);
+		HndJsSearchEngine.AddSearchData(sTopicFooter, HndGeneratorInfo.CurrentTopic);
+
+%>
+
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title><% print(HTMLEncode(HndTopics.GetTopicCaption(HndGeneratorInfo.CurrentTopic))); %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="js/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/hnd.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+</head>
+
+<body>
+
+<body>
+
+	<div data-role="page"> 
+	
+		<div data-role="header" data-id="header" data-position="fixed">
+			<% if ((sPrevId <> '') and (sPrevId <> HndTopics.GetProjectTopic())) then begin %>
+				<a data-icon="arrow-l" data-direction="reverse" href="<% printf('%s.html', [HndTopics.GetTopicHelpId(sPrevId)]); %>"><% print(HTMLEncode(HndTopics.GetTopicCaption(sPrevId))); %></a>
+			<% end else begin %>
+			<a data-icon="home" href="<% print(ExtractFileName(HndGeneratorInfo.OutputFile)); %>">Home</a>
+			<% end; %>
+			<h1><% print(HTMLEncode(HndTopics.GetTopicHeaderTextCalculated(HndGeneratorInfo.CurrentTopic))); %></h1>
+			<% if sNextId <> '' then begin %>
+				<a data-icon="arrow-r" href="<% printf('%s.html', [HndTopics.GetTopicHelpId(sNextId)]); %>"><% print(HTMLEncode(HndTopics.GetTopicCaption(sNextId))); %></a>
+			<% end; %>
+		</div>
+		
+		<div data-role="content" class="ui-body ui-body-d">
+			<% print(HndTopics.GetTopicContentAsHtml(HndGeneratorInfo.CurrentTopic)); %>
+		</div>
+
+		<div data-role="footer" class="ui-bar">
+			<a data-role="button" data-icon="home" data-direction="reverse" href="<% print(ExtractFileName(HndGeneratorInfo.OutputFile)); %>">Home</a>
+			<% if nFooterKind <> 2 then begin %>
+				<h4><% print(HTMLEncode(sTopicFooter)); %></h4>
+			<% end; %>
+		</div>
+		
+	</div>
+</body>
+
+</html>
+
+<%
+	end;
+	
+	// Output JS Search engine data
+	HndGeneratorInfo.CurrentFile := 'js\searchdata.js';
+	print(HndJsSearchEngine.GetJsData());
+	
+	// Free the editor
+	HndEditor.DestroyTemporaryEditor(oEditor);
+	// Clear the search engine
+	HndJsSearchEngine.ClearSearchData();
+	
+end.
+%>

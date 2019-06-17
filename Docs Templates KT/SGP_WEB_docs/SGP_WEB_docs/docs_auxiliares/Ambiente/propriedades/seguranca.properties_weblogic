@@ -1,0 +1,4 @@
+java.naming.factory.initial=weblogic.jndi.WLInitialContextFactory
+java.naming.provider.url=t3://172.22.24.98:8011/seguranca,172.22.24.99:8012/seguranca
+java.naming.security.credentials=welcome2
+java.naming.security.principal=segur_user

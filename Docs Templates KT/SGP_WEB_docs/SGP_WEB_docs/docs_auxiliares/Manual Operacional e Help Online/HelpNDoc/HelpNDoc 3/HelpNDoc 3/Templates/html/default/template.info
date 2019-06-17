@@ -1,0 +1,83 @@
+[config]
+name=Default HTML Template
+category=HTML Documentation
+extension=html
+
+[var_BaseColor]
+name=Base color
+kind=color
+default=#EFEFEF
+description=Customize the documentation's base color.
+
+[var_IconStyle]
+name=Base icon set
+kind=enum
+default=chm
+values=chm|folder|vista
+description=Define the style for the icons displayed in the table of contents, keywords and search trees.
+
+[var_TocTitle]
+name=Table of contents tab title
+kind=string
+default=Contents
+description=Define the title for the table of contents tab.
+
+[var_TocShow]
+name=Show the table of contents tab
+kind=bool
+default=1
+description=If checked, the table of contents tab wil be shown. Hidden otherwise.
+
+[var_TocExpanded]
+name=Expand table of contents tree
+kind=bool
+default=1
+description=If checked, the table of contents tree will be fully expanded. Collapsed otherwise.
+
+[var_TocWidth]
+name=Table of contents width
+kind=int
+default=300
+description=Indicates the width of the table of contents panel.
+
+[var_TocKeywordsTitle]
+name=Keywords tab title
+kind=string
+default=Index
+description=Define the title for the keywords tab.
+
+[var_TocKeywordsShow]
+name=Show the keywords tab
+kind=bool
+default=1
+description=If checked, the keywords tab wil be shown. Hidden otherwise.
+
+[var_TocKeywordsExpanded]
+name=Expand keywords tree
+kind=bool
+default=1
+description=If checked, the keywords tree will be fully expanded. Collapsed otherwise.
+
+[var_TocSearchTitle]
+name=Search tab title
+kind=string
+default=Search
+description=Define the title for the search tab.
+
+[var_TocSearchShow]
+name=Show the search tab
+kind=bool
+default=1
+description=If checked, the search tab wil be shown. Hidden otherwise.
+
+[var_ShowBreadCrumbs]
+name=Show BreadCrumbs
+kind=bool
+default=1
+description=Show the breadcrumbs at the top of each topic bellow the topic title.
+
+[var_ShowNavigation]
+name=Show navigation arrows
+kind=bool
+default=1
+description=Show the navigation arrows at the top of each topic right of the topic title.

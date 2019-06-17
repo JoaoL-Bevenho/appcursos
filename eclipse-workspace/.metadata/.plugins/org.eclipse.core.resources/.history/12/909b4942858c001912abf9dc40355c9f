@@ -1,0 +1,32 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<!--Import Google Icon Font-->
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	    <link type="text/css" rel="stylesheet" href="css/local.css">
+	    
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="message-modal" class="modal modal-message-overwrite modal-fixed-footer modal-fixed-footer-overwrite">
+			<form method="post">
+				<div class="modal-header">
+					<h5><b>ERROR</b></h5>
+				</div>
+				<div class="modal-content modal-content-overwrite">
+					Name: <input type="text" value="" name="nameGuest"/>
+					CPF: <input type="text" value="" name="cpf" id="cpfinput"/>
+				</div>
+				<div class="modal-footer">
+					<button class="modal-action modal-close btn waves-effect waves-light btn">Ok</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="css/local.css">
+		<link type="text/css" rel="stylesheet" href="css/admin-form.css">
+		<!-- Bootstrap core CSS-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<!--Glyphicons-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/glyph_css/glyph_bootstrap.css">
+		
+		<meta charset="UTF-8">
+		<title>Register Event</title>
+		
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="navtitle-area">
+				<label class="navbar-brand" href="#">Event Registration</label>
+			</div>
+			<ul class="navbar-nav navbtn-area">
+				<li class="nav-item active">
+					<a class="btn nav-btn nav-link" href="/events">
+						<span class="glyphicon glyphicon-list"></span> List of Events
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="mainbody-InsertEvent">
+<!-- 			<th:block th:include="messageValidation"></th:block> -->
+			<form class="container " method="post">
+				<div class="form-group">
+					<div class="form-label-group">
+						<input type="text" id="nameInsert" class="form-control" name="name"  placeholder="Name"/>
+						<label for="nameInsert">Name</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="text" id="placeInsert" class="form-control" name="place" 
+									placeholder="Place"/>
+								<label for="placeInsert">Place</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-label-group">
+								<input type="date" id="dateInsert" class="form-control" name="date" placeholder="Date"/>
+								<label for="dateInsert">Date</label>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-label-group">
+								<input type="text" id="timeInsert" class="form-control" name="time" placeholder="Time"/>
+								<label for="timeInsert">Time</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary btn-block btn-primary-overwrite">Register Event</button>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){ registerInputMasks(); })
+	</script>
+</html>

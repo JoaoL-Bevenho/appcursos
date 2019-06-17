@@ -1,0 +1,16 @@
+Após emitir uma redução Z a impressora FS600 fica travada para novas vendas no dia...
+Segue o procedimento para reset da mesma:
+
+1 – Desligar a impressora
+2 – Retirar o jumper jp2
+3 – Ligar a impressora
+4 – Abrir o aplicativo TOOL PARA IMPRESSORAS MDF (ToolFS_V.1.52.2)
+5 – Verificar se a impressora foi detectada (sinal VERDE abaixo na direita)
+      Se a impressora não for detectada é preciso verificar a ligação com o PC. Verificar se NÃO está na porta de fisco (porta errada)
+6 – Clicar em Ajustes/Interv.
+7 – Clicar em Aj. Relógio
+8 – O relógio será ajustado. A impressora irá remitir uma leitura X e um relatório gerencial
+9 – Desligar a impressora e sair do programa
+10 – Recolocar o jumper
+
+A impressora está pronta para a venda. Esse processo será necessário após a redução Z, no caso de ser necessário realizar uma nova venda.

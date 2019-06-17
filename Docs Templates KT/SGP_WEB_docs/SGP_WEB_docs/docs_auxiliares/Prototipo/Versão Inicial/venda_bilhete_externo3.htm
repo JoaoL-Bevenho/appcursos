@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SGP WEB</title>
+	<link rel="stylesheet" href="css/sgpweb.css">
+
+	<script>
+		var assentosDisp     = 3;
+		var assentosIdaUso   = 3;
+		var assentosVoltaUso = 3;
+		
+		function reservarAssentoIda(assento){
+
+			if(assento.className == "assentoReservado"){
+				assentosIdaUso--;
+				assento.className = "assentoVazio"
+			}else if(assento.className == "assentoVazio"){
+				assentosIdaUso++;
+				if(assentosIdaUso <= assentosDisp){
+					assento.className = "assentoReservado"				
+				}else{assentosIdaUso=3;}
+			}
+				//alert(assento.className);			
+		} 
+		
+		function reservarAssentoVolta(assento){
+
+			if(assento.className == "assentoReservado"){
+				assentosVoltaUso--;
+				assento.className = "assentoVazio"
+			}else if(assento.className == "assentoVazio"){
+				assentosVoltaUso++;
+				if(assentosVoltaUso <= assentosDisp){
+					assento.className = "assentoReservado"				
+				}else{assentosVoltaUso=3;}
+			}
+				//alert(assento.className);			
+		} 		
+		function cancelar(){
+			if(confirm('Deseja realmente cancelar a venda?')){
+				window.location = 'venda_bilhete_externo1.htm';
+			}
+		}		
+	</script>
+    <style type="text/css">
+<!--
+.style1 {font-size: 12px}
+.style5 {font-size: 9px}
+.style8 {font-size: 10; font-weight: bold; }
+.style11 {font-size: 10px}
+-->
+    </style>
+</head>
+
+<body>
+<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="middle" colspan="3">&nbsp;</td>
+  </tr>   
+  <tr>
+    <td width="73%" height="30" align="left" valign="middle" class="linhaHeader"><div align="left" class="style1"><u>Venda de passagens &gt;&gt; Clientes Externos &gt;&gt; Cadastro de Identifica&ccedil;&atilde;o B&aacute;sica </u></div></td>
+    <td width="13%" nowrap="nowrap" class="linhaHeader style5"><div align="right">Outras vendas: </div></td>
+    <td width="14%" nowrap="nowrap" class="linhaHeader"><div align="right"><span class="style5"><a href="venda_bilhete_funcionario1.htm">Funcion&aacute;rios/Aposentados</a> <br />
+          <a href="venda_bilhete_funcionario1.htm">N&atilde;o Remunerada</a></span></div></td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle" colspan="3"><hr/></td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle" colspan="3">&nbsp;</td>
+  </tr>   
+  <tr>
+    <td align="left" valign="middle" colspan="3"><table width="67%" border="0" align="center" cellpadding="2" cellspacing="0">
+      <tr class="tableOddLineSmall">
+        <td width="40%"><div align="center"><span class="style8">Nome</span></div></td>
+        <td width="28%"><div align="center"><span class="style8">Tipo da Identifica&ccedil;&atilde;o </span></div></td>
+        <td width="32%"><div align="center"><span class="style8">N&ordm; Identifica&ccedil;&atilde;o</span></div></td>
+      </tr>
+      <tr class="texto">
+        <td><div align="center">
+            <input name="textfield4" type="text" class="textoDestacado" size="50" maxlength="20" />
+        </div></td>
+        <td><div align="center">
+            <select name="select" class="textoDestacado">
+              <option value="CPF">CPF</option>
+              <option value="Identidade">Identidade</option>
+              <option value="CT">Carteira de Trabalho</option>
+              <option value="CN">Certid&atilde;o de Nascimento</option>
+            </select>
+        </div></td>
+        <td><div align="center">
+            <input name="textfield" type="text" class="textoDestacado" size="30" maxlength="20" />
+        </div></td>
+      </tr>
+      <tr class="texto">
+        <td><div align="center">
+            <input name="textfield42" type="text" class="textoDestacado" size="50" maxlength="20" />
+        </div></td>
+        <td><div align="center">
+            <select name="select2" class="textoDestacado">
+              <option value="CPF">CPF</option>
+              <option value="Identidade">Identidade</option>
+              <option value="CT">Carteira de Trabalho</option>
+              <option value="CN">Certid&atilde;o de Nascimento</option>
+            </select>
+        </div></td>
+        <td><div align="center">
+            <input name="textfield2" type="text" class="textoDestacado" size="30" maxlength="20" />
+        </div></td>
+      </tr>
+      <tr class="texto">
+        <td><div align="center">
+            <input name="textfield43" type="text" class="textoDestacado" size="50" maxlength="20" />
+        </div></td>
+        <td><div align="center">
+            <select name="select3" class="textoDestacado">
+              <option value="CPF">CPF</option>
+              <option value="Identidade">Identidade</option>
+              <option value="CT">Carteira de Trabalho</option>
+              <option value="CN">Certid&atilde;o de Nascimento</option>
+            </select>
+        </div></td>
+        <td><div align="center">
+            <input name="textfield3" type="text" class="textoDestacado" size="30" maxlength="20" />
+        </div></td>
+      </tr>
+    </table></td>
+  </tr>    
+  <tr>
+    <td align="left" valign="middle" colspan="3">&nbsp;</td>
+  </tr>  
+    <tr>
+    <td align="center" valign="middle" colspan="3"><input type="image" name="imageField" src="img/bt_voltar.gif" onclick="history.go(-1)" />
+		  &nbsp;&nbsp;&nbsp;<input type="image" name="imageField4" src="img/bt_avancar.gif" onclick="javascript:window.location = 'venda_bilhete_externo4.htm'" />&nbsp;&nbsp;&nbsp;
+		  <img name="imageField2" src="img/bt_cancelar.gif" onclick="cancelar()"/></td>
+  </tr>    
+</table>
+
+</body>
+</html>

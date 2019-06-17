@@ -1,0 +1,1913 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	0)
+
+(object Class_Category "<Componente 2>"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"414DC1DC013B"
+    stereotype 	"component"
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class_Category "Serviços"
+	    quid       	"4485B04F0113"
+	    documentation 	
+|Nesta pasta conterá todos os diagramas de sequência dos serviços deste componente.
+|Para cada serviço, deverá ser criado um "package" com o nome da interface Service. E, dentro do mesmo, deverá conter os diagramas de sequência de todos os métodos.
+	    
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class_Category "<doSomeThing>"
+		    quid       	"44858D7A03A3"
+		    documentation 	"Nome de uma interface de serviço."
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Mechanism @1
+			    logical_models 	(list unit_reference_list
+				(object Object "$UNNAMED$0"
+				    quid       	"44858DE100EB"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"44858E4401A5"
+					    supplier   	"$UNNAMED$1"
+					    quidu      	"44858E3D0240"
+					    messages   	(list Messages
+						(object Message "find( )"
+						    quid       	"44858E4401A6"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1"
+						    ordinal    	1
+						    quidu      	"414DD6E401B3"
+						    creation   	FALSE))))
+				    class      	"Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services"
+				    quidu      	"414DC4AD0357"
+				    persistence 	"Transient"
+				    creationObj 	TRUE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$1"
+				    quid       	"44858E3D0240"
+				    class      	"Logical View::3. Modelo de Design::<Componente 2>::Classes::model::DAO::<EntitidadeDAO>"
+				    quidu      	"414DC555025A"
+				    persistence 	"Transient"
+				    creationObj 	TRUE
+				    multi      	FALSE)
+				(object Object "Client"
+				    quid       	"4485A7EA02D5"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4485A7F501AB"
+					    supplier   	"$UNNAMED$0"
+					    quidu      	"44858DE100EB"
+					    messages   	(list Messages
+						(object Message "<doSomeThing>( )"
+						    quid       	"4485A7F501AC"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1"
+						    ordinal    	0
+						    quidu      	"414DC9AD002F"
+						    creation   	FALSE))))
+				    persistence 	"Transient"
+				    creationObj 	TRUE
+				    multi      	FALSE))))
+		    logical_presentations 	(list unit_reference_list
+			(object InteractionDiagram "<doSomeThing>"
+			    mechanism_ref 	@1
+			    quid       	"44858DB9037F"
+			    title      	"<doSomeThing>"
+			    documentation 	"Método <Nome do Método> do Serviço <Service>."
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	59
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object InterObjView "$UNNAMED$0" @2
+				    location   	(944, 832)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@2
+					location   	(944, 832)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	456
+					justify    	0
+					label      	"")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858DE100EB"
+				    width      	474
+				    height     	590
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @3
+					location   	(944, 892)
+					InterObjView 	@2
+					height     	60
+					y_coord    	0
+					Nested     	FALSE)
+				    Focus_Of_Control 	(object Focus_Of_Control "" @4
+					location   	(944, 1040)
+					line_color 	3342489
+					InterObjView 	@2
+					height     	232
+					y_coord    	172
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$1" @5
+				    location   	(1600, 848)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@5
+					location   	(1600, 848)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	330
+					justify    	0
+					label      	"")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858E3D0240"
+				    width      	348
+				    height     	574
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @6
+					location   	(1600, 908)
+					InterObjView 	@5
+					height     	60
+					y_coord    	0
+					Nested     	FALSE)
+				    Focus_Of_Control 	(object Focus_Of_Control "" @7
+					location   	(1600, 1152)
+					line_color 	3342489
+					InterObjView 	@5
+					height     	60
+					y_coord    	0
+					Nested     	FALSE))
+				(object InterObjView "Client" @8
+				    location   	(256, 832)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@8
+					location   	(256, 832)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	282
+					justify    	0
+					label      	"Client")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4485A7EA02D5"
+				    width      	300
+				    height     	590
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @9
+					location   	(256, 892)
+					InterObjView 	@8
+					height     	60
+					y_coord    	0
+					Nested     	FALSE)
+				    Focus_Of_Control 	(object Focus_Of_Control "" @10
+					location   	(256, 1040)
+					line_color 	3342489
+					InterObjView 	@8
+					height     	292
+					y_coord    	232
+					Nested     	FALSE))
+				(object InterMessView "" @11
+				    location   	(1264, 1152)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @12
+					Parent_View 	@11
+					location   	(1016, 1124)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"44858E4401A6"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	110
+					justify    	0
+					label      	"find( )"
+					pctDist    	0.091200
+					height     	29
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@2
+				    supplier   	@5
+				    Focus_Src  	@4
+				    Focus_Entry 	@7
+				    origin     	(959, 1152)
+				    terminus   	(1584, 1152)
+				    ordinal    	1)
+				(object NoteView @13
+				    location   	(976, 400)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@13
+					location   	(135, 81)
+					fill_color 	13434879
+					nlines     	12
+					max_width  	1646
+					label      	
+|Diagrama de sequência que ilustra o fluxo de execução de determinado serviço.
+|
+|O fluxo é inicializado com um "Client" chamando o serviço que será representado no diagrama. Isto é feito para que este diagrama possa ser visivel na hora de buscar os diagramas utilizados por este método de serviço.
+|
+|Deve-se evitar que o diagrama fique muito extenso. Para isso, é comum omitir mensagens e objetos relacionados a mecanismos largamente usados no projeto. Assim diversas convenções podem ser adotadas a fim de simplificar e clarificar os diagramas, deixando apenas o que é realmente importante transmitir ao implementador.
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	1706
+				    height     	650)
+				(object InterMessView "" @14
+				    location   	(592, 1040)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @15
+					Parent_View 	@14
+					location   	(454, 1011)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4485A7F501AC"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	338
+					justify    	0
+					label      	"<doSomeThing>( )"
+					pctDist    	0.278539
+					height     	30
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@8
+				    supplier   	@2
+				    Focus_Src  	@10
+				    Focus_Entry 	@4
+				    origin     	(271, 1040)
+				    terminus   	(928, 1040)
+				    ordinal    	0))))))
+	    logical_presentations 	(list unit_reference_list))
+	(object Class_Category "Classes"
+	    quid       	"449FF9C90384"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class_Category "presentation"
+		    quid       	"414DC23A0171"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class_Category "actions"
+			    quid       	"414DC24601C0"
+			    visible_categories 	(list visibility_relationship_list
+				(object Visibility_Relationship
+				    quid       	"414DC3F000B8"
+				    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::forms"
+				    quidu      	"414DC2510367"))
+			    visible_modules 	(list dependency_list
+				(object Dependency_Relationship
+				    quid       	"414DC510014B"
+				    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services"
+				    quidu      	"414DC4AD0357"))
+			    exportControl 	"Public"
+			    logical_models 	(list unit_reference_list
+				(object Class "<Action>Action"
+				    quid       	"414DC7FF0117"
+				    used_nodes 	(list uses_relationship_list
+					(object Uses_Relationship
+					    quid       	"414DC8400013"
+					    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::forms::<Form>Form"
+					    quidu      	"414DC81401D5")
+					(object Uses_Relationship
+					    quid       	"414DC84501D8"
+					    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services"
+					    quidu      	"414DC4AD0357")
+					(object Uses_Relationship
+					    quid       	"4485916C03C3"
+					    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::model::Entidade"
+					    quidu      	"44858E1D0291"))
+				    operations 	(list Operations
+					(object Operation "performe"
+					    quid       	"414DC9810377"
+					    concurrency 	"Sequential"
+					    opExportControl 	"Public"
+					    uid        	0))))
+			    logical_presentations 	(list unit_reference_list))
+			(object Class_Category "forms"
+			    quid       	"414DC2510367"
+			    exportControl 	"Public"
+			    logical_models 	(list unit_reference_list
+				(object Class "<Form>Form"
+				    quid       	"414DC81401D5"))
+			    logical_presentations 	(list unit_reference_list)))
+		    logical_presentations 	(list unit_reference_list))
+		(object Class_Category "services"
+		    quid       	"414DC26E01B4"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "<Componente>Services"
+			    quid       	"414DC4AD0357"
+			    used_nodes 	(list uses_relationship_list
+				(object Uses_Relationship
+				    quid       	"4485914A0221"
+				    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::model::DAO::<EntitidadeDAO>"
+				    quidu      	"414DC555025A")
+				(object Uses_Relationship
+				    quid       	"448591760365"
+				    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::model::Entidade"
+				    quidu      	"44858E1D0291"))
+			    operations 	(list Operations
+				(object Operation "<doSomeThing>"
+				    quid       	"414DC9AD002F"
+				    documentation 	"<Escrever uma descrição sucinta do método caso não se consiga inferir sobre a sua utilização apenas com os atributos de entrada, tipo de retorno e o nome do mesmo>"
+				    concurrency 	"Sequential"
+				    opExportControl 	"Public"
+				    uid        	0)))
+			(object Class_Category "impl"
+			    quid       	"414DC37B017A"
+			    realized_interfaces 	(list realize_rel_list
+				(object Realize_Relationship
+				    quid       	"414DC5150013"
+				    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services"
+				    quidu      	"414DC4AD0357"))
+			    exportControl 	"Public"
+			    logical_models 	(list unit_reference_list)
+			    logical_presentations 	(list unit_reference_list)))
+		    logical_presentations 	(list unit_reference_list))
+		(object Class_Category "model"
+		    quid       	"414DC36A0254"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class "Entidade"
+			    quid       	"44858E1D0291"
+			    class_attributes 	(list class_attribute_list
+				(object ClassAttribute "<atributo>"
+				    quid       	"44858E2602DC"
+				    type       	"<Type>")))
+			(object Class_Category "DAO"
+			    quid       	"44858DFD03BD"
+			    exportControl 	"Public"
+			    logical_models 	(list unit_reference_list
+				(object Class "<EntitidadeDAO>"
+				    quid       	"414DC555025A"
+				    used_nodes 	(list uses_relationship_list
+					(object Uses_Relationship
+					    quid       	"4485915400E5"
+					    supplier   	"Logical View::3. Modelo de Design::<Componente 2>::Classes::model::Entidade"
+					    quidu      	"44858E1D0291"))
+				    operations 	(list Operations
+					(object Operation "find"
+					    quid       	"414DD6E401B3"
+					    documentation 	"<Escrever uma descrição sucinta do método caso não se consiga inferir sobre a sua utilização apenas com os atributos de entrada, tipo de retorno e o nome do mesmo>"
+					    concurrency 	"Sequential"
+					    opExportControl 	"Public"
+					    uid        	0))))
+			    logical_presentations 	(list unit_reference_list)))
+		    logical_presentations 	(list unit_reference_list)))
+	    logical_presentations 	(list unit_reference_list))
+	(object Class_Category "<<sub-componente> <SubComponente 2>"
+	    quid       	"449FFABC00C1"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list)
+	    logical_presentations 	(list unit_reference_list))
+	(object Class_Category "<<sub-componente> <SubComponente 2>"
+	    quid       	"44A0133B001E"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list)
+	    logical_presentations 	(list unit_reference_list))
+	(object Class_Category "Realizações"
+	    quid       	"44A12AD60039"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object UseCase "UCD - <Caso de Uso 2>"
+		    attributes 	(list Attribute_Set
+			(object Attribute
+			    tool       	"RequisitePro"
+			    name       	"ReqProProjectPath"
+			    value      	""))
+		    quid       	"4485B2190323"
+		    documentation 	"Exemplo de um caso de uso que utiliza um template."
+		    stereotype 	"use-case realization"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"4485B55800EB"
+			    stereotype 	"realize"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::<Componente>::<Caso de Uso 2>"
+			    quidu      	"4485B5120019"))
+		    logical_models 	(list unit_reference_list
+			(object Mechanism @16
+			    logical_models 	(list unit_reference_list)))
+		    logical_presentations 	(list unit_reference_list
+			(object UseCaseDiagram "Rastreabilidade"
+			    quid       	"4485B52D0163"
+			    title      	"Rastreabilidade"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::<Componente>::<Caso de Uso 2>" @17
+				    location   	(1088, 960)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@17
+					location   	(1088, 1098)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"<Caso de Uso 2>")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4485B5120019")
+				(object UseCaseView "Logical View::3. Modelo de Design::<Componente 2>::Realizações::UCD - <Caso de Uso 2>" @18
+				    location   	(288, 960)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@18
+					location   	(288, 1098)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	648
+					justify    	0
+					label      	"UCD - <Caso de Uso 2>")
+				    icon       	"use-case realization"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4485B2190323"
+				    width      	222
+				    height     	117)
+				(object DependencyView "" @19
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    stereotype 	(object SegLabel @20
+					Parent_View 	@19
+					location   	(672, 919)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor     	10
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"<<realize>>"
+					pctDist    	0.473561
+					height     	42
+					orientation 	0)
+				    line_color 	3342489
+				    quidu      	"4485B55800EB"
+				    client     	@18
+				    supplier   	@17
+				    line_style 	0)
+				(object NoteView @21
+				    location   	(688, 400)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@21
+					location   	(107, 56)
+					fill_color 	13434879
+					nlines     	13
+					max_width  	1127
+					label      	
+|Diagrama de casos de uso que documenta a rastreabilidade das realizações de caso de uso para os casos de uso originais.
+|
+|Use o estereótipo <<realize>> para o relacionamento de dependência criado da realização para o caso de uso.
+|
+|Em algumas situações pode acontecer de um certo caso de uso ser dividido, para fins de design, em mais de uma realização; ou, ao contrário, uma mesma realização atender a mais de um caso de uso simultaneamente.  Nestes casos, as relações de dependência devem ilustrar estas caracteristicas do design.
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	1187
+				    height     	700)))
+			(object ClassDiagram "VoPC"
+			    quid       	"4485BABD0048"
+			    title      	"VoPC"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::actions::<Action>Action" @22
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(432, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@22
+					location   	(249, 578)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	366
+					justify    	0
+					label      	"<Action>Action")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC7FF0117"
+				    width      	384
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::forms::<Form>Form" @23
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1520, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@23
+					location   	(1356, 578)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	328
+					justify    	0
+					label      	"<Form>Form")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC81401D5"
+				    width      	346
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services" @24
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(432, 1408)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@24
+					location   	(161, 1330)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	542
+					justify    	0
+					label      	"<Componente>Services")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC4AD0357"
+				    width      	560
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object NoteView @25
+				    location   	(704, 272)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@25
+					location   	(79, 78)
+					fill_color 	13434879
+					nlines     	7
+					max_width  	1215
+					label      	
+|Diagrama de classes para ilustrar os principais elementos de design (classes e componentes) que participam da realização do caso de uso, e as suas relações de dependência.
+|
+|Os componentes externos devem aparacer apresentados pelo seu pacote - não colocar as classes de sua implementação neste diagrama, de modo a ilustrar o seu encapsulamento.
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	1275
+				    height     	400)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::model::Entidade" @26
+				    ShowCompartmentStereotypes 	TRUE
+				    SuppressOperation 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1008, 992)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@26
+					location   	(887, 914)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	242
+					justify    	0
+					label      	"Entidade")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858E1D0291"
+				    width      	260
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::model::DAO::<EntitidadeDAO>" @27
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    ShowOperationSignature 	TRUE
+				    location   	(1600, 1408)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@27
+					location   	(1390, 1330)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	420
+					justify    	0
+					label      	"<EntitidadeDAO>")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC555025A"
+				    width      	438
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object UsesView "" @28
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"414DC8400013"
+				    client     	@22
+				    supplier   	@23
+				    line_style 	0)
+				(object UsesView "" @29
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"414DC84501D8"
+				    client     	@22
+				    supplier   	@24
+				    line_style 	0)
+				(object UsesView "" @30
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"448591760365"
+				    client     	@24
+				    supplier   	@26
+				    vertices   	(list Points
+					(712, 1342)
+					(990, 1342)
+					(990, 1082))
+				    line_style 	3
+				    origin_attachment 	(712, 1342)
+				    terminal_attachment 	(990, 1082))
+				(object UsesView "" @31
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4485916C03C3"
+				    client     	@22
+				    supplier   	@26
+				    vertices   	(list Points
+					(513, 746)
+					(513, 972)
+					(878, 972))
+				    line_style 	3
+				    origin_attachment 	(513, 746)
+				    terminal_attachment 	(878, 972))
+				(object UsesView "" @32
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4485914A0221"
+				    client     	@24
+				    supplier   	@27
+				    line_style 	0)
+				(object UsesView "" @33
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4485915400E5"
+				    client     	@27
+				    supplier   	@26
+				    vertices   	(list Points
+					(1381, 1341)
+					(1056, 1341)
+					(1056, 1082))
+				    line_style 	3
+				    origin_attachment 	(1381, 1341)
+				    terminal_attachment 	(1056, 1082))))
+			(object InteractionDiagram "1. <Fluxo Báscio>"
+			    mechanism_ref 	@16
+			    quid       	"4485B2380369"
+			    title      	"1. <Fluxo Báscio>"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object NoteView @34
+				    location   	(592, 352)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@34
+					location   	(89, 143)
+					fill_color 	13434879
+					nlines     	8
+					max_width  	971
+					label      	
+|Este caso de uso utiliza o template linkado abaixo. Utilizar os seguintes dados:
+|  Service: <Service>
+|  DAO: <EntidadeDAO>
+|  método: <findXXXX>
+|Obs.: Vale lembrar que os métodos que utilizam os templates devem estar nas interfaces <Services> e <EntidadeDAO>
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	1031
+				    height     	431)
+				(object NoteView @35
+				    location   	(592, 960)
+				    font       	(object Font
+					size       	8
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@35
+					location   	(348, 888)
+					fill_color 	13434879
+					nlines     	3
+					max_width  	453
+					label      	"Sequence Diagram: <Template 1> / <Template 1>")
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	513
+				    height     	156
+				    quidu      	"4485B14900A4")
+				(object AttachView "" @36
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    client     	@34
+				    supplier   	@35
+				    line_style 	0)))))
+		(object UseCase "UCD - <Caso de Uso 1>"
+		    attributes 	(list Attribute_Set
+			(object Attribute
+			    tool       	"RequisitePro"
+			    name       	"ReqProProjectPath"
+			    value      	""))
+		    quid       	"414DC5E90043"
+		    stereotype 	"use-case realization"
+		    visible_modules 	(list dependency_list
+			(object Dependency_Relationship
+			    quid       	"414DCD9803A8"
+			    stereotype 	"realize"
+			    supplier   	"Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::<Componente>::<Caso de Uso 1>"
+			    quidu      	"414DCD8400C8"))
+		    statemachine 	(object State_Machine "Navegação"
+			quid       	"414DC87B023A"
+			documentation 	"O diagrama de navegação não faz parte do design mínimo padrão da Ci&T."
+			states     	(list States
+			    (object State "$UNNAMED$2"
+				quid       	"414DC8980058"
+				transitions 	(list transition_list
+				    (object State_Transition
+					quid       	"414DC8C600E8"
+					supplier   	"<tela 1>"
+					quidu      	"414DC899024C"
+					sendEvent  	(object sendEvent
+					    quid       	"414DC8C600EB")))
+				type       	"StartState")
+			    (object State "<tela 1>"
+				quid       	"414DC899024C"
+				transitions 	(list transition_list
+				    (object State_Transition
+					quid       	"414DC8C90108"
+					supplier   	"<tela 2>"
+					quidu      	"414DC8A300B7"
+					sendEvent  	(object sendEvent
+					    quid       	"414DC8C9010B")))
+				type       	"Normal")
+			    (object State "<tela 2>"
+				quid       	"414DC8A300B7"
+				transitions 	(list transition_list
+				    (object State_Transition
+					quid       	"414DC8D40109"
+					supplier   	"$UNNAMED$3"
+					quidu      	"414DC8D2002E"
+					sendEvent  	(object sendEvent
+					    quid       	"414DC8D4010C")))
+				type       	"Normal")
+			    (object State "$UNNAMED$3"
+				quid       	"414DC8D2002E"
+				type       	"EndState"))
+			partitions 	(list Partitions)
+			objects    	(list Objects)
+			statediagrams 	(list StateDiagrams
+			    (object State_Diagram "<caso de uso>"
+				quid       	"414DC87B023B"
+				title      	"<caso de uso>"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object StateView "StartState" "$UNNAMED$2" @37
+					location   	(272, 768)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@37
+					    location   	(314, 738)
+					    nlines     	2
+					    max_width  	600
+					    label      	"")
+					icon_style 	"Icon"
+					line_color 	3342489
+					quidu      	"414DC8980058"
+					autoResize 	TRUE)
+				    (object StateView "Normal" "<tela 1>" @38
+					location   	(272, 960)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@38
+					    location   	(272, 949)
+					    fill_color 	13434879
+					    anchor_loc 	1
+					    nlines     	2
+					    max_width  	204
+					    justify    	0
+					    label      	"<tela 1>")
+					icon_style 	"Icon"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"414DC899024C"
+					autoResize 	TRUE)
+				    (object StateView "Normal" "<tela 2>" @39
+					location   	(272, 1216)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@39
+					    location   	(272, 1205)
+					    fill_color 	13434879
+					    anchor_loc 	1
+					    nlines     	2
+					    max_width  	204
+					    justify    	0
+					    label      	"<tela 2>")
+					icon_style 	"Icon"
+					line_color 	3342489
+					fill_color 	13434879
+					quidu      	"414DC8A300B7"
+					autoResize 	TRUE)
+				    (object TransView "" @40
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"414DC8C600E8"
+					client     	@37
+					supplier   	@38
+					line_style 	0
+					x_offset   	FALSE)
+				    (object TransView "" @41
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"414DC8C90108"
+					client     	@38
+					supplier   	@39
+					line_style 	0
+					x_offset   	FALSE)
+				    (object StateView "EndState" "$UNNAMED$3" @42
+					location   	(272, 1440)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@42
+					    location   	(326, 1398)
+					    nlines     	2
+					    max_width  	600
+					    label      	"")
+					icon_style 	"Icon"
+					line_color 	3342489
+					quidu      	"414DC8D2002E"
+					autoResize 	TRUE)
+				    (object TransView "" @43
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"414DC8D40109"
+					client     	@39
+					supplier   	@42
+					line_style 	0
+					x_offset   	FALSE)
+				    (object NoteView @44
+					location   	(720, 368)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@44
+					    location   	(98, 99)
+					    fill_color 	13434879
+					    nlines     	10
+					    max_width  	1208
+					    label      	
+|Diagrama de estados para representar a navegação de telas do caso de uso.  Este diagrama é interessante para ilustrar os eventos e ações possiveis e servir de guia para a leitura dos diagramas de sequência que realizam cada uma das ações.
+|
+|Em geral, não é necessário representar os eventos de "back", que ficam implicitos.  Esta regra pode não ser válida se alguma ação importante deva ser tomada em um destes eventos, ou ele deva ser feito de alguma maneira especial.  Neste caso, acrescentar notas explicativas para esclarecer e alertar para estes fatos.
+					    )
+					line_color 	3342489
+					fill_color 	13434879
+					width      	1268
+					height     	550)))))
+		    logical_models 	(list unit_reference_list
+			(object Mechanism @45
+			    logical_models 	(list unit_reference_list
+				(object Object "$UNNAMED$4"
+				    quid       	"44858CF70153"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"44858D1702B5"
+					    supplier   	"$UNNAMED$5"
+					    quidu      	"44858D1300DC"
+					    messages   	(list Messages
+						(object Message "performe( )"
+						    quid       	"44858D1702B6"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1"
+						    ordinal    	0
+						    quidu      	"414DC9810377"
+						    creation   	FALSE))))
+				    class      	"Use Case View::2. Modelo de Casos de Uso::1. Atores::<Ator>"
+				    quidu      	"414DD4650133"
+				    persistence 	"Transient"
+				    creationObj 	TRUE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$5"
+				    quid       	"44858D1300DC"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"44858D320186"
+					    supplier   	"$UNNAMED$6"
+					    quidu      	"44858D280382"
+					    messages   	(list Messages
+						(object Message "<doSomeThing>( )"
+						    quid       	"44858D320187"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1"
+						    ordinal    	1
+						    quidu      	"414DC9AD002F"
+						    creation   	FALSE))))
+				    class      	"Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::actions::<Action>Action"
+				    quidu      	"414DC7FF0117"
+				    persistence 	"Transient"
+				    creationObj 	TRUE
+				    multi      	FALSE)
+				(object Object "$UNNAMED$6"
+				    quid       	"44858D280382"
+				    class      	"Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services"
+				    quidu      	"414DC4AD0357"
+				    persistence 	"Transient"
+				    creationObj 	TRUE
+				    multi      	FALSE))))
+		    logical_presentations 	(list unit_reference_list
+			(object ClassDiagram "VoPC"
+			    quid       	"414DC76C0199"
+			    title      	"VoPC"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::actions::<Action>Action" @46
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(432, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@46
+					location   	(249, 578)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	366
+					justify    	0
+					label      	"<Action>Action")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC7FF0117"
+				    width      	384
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::presentation::forms::<Form>Form" @47
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1520, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@47
+					location   	(1356, 578)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	328
+					justify    	0
+					label      	"<Form>Form")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC81401D5"
+				    width      	346
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::services::<Componente>Services" @48
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(432, 1408)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@48
+					location   	(161, 1330)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	542
+					justify    	0
+					label      	"<Componente>Services")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC4AD0357"
+				    width      	560
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object NoteView @49
+				    location   	(704, 272)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@49
+					location   	(79, 78)
+					fill_color 	13434879
+					nlines     	7
+					max_width  	1215
+					label      	
+|Diagrama de classes para ilustrar os principais elementos de design (classes e componentes) que participam da realização do caso de uso, e as suas relações de dependência.
+|
+|Os componentes externos devem aparacer apresentados pelo seu pacote - não colocar as classes de sua implementação neste diagrama, de modo a ilustrar o seu encapsulamento.
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	1275
+				    height     	400)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::model::Entidade" @50
+				    ShowCompartmentStereotypes 	TRUE
+				    SuppressOperation 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    location   	(1008, 992)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@50
+					location   	(887, 914)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	242
+					justify    	0
+					label      	"Entidade")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858E1D0291"
+				    width      	260
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::3. Modelo de Design::<Componente 2>::Classes::model::DAO::<EntitidadeDAO>" @51
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    ShowOperationSignature 	TRUE
+				    location   	(1600, 1408)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@51
+					location   	(1390, 1330)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	420
+					justify    	0
+					label      	"<EntitidadeDAO>")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC555025A"
+				    width      	438
+				    height     	180
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object UsesView "" @52
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4485914A0221"
+				    client     	@48
+				    supplier   	@51
+				    line_style 	0)
+				(object UsesView "" @53
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"448591760365"
+				    client     	@48
+				    supplier   	@50
+				    vertices   	(list Points
+					(712, 1342)
+					(990, 1342)
+					(990, 1082))
+				    line_style 	3
+				    origin_attachment 	(712, 1342)
+				    terminal_attachment 	(990, 1082))
+				(object UsesView "" @54
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4485915400E5"
+				    client     	@51
+				    supplier   	@50
+				    vertices   	(list Points
+					(1381, 1341)
+					(1056, 1341)
+					(1056, 1082))
+				    line_style 	3
+				    origin_attachment 	(1381, 1341)
+				    terminal_attachment 	(1056, 1082))
+				(object UsesView "" @55
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"414DC8400013"
+				    client     	@46
+				    supplier   	@47
+				    line_style 	0)
+				(object UsesView "" @56
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"414DC84501D8"
+				    client     	@46
+				    supplier   	@48
+				    line_style 	0)
+				(object UsesView "" @57
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"4485916C03C3"
+				    client     	@46
+				    supplier   	@50
+				    vertices   	(list Points
+					(513, 746)
+					(513, 972)
+					(878, 972))
+				    line_style 	3
+				    origin_attachment 	(513, 746)
+				    terminal_attachment 	(878, 972))))
+			(object UseCaseDiagram "Rastreabilidade"
+			    quid       	"414DCD7702AC"
+			    title      	"Rastreabilidade"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object UseCaseView "Logical View::3. Modelo de Design::<Componente 2>::Realizações::UCD - <Caso de Uso 1>" @58
+				    location   	(240, 976)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@58
+					location   	(240, 1114)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	648
+					justify    	0
+					label      	"UCD - <Caso de Uso 1>")
+				    icon       	"use-case realization"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DC5E90043"
+				    width      	222
+				    height     	117)
+				(object UseCaseView "Use Case View::2. Modelo de Casos de Uso::2. Casos de Uso::<Componente>::<Caso de Uso 1>" @59
+				    location   	(1120, 976)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@59
+					location   	(1120, 1114)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	630
+					justify    	0
+					label      	"<Caso de Uso 1>")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"414DCD8400C8"
+				    height     	118)
+				(object DependencyView "" @60
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@60
+					location   	(678, 976)
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"")
+				    stereotype 	(object SegLabel @61
+					Parent_View 	@60
+					location   	(684, 917)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					anchor     	10
+					anchor_loc 	1
+					nlines     	1
+					max_width  	450
+					justify    	0
+					label      	"<<realize>>"
+					pctDist    	0.509091
+					height     	59
+					orientation 	0)
+				    line_color 	3342489
+				    quidu      	"414DCD9803A8"
+				    client     	@58
+				    supplier   	@59
+				    line_style 	0)
+				(object NoteView @62
+				    location   	(688, 448)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@62
+					location   	(107, 104)
+					fill_color 	13434879
+					nlines     	13
+					max_width  	1127
+					label      	
+|Diagrama de casos de uso que documenta a rastreabilidade das realizações de caso de uso para os casos de uso originais.
+|
+|Use o estereótipo <<realize>> para o relacionamento de dependência criado da realização para o caso de uso.
+|
+|Em algumas situações pode acontecer de um certo caso de uso ser dividido, para fins de design, em mais de uma realização; ou, ao contrário, uma mesma realização atender a mais de um caso de uso simultaneamente.  Nestes casos, as relações de dependência devem ilustrar estas caracteristicas do design.
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	1187
+				    height     	700)))
+			(object InteractionDiagram "1. <Fluxo Básico>"
+			    mechanism_ref 	@45
+			    quid       	"44858CE602C6"
+			    title      	"1. <Fluxo Básico>"
+			    zoom       	85
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	926
+			    items      	(list diagram_item_list
+				(object InterObjView "$UNNAMED$4" @63
+				    location   	(224, 704)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@63
+					location   	(224, 729)
+					anchor_loc 	1
+					nlines     	2
+					max_width  	360
+					justify    	0
+					label      	"")
+				    icon       	"Actor"
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858CF70153"
+				    width      	336
+				    height     	1454
+				    icon_height 	162
+				    icon_width 	120
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @64
+					location   	(224, 768)
+					InterObjView 	@63
+					height     	60
+					y_coord    	0
+					Nested     	FALSE)
+				    Focus_Of_Control 	(object Focus_Of_Control "" @65
+					location   	(224, 1790)
+					line_color 	3342489
+					InterObjView 	@63
+					height     	278
+					y_coord    	218
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$5" @66
+				    location   	(912, 1584)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@66
+					location   	(912, 1584)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	357
+					justify    	0
+					label      	"")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858D1300DC"
+				    width      	375
+				    height     	574
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @67
+					location   	(912, 1644)
+					InterObjView 	@66
+					height     	60
+					y_coord    	0
+					Nested     	FALSE)
+				    Focus_Of_Control 	(object Focus_Of_Control "" @68
+					location   	(912, 1792)
+					line_color 	3342489
+					InterObjView 	@66
+					height     	216
+					y_coord    	156
+					Nested     	FALSE))
+				(object InterObjView "$UNNAMED$6" @69
+				    location   	(1632, 1600)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@69
+					location   	(1632, 1600)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	519
+					justify    	0
+					label      	"")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44858D280382"
+				    width      	537
+				    height     	558
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @70
+					location   	(1632, 1660)
+					InterObjView 	@69
+					height     	60
+					y_coord    	0
+					Nested     	FALSE)
+				    Focus_Of_Control 	(object Focus_Of_Control "" @71
+					location   	(1632, 1888)
+					line_color 	3342489
+					InterObjView 	@69
+					height     	60
+					y_coord    	0
+					Nested     	FALSE))
+				(object NoteView @72
+				    location   	(1152, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@72
+					location   	(127, 55)
+					fill_color 	13434879
+					nlines     	21
+					max_width  	2015
+					label      	
+|Diagrama de sequência que ilustra o fluxo de execução iniciado por um determinado evento ou ação no sistema. 
+|
+|Em geral, o fluxo vai se iniciar com um ator acionando um serviço de uma classe - no caso de eventos de apresentação, esta será uma Action.
+|
+|Deve-se evitar que o diagrama fique muito extenso. Para isso, é comum omitir mensagens e objetos relacionados a mecanismos largamente usados no projeto, como a instanciação de uma interface de serviços atráves de sua fábrica.  Assim diversas convenções podem ser adotadas a fim de simplificar e clarificar os diagramas, deixando apenas o que é realmente importante transmitir ao implementador.
+|
+|Outros passos, que em termos de código podem ser bastante complexos ou extensos, também podem ser simplificados no diagrama, com o uso de auto-chamadas - nestes casos, em geral usa-se a notação de comentários com barras duplas ("//") -, e notas explicativas.
+|
+|Usa-se ainda "scripts" para criar controladores de fluxo - condicionais e repetições. No caso das repetições é bastante recomendado incluir "scripts" para marcar os final do ciclo de repetição, em especial quando este conter mais que uma mensagem.
+					)
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	2075
+				    height     	1214)
+				(object InterMessView "" @73
+				    location   	(592, 1790)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @74
+					Parent_View 	@73
+					location   	(396, 1763)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"44858D1702B6"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	234
+					justify    	0
+					label      	"performe( )"
+					pctDist    	0.239437
+					height     	28
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@63
+				    supplier   	@66
+				    Focus_Src  	@65
+				    Focus_Entry 	@68
+				    origin     	(239, 1790)
+				    terminus   	(896, 1790)
+				    ordinal    	0)
+				(object InterMessView "" @75
+				    location   	(1264, 1888)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @76
+					Parent_View 	@75
+					location   	(1271, 1844)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"44858D320187"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	389
+					justify    	0
+					label      	"<doSomeThing>( )"
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@66
+				    supplier   	@69
+				    Focus_Src  	@68
+				    Focus_Entry 	@71
+				    origin     	(927, 1888)
+				    terminus   	(1616, 1888)
+				    ordinal    	1)
+				(object NoteView @77
+				    location   	(1424, 2096)
+				    font       	(object Font
+					size       	8
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@77
+					location   	(1190, 2018)
+					fill_color 	13434879
+					nlines     	3
+					max_width  	433
+					label      	"Sequence Diagram: <Service> / <doSomeThing>")
+				    line_color 	3342489
+				    fill_color 	13434879
+				    width      	493
+				    height     	169
+				    quidu      	"44858DB9037F")
+				(object AttachView "" @78
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    client     	@75
+				    supplier   	@77
+				    line_style 	0))))))
+	    logical_presentations 	(list unit_reference_list)))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "Visão de Sub-Componentes"
+	    quid       	"449FFA5501C8"
+	    title      	"Visão de Sub-Componentes"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	0
+	    items      	(list diagram_item_list
+		(object CategoryView "Logical View::3. Modelo de Design::<Componente 2>::<<sub-componente> <SubComponente 2>" @79
+		    location   	(480, 752)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@79
+			location   	(256, 668)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	448
+			justify    	0
+			label      	"<<sub-componente> <SubComponente 2>")
+		    icon_style 	"None"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"449FFABC00C1"
+		    width      	460
+		    height     	180)
+		(object NoteView @80
+		    location   	(736, 224)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@80
+			location   	(92, 146)
+			fill_color 	13434879
+			nlines     	3
+			max_width  	1253
+			label      	"Diagrama de pacotes para ilustrar os sub-componentes do componente pai, e suas relacões de dependência.")
+		    line_color 	3342489
+		    fill_color 	13434879
+		    width      	1313
+		    height     	169)
+		(object CategoryView "Logical View::3. Modelo de Design::<Componente 2>::<<sub-componente> <SubComponente 2>" @81
+		    location   	(1056, 752)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@81
+			location   	(832, 668)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	448
+			justify    	0
+			label      	"<<sub-componente> <SubComponente 2>")
+		    icon_style 	"None"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"44A0133B001E"
+		    width      	460
+		    height     	180)))))

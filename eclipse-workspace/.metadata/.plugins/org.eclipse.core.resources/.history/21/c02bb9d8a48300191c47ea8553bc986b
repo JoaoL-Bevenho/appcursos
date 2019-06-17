@@ -1,0 +1,83 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		
+		<!--Import Google Icon Font-->
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	    <link type="text/css" rel="stylesheet" href="css/local.css">
+	    
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8">
+		<title>Details Event</title>
+	</head>
+	<body>
+		<header class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+				<a href="#" class="brand-logo brand-logo-overwrite">Event Details</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="#register-guest-modal" class="waves-effect waves-light btn modal-trigger"><i class="material-icons left">add_circle_outline</i>Add Guest</a></li>
+						<li><a href="/events" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>List of Events</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header> 
+		<div class="gridMain-body">
+			<h3><span th:text="${event.name}"></span></h3>
+			<div th:each="event:${event}" class="container">
+				<div class="row">
+					<p><span th:text="${event.place}"></span></p>
+					<p><span th:text="${event.date}"></span></p>
+					<p><span th:text="${event.time}"></span></p>
+				</div>
+				<h4>List of Guests</h4>
+				<div class="table-format">
+					<table class="container">
+						<thead>
+							<tr>
+								<th>Name of Guest</th>
+								<th>CPF</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="guest:${guests}">
+								<td><span th:text="${guest.nameGuest}"></span></td>
+								<td><span th:text="${guest.cpf}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>	
+		</div>
+		<!-- Modal Structure -->
+		<div id="register-guest-modal" class="modal modal-fixed-footer modal-overwrite modal-fixed-footer-overwrite">
+			<form method="post">
+				<th:block th:include="messageValidation"></th:block>
+				<div class="modal-content modal-content-overwrite">
+					Name: <input type="text" value="" name="nameGuest"/>
+					CPF: <input type="text" value="" name="rg" id="rginput"/>
+				</div>
+				<div class="modal-footer modal-footer-overwrite">
+					<button type="submit" class="waves-effect waves-light btn">Add Guest</button>
+					<a href="#" class="modal-action modal-close btn deep-orange darken-2">Cancel</a>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function()
+		{
+			registerInputMasks();
+			$('.modal').modal();
+		})
+	</script>
+</html>

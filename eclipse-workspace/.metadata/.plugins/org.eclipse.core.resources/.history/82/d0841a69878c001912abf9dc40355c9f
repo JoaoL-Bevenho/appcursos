@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="message-modal" class="modal fade"  tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div id="message-header" class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel"><span th:text="${message-header}"></span></h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-label-group">
+								<span th:text="${message}"></span>
+								<br /> Clica no botão abaixo para continuar.
+							</div>
+						</div>
+					</div>
+					<form method="POST">
+						<div class="modal-footer">
+							<input type="submit" class="btn btn-primary btn-block btn-primary-overwrite" id="alertSubmit" /> <input type="text" id="hiddenalertSubmit"
+								name="hiddenalertaSubmit" value="Ok" hidden />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

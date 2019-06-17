@@ -1,0 +1,714 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.2.0311.2600"
+    charSet    	0)
+
+(object Class_Category "1. Arquitetura"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"414DC68A0224"
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class_Category "Mecanismos"
+	    quid       	"449FFCCF03DC"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class_Category "<Mecanismo 1>"
+		    is_unit    	TRUE
+		    is_loaded  	FALSE
+		    file_name  	"$CURDIR\\Arquitetura.Mecanismo1.cat"
+		    quid       	"41781064037A")
+		(object Class_Category "<Mecanismo 2>"
+		    is_unit    	TRUE
+		    is_loaded  	FALSE
+		    file_name  	"$CURDIR\\Arquitetura.Mecanismo2.cat"
+		    quid       	"449FFCF000DD"))
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Main"
+		    quid       	"44B0234F0272"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object CategoryView "Logical View::1. Arquitetura::Mecanismos::<Mecanismo 1>" @1
+			    location   	(272, 480)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@1
+				location   	(100, 396)
+				fill_color 	13434879
+				nlines     	2
+				max_width  	344
+				justify    	0
+				label      	"<Mecanismo 1>")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"41781064037A"
+			    width      	357
+			    height     	181)
+			(object CategoryView "Logical View::1. Arquitetura::Mecanismos::<Mecanismo 2>" @2
+			    location   	(752, 480)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(580, 396)
+				fill_color 	13434879
+				nlines     	2
+				max_width  	344
+				justify    	0
+				label      	"<Mecanismo 2>")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"449FFCF000DD"
+			    width      	356
+			    height     	181)))))
+	(object Class_Category "Templates"
+	    quid       	"4485B0AD0074"
+	    documentation 	"Esta pasta conterá todos os templates do projeto."
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Class_Category "<Template 1>"
+		    quid       	"44A12AC102A4"
+		    exportControl 	"Public"
+		    logical_models 	(list unit_reference_list
+			(object Class_Category "Classes"
+			    quid       	"44A12AAD0183"
+			    exportControl 	"Public"
+			    logical_models 	(list unit_reference_list
+				(object Class_Category "presentation"
+				    quid       	"44B025DB039C"
+				    exportControl 	"Public"
+				    logical_models 	(list unit_reference_list
+					(object Class_Category "action"
+					    quid       	"44B0260B008E"
+					    exportControl 	"Public"
+					    logical_models 	(list unit_reference_list
+						(object Class "<Action>"
+						    quid       	"44B0265303B3"
+						    used_nodes 	(list uses_relationship_list
+							(object Uses_Relationship
+							    quid       	"44B0266F02A4"
+							    supplier   	"Logical View::1. Arquitetura::Templates::<Template 1>::Classes::services::<Component>Services"
+							    quidu      	"44B02646002F")
+							(object Uses_Relationship
+							    quid       	"44B0269A01AC"
+							    supplier   	"Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::to::<Entidade>"
+							    quidu      	"44B026390225"))))
+					    logical_presentations 	(list unit_reference_list)))
+				    logical_presentations 	(list unit_reference_list))
+				(object Class_Category "services"
+				    quid       	"44B025E7010E"
+				    visible_categories 	(list visibility_relationship_list
+					(object Visibility_Relationship
+					    quid       	"474499A0002B"
+					    supplier   	"Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::to"
+					    quidu      	"44B0261703AC"))
+				    exportControl 	"Public"
+				    logical_models 	(list unit_reference_list
+					(object Class "<Component>Services"
+					    quid       	"44B02646002F"
+					    used_nodes 	(list uses_relationship_list
+						(object Uses_Relationship
+						    quid       	"44B0267900BE"
+						    supplier   	"Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::dao::<EntidadeDAO>"
+						    quidu      	"44B0262D01B9")
+						(object Uses_Relationship
+						    quid       	"44B026840056"
+						    supplier   	"Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::to::<Entidade>"
+						    quidu      	"44B026390225"))))
+				    logical_presentations 	(list unit_reference_list))
+				(object Class_Category "model"
+				    quid       	"44B026030141"
+				    exportControl 	"Public"
+				    logical_models 	(list unit_reference_list
+					(object Class_Category "to"
+					    quid       	"44B0261703AC"
+					    exportControl 	"Public"
+					    logical_models 	(list unit_reference_list
+						(object Class "<Entidade>"
+						    quid       	"44B026390225"))
+					    logical_presentations 	(list unit_reference_list))
+					(object Class_Category "dao"
+					    quid       	"44B026200142"
+					    exportControl 	"Public"
+					    logical_models 	(list unit_reference_list
+						(object Class "<EntidadeDAO>"
+						    quid       	"44B0262D01B9"
+						    used_nodes 	(list uses_relationship_list
+							(object Uses_Relationship
+							    quid       	"44B0268700C8"
+							    supplier   	"Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::to::<Entidade>"
+							    quidu      	"44B026390225"))))
+					    logical_presentations 	(list unit_reference_list)))
+				    logical_presentations 	(list unit_reference_list)))
+			    logical_presentations 	(list unit_reference_list))
+			(object Mechanism @3
+			    logical_models 	(list unit_reference_list
+				(object Object "Action"
+				    quid       	"4485B15D01BC"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4485B18A036D"
+					    supplier   	"<Service>"
+					    quidu      	"4485B1750156"
+					    messages   	(list Messages
+						(object Message ""
+						    quid       	"4485B18A036E"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1"
+						    ordinal    	0
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::3. Modelo de Design::Passagem::Classes::presentation::action::<Action>Action"
+				    quidu      	"414DC7FF0117"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "<Service>"
+				    quid       	"4485B1750156"
+				    collaborators 	(list link_list
+					(object Link
+					    quid       	"4485B18D000F"
+					    supplier   	"<DAO>"
+					    quidu      	"4485B17F0188"
+					    messages   	(list Messages
+						(object Message ""
+						    quid       	"4485B18D0010"
+						    frequency  	"Aperiodic"
+						    synchronization 	"Simple"
+						    dir        	"FromClientToSupplier"
+						    sequence   	"1.1"
+						    ordinal    	1
+						    quidu      	"000000000000"
+						    creation   	FALSE))))
+				    class      	"Logical View::3. Modelo de Design::Passagem::Classes::services::<Componente>Services"
+				    quidu      	"414DC4AD0357"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE)
+				(object Object "<DAO>"
+				    quid       	"4485B17F0188"
+				    class      	"Logical View::3. Modelo de Design::Passagem::Classes::model::dao::<EntitidadeDAO>"
+				    quidu      	"414DC555025A"
+				    persistence 	"Transient"
+				    creationObj 	FALSE
+				    multi      	FALSE))))
+		    logical_presentations 	(list unit_reference_list
+			(object ClassDiagram "VoPC"
+			    quid       	"44B0254100C9"
+			    title      	"VoPC"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object ClassView "Class" "Logical View::1. Arquitetura::Templates::<Template 1>::Classes::presentation::action::<Action>" @4
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    ShowOperationSignature 	TRUE
+				    location   	(384, 208)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@4
+					location   	(261, 134)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	246
+					justify    	0
+					label      	"<Action>")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44B0265303B3"
+				    width      	264
+				    height     	172
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::1. Arquitetura::Templates::<Template 1>::Classes::services::<Component>Services" @5
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    ShowOperationSignature 	TRUE
+				    location   	(1072, 224)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@5
+					location   	(813, 150)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	518
+					justify    	0
+					label      	"<Component>Services")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44B02646002F"
+				    width      	536
+				    height     	172
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::to::<Entidade>" @6
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    ShowOperationSignature 	TRUE
+				    location   	(384, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@6
+					location   	(238, 582)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	292
+					justify    	0
+					label      	"<Entidade>")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44B026390225"
+				    width      	310
+				    height     	172
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object ClassView "Class" "Logical View::1. Arquitetura::Templates::<Template 1>::Classes::model::dao::<EntidadeDAO>" @7
+				    ShowCompartmentStereotypes 	TRUE
+				    IncludeAttribute 	TRUE
+				    IncludeOperation 	TRUE
+				    ShowOperationSignature 	TRUE
+				    location   	(1072, 656)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@7
+					location   	(871, 582)
+					fill_color 	13434879
+					nlines     	1
+					max_width  	402
+					justify    	0
+					label      	"<EntidadeDAO>")
+				    icon_style 	"Icon"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"44B0262D01B9"
+				    width      	420
+				    height     	172
+				    annotation 	8
+				    autoResize 	TRUE)
+				(object UsesView "" @8
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"44B0266F02A4"
+				    client     	@4
+				    supplier   	@5
+				    line_style 	0)
+				(object UsesView "" @9
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"44B0267900BE"
+				    client     	@5
+				    supplier   	@7
+				    line_style 	0)
+				(object UsesView "" @10
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"44B026840056"
+				    client     	@5
+				    supplier   	@6
+				    line_style 	0)
+				(object UsesView "" @11
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"44B0268700C8"
+				    client     	@7
+				    supplier   	@6
+				    line_style 	0)
+				(object UsesView "" @12
+				    stereotype 	TRUE
+				    line_color 	3342489
+				    quidu      	"44B0269A01AC"
+				    client     	@4
+				    supplier   	@6
+				    line_style 	0)))
+			(object InteractionDiagram "<Template 1>"
+			    mechanism_ref 	@3
+			    quid       	"4485B14900A4"
+			    title      	"<Template 1>"
+			    zoom       	100
+			    max_height 	28350
+			    max_width  	21600
+			    origin_x   	0
+			    origin_y   	0
+			    items      	(list diagram_item_list
+				(object InterObjView "Action" @13
+				    location   	(272, 225)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@13
+					location   	(272, 224)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	308
+					justify    	0
+					label      	"Action")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4485B15D01BC"
+				    width      	326
+				    height     	573
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @14
+					location   	(272, 400)
+					line_color 	3342489
+					InterObjView 	@13
+					height     	308
+					y_coord    	218
+					Nested     	FALSE))
+				(object InterObjView "<Service>" @15
+				    location   	(912, 225)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@15
+					location   	(912, 224)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	446
+					justify    	0
+					label      	"<Service>")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4485B1750156"
+				    width      	464
+				    height     	573
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @16
+					location   	(912, 400)
+					line_color 	3342489
+					InterObjView 	@15
+					height     	248
+					y_coord    	158
+					Nested     	FALSE))
+				(object InterObjView "<DAO>" @17
+				    location   	(1616, 225)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	TRUE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object ItemLabel
+					Parent_View 	@17
+					location   	(1616, 224)
+					fill_color 	13434879
+					anchor_loc 	1
+					nlines     	2
+					max_width  	346
+					justify    	0
+					label      	"<DAO>")
+				    icon_style 	"None"
+				    line_color 	3342489
+				    fill_color 	13434879
+				    quidu      	"4485B17F0188"
+				    width      	364
+				    height     	573
+				    icon_height 	0
+				    icon_width 	0
+				    icon_y_offset 	0
+				    annotation 	1
+				    Focus_Of_Control 	(object Focus_Of_Control "" @18
+					location   	(1616, 528)
+					line_color 	3342489
+					InterObjView 	@17
+					height     	60
+					y_coord    	-30
+					Nested     	FALSE))
+				(object InterMessView "" @19
+				    location   	(592, 400)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @20
+					Parent_View 	@19
+					location   	(591, 356)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4485B18A036E"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	0
+					justify    	0
+					label      	""
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@13
+				    supplier   	@15
+				    Focus_Src  	@14
+				    Focus_Entry 	@16
+				    origin     	(287, 400)
+				    terminus   	(896, 400)
+				    ordinal    	0)
+				(object InterMessView "" @21
+				    location   	(1264, 528)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    label      	(object SegLabel @22
+					Parent_View 	@21
+					location   	(1263, 484)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					quidu      	"4485B18D0010"
+					anchor_loc 	1
+					nlines     	1
+					max_width  	0
+					justify    	0
+					label      	""
+					pctDist    	0.500000
+					height     	45
+					orientation 	0)
+				    line_color 	3342489
+				    client     	@15
+				    supplier   	@17
+				    Focus_Src  	@16
+				    Focus_Entry 	@18
+				    origin     	(927, 528)
+				    terminus   	(1600, 528)
+				    ordinal    	1)
+				(object Label @23
+				    Parent_View 	@19
+				    location   	(288, 336)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    nlines     	1
+				    max_width  	238
+				    label      	"<metodo()>")
+				(object Label @24
+				    Parent_View 	@21
+				    location   	(944, 464)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    nlines     	1
+				    max_width  	256
+				    label      	"<metodo()>"))))))
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Main"
+		    quid       	"44B0236B029A"
+		    title      	"Main"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object CategoryView "Logical View::1. Arquitetura::Templates::<Template 1>" @25
+			    location   	(224, 224)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@25
+				location   	(80, 140)
+				fill_color 	13434879
+				nlines     	2
+				max_width  	288
+				justify    	0
+				label      	"<Template 1>")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"44A12AC102A4"
+			    width      	300
+			    height     	180))))))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "Main"
+	    quid       	"44B022DF03CF"
+	    title      	"Main"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	0
+	    items      	(list diagram_item_list
+		(object CategoryView "Logical View::1. Arquitetura::Mecanismos" @26
+		    location   	(304, 256)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@26
+			location   	(160, 172)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	288
+			justify    	0
+			label      	"Mecanismos")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"449FFCCF03DC"
+		    width      	300
+		    height     	180)
+		(object CategoryView "Logical View::1. Arquitetura::Templates" @27
+		    location   	(816, 256)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@27
+			location   	(672, 172)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	288
+			justify    	0
+			label      	"Templates")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"4485B0AD0074"
+		    width      	300
+		    height     	180)))))

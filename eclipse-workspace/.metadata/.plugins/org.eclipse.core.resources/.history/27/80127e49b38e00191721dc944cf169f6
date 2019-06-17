@@ -1,0 +1,61 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>		
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<!-- Add Guest Modal-->
+		<div id="register-event-modal" class="modal fade" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Register Event</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<form method="post">
+						<div class="modal-body">
+							<div class="form-group">
+								<div class="form-label-group">
+									<input type="text" id="nameEventInsert" class="form-control" name="name"  placeholder="Name"/>
+									<label for="nameEventInsert">Name</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<div class="form-label-group">
+											<input type="text" id="placeInsert" class="form-control" name="place" 
+												placeholder="Place"/>
+											<label for="placeInsert">Place</label>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-label-group">
+											<input type="date" id="dateInsert" class="form-control" name="date" placeholder="Date"/>
+											<label for="dateInsert">Date</label>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-label-group">
+											<input type="text" id="timeInsert" class="form-control" name="time" placeholder="Time"/>
+											<label for="timeInsert">Time</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<input type="submit" class="btn btn-primary btn-block btn-primary-overwrite" value="Add Guest"/>
+                			<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

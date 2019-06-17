@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.vale.com/InternetSales/services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns0="http://www.vale.com/InternetSales.xsd" name="Untitled" targetNamespace="http://www.vale.com/InternetSales/services">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.vale.com/InternetSales.xsd" targetNamespace="http://www.vale.com/InternetSales.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Authorizer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Código da Autorizadora </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BankTicketAdress" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Endereço do comprador</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BankTicketCEP" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>CEP do comprador</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BankTicketCPF" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>CPF do comprador </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BankTicketCity" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Cidade do comprador</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BankTicketName" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Nome do comprador</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="BankTicketUF" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Estado do comprador</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="EstablishmentTicket" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Cupom do estabelecimento em caso de pagamento efetuado.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Exception">
+                <xs:annotation>
+                    <xs:documentation>Exceção</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:ExceptionType">
+                            <xs:annotation>
+                                <xs:documentation>Tipo Exceção
+I: Infra-Estrutura
+N: Negócio
+</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:ExceptionCode">
+                            <xs:annotation>
+                                <xs:documentation>Código da Exceção</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:ExceptionDescription">
+                            <xs:annotation>
+                                <xs:documentation>Mensagem da Exceção</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ExceptionCode" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Código da Exceção</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ExceptionDescription" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Mensagem da Exceção</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ExceptionType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Tipo Exceção
+I: Infra-Estrutura
+N: Negócio
+</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="InternetSales">
+                <xs:annotation>
+                    <xs:documentation>Schema utilizado pela integracao de Venda pela Internet entre o SGPWeb e o e-SiTef.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element ref="ns0:Request"/>
+                        <xs:element ref="ns0:Response"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Message" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Mensagem da autorizadora</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Nit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>NIT criptografado da transação</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Nsu" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>Número seqüencial da loja </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NsuHost" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Número seqüencial único da Autorizadora</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="NsuSitef" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Número seqüencial único do SiTef</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PaymentType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Tipo do pagamento</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Plots" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>Número de parcelas</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Realocation" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>redirecionamento</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Request">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="StartTransationRequest">
+                            <xs:annotation>
+                                <xs:documentation>Envio de Iniciar Transacao</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="ns0:Store">
+                                        <xs:annotation>
+                                            <xs:documentation>Código da loja </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Value">
+                                        <xs:annotation>
+                                            <xs:documentation>Valor total da compra em centavos</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:RequestCode">
+                                        <xs:annotation>
+                                            <xs:documentation>Código do Pedido na Loja</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Nsu" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número seqüencial da loja </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Authorizer" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Código da Autorizadora </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Plots" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número de parcelas</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Style" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Estilo da Janela de venda</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:urlSuccess" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>URL de redirecionamento do cliente em caso de sucesso.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:urlError" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>URL de redirecionamento do cliente em caso de fracasso.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:urlCancel" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>URL de redirecionamento do cliente em caso de cancelamento.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Realocation" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>redirecionamento</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:BankTicketCPF" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>CPF do comprador </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:BankTicketName" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Nome do comprador</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:BankTicketAdress" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Endereço do comprador</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:BankTicketCEP" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>CEP do comprador</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:BankTicketCity" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Cidade do comprador</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:BankTicketUF" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Estado do comprador</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="StatusNotifyRequest">
+                            <xs:annotation>
+                                <xs:documentation>Envio de Avisar Status</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="ns0:Nit">
+                                        <xs:annotation>
+                                            <xs:documentation>NIT criptografado da transação</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:RequestCode">
+                                        <xs:annotation>
+                                            <xs:documentation>Código do Pedido na Loja</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Nsu" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número seqüencial da loja </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Status">
+                                        <xs:annotation>
+                                            <xs:documentation>Status do Pedido</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:NsuSitef" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número seqüencial único do SiTef</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:NsuHost" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número seqüencial único da Autorizadora</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Ticket" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Cupom do pagamento </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:EstablishmentTicket" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Cupom do estabelecimento em caso de pagamento efetuado.</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Authorizer" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Código da Autorizadora </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:PaymentType" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Tipo do pagamento</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:SitefDate" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Data do pagamento</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Plots" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número de parcelas</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Message" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Mensagem da autorizadora</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="StatusQueryRequest">
+                            <xs:annotation>
+                                <xs:documentation>Envio de Consulta de Status</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="ns0:Nit" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>NIT criptografado da transação</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RequestCode" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Código do Pedido na Loja</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Response">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="StartTransationResponse">
+                            <xs:annotation>
+                                <xs:documentation>Resposta do servico Iniciar Transacao</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="ns0:Nit" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>NIT criptografado da transação</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Nsu" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Número seqüencial da loja </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:ReturnStatus">
+                                        <xs:annotation>
+                                            <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Exception" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Exceção</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="StatusNotifyResponse">
+                            <xs:annotation>
+                                <xs:documentation>Resposta do servico de Avisar Status</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="ns0:ReturnStatus">
+                                        <xs:annotation>
+                                            <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Exception" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Exceção</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="StatusQueryResponse">
+                            <xs:annotation>
+                                <xs:documentation>Resposta do servico Consulta de Status</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element ref="ns0:ReturnStatus">
+                                        <xs:annotation>
+                                            <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element ref="ns0:Exception" minOccurs="0">
+                                        <xs:annotation>
+                                            <xs:documentation>Exceção</xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ReturnStatus" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="SitefDate" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Data do pagamento</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StartTransationRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:Store">
+                            <xs:annotation>
+                                <xs:documentation>Código da loja </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Value">
+                            <xs:annotation>
+                                <xs:documentation>Valor total da compra em centavos</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:RequestCode">
+                            <xs:annotation>
+                                <xs:documentation>Código do Pedido na Loja</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Nsu" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número seqüencial da loja </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Authorizer" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Código da Autorizadora </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Plots" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número de parcelas</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Style" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Estilo da Janela de venda</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:urlSuccess" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>URL de redirecionamento do cliente em caso de sucesso.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:urlError" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>URL de redirecionamento do cliente em caso de fracasso.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:urlCancel" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>URL de redirecionamento do cliente em caso de cancelamento.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Realocation" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>redirecionamento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:BankTicketCPF" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>CPF do comprador </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:BankTicketName" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Nome do comprador</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:BankTicketAdress" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Endereço do comprador</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:BankTicketCEP" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>CEP do comprador</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:BankTicketCity" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Cidade do comprador</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:BankTicketUF" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Estado do comprador</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="StartTransationResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:Nit" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>NIT criptografado da transação</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Nsu" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número seqüencial da loja </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:ReturnStatus">
+                            <xs:annotation>
+                                <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Exception" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Exceção</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Status" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Status do Pedido</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="StatusNotifyRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:Nit">
+                            <xs:annotation>
+                                <xs:documentation>NIT criptografado da transação</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:RequestCode">
+                            <xs:annotation>
+                                <xs:documentation>Código do Pedido na Loja</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Nsu" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número seqüencial da loja </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Status">
+                            <xs:annotation>
+                                <xs:documentation>Status do Pedido</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:NsuSitef" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número seqüencial único do SiTef</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:NsuHost" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número seqüencial único da Autorizadora</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Ticket" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Cupom do pagamento </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:EstablishmentTicket" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Cupom do estabelecimento em caso de pagamento efetuado.</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Authorizer" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Código da Autorizadora </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:PaymentType" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Tipo do pagamento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:SitefDate" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Data do pagamento</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Plots" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Número de parcelas</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Message" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Mensagem da autorizadora</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="StatusNotifyResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:ReturnStatus">
+                            <xs:annotation>
+                                <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Exception" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Exceção</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="StatusQueryRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:Nit" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>NIT criptografado da transação</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="StatusQueryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:ReturnStatus">
+                            <xs:annotation>
+                                <xs:documentation>Status da Mensagem;
+{ “OK” – Success , “NOK” – Error }</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="ns0:Exception" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>Exceção</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Store" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Código da loja </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Style" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Estilo da Janela de venda</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Ticket" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Cupom do pagamento </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Value" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>Valor total da compra em centavos</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="urlCancel" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>URL de redirecionamento do cliente em caso de cancelamento.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="urlError" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>URL de redirecionamento do cliente em caso de fracasso.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="urlSuccess" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>URL de redirecionamento do cliente em caso de sucesso.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="SVRC_InternetSales">
+        <wsdl:port name="InternetSalesEndpoint" binding="tns:InternetSalesEndpointBinding">
+            <soap:address location="http://DanielC2D:5555/services"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="InternetSales">
+        <wsdl:operation name="StartTransaction">
+            <wsdl:input message="tns:StartTransactionRequest"/>
+            <wsdl:output message="tns:StartTransactionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="StatusNotify">
+            <wsdl:input message="tns:StatusNotifyRequest"/>
+            <wsdl:output message="tns:StatusNotifyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="StatusQuery">
+            <wsdl:input message="tns:StatusQueryRequest"/>
+            <wsdl:output message="tns:StatusQueryResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="InternetSalesEndpointBinding" type="tns:InternetSales">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="StartTransaction">
+            <soap:operation style="document" soapAction="/StartTransaction"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="startTransaction"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="startTransaction"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="StatusNotify">
+            <soap:operation style="document" soapAction="/StatusNotify"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="statusNotify"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="statusNotify"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="StatusQuery">
+            <soap:operation style="document" soapAction="/StatusQuery"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="statusQuery"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="statusQuery"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="StartTransactionRequest">
+        <wsdl:part name="startTransaction" element="ns0:StartTransationRequest"/>
+    </wsdl:message>
+    <wsdl:message name="StartTransactionResponse">
+        <wsdl:part name="startTransaction" element="ns0:StartTransationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StatusNotifyRequest">
+        <wsdl:part name="statusNotify" element="ns0:StatusNotifyRequest"/>
+    </wsdl:message>
+    <wsdl:message name="StatusNotifyResponse">
+        <wsdl:part name="statusNotify" element="ns0:StatusNotifyResponse"/>
+    </wsdl:message>
+    <wsdl:message name="StatusQueryRequest">
+        <wsdl:part name="statusQuery" element="ns0:StatusQueryRequest"/>
+    </wsdl:message>
+    <wsdl:message name="StatusQueryResponse">
+        <wsdl:part name="statusQuery" element="ns0:StatusQueryResponse"/>
+    </wsdl:message>
+</wsdl:definitions>

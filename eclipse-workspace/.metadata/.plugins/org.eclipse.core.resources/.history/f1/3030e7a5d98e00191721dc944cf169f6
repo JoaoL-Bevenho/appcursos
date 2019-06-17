@@ -1,0 +1,82 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="css/local.css">
+		<link type="text/css" rel="stylesheet" href="css/admin-form.css">
+		<!-- Bootstrap core CSS-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<!--Glyphicons-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/glyph_css/glyph_bootstrap.css">
+		
+		<meta charset="UTF-8">
+		<title>Event List</title>
+	</head>
+	<body>
+		<nav class="navbarnavbar-expand-lg navbar-light bg-light">
+			<div class="navtitle-area">
+				<label class="navbar-brand" href="#">List of Events</label>
+			</div>
+			<ul class="navbar-nav navbtn-area">
+				<li class="nav-item active">
+					<button class="btn nav-btn nav-link modal-trigger" data-toggle="modal" data-target="#register-event-modal">
+						<span class="glyphicon glyphicon-plus"></span> Register Event
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div hidden id="checkInsertMessage" th:class="${class}" th:if="${not #strings.isEmpty(message)}"></div>
+		<div class="mainbody-List">
+			<div>
+				<table class="container">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Place</th>
+							<th>Date</th>
+							<th>Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="event:${events}">
+							<td><a th:href="${(#mvc.url('EC#detailsEventGet').arg(0, event.idEvent)).build()}"><span th:text="${event.name}"></span></a></td>
+							<td><span th:text="${event.place}"></span></td>
+							<td><span th:text="${event.date}"></span></td>
+							<td><span th:text="${event.time}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<th:block th:include="modals/registerEventModal"></th:block>
+		<th:block th:include="modals/messageModal"></th:block>
+	</body>
+		<script>
+		$(document).ready(function()
+		{
+			registerInputMasks();	
+			
+			$classCheck = document.getElementById("checkInsertMessage");
+			if($classCheck.classList.contains('error-msg'))
+			{
+				$('#message-modal').modal();
+				$modalHeader = document.getElementById('message-header');
+				$modalHeader.className += " error-msg";
+				$('#message-modal').openModal;
+			}
+			if($classCheck.classList.contains('success-msg'))
+			{
+				$('#message-modal').modal();
+				$modalHeader = document.getElementById('message-header');
+				$modalHeader.className += " success-msg";
+				$('#message-modal').openModal;
+			}
+		});
+	</script>
+</html>

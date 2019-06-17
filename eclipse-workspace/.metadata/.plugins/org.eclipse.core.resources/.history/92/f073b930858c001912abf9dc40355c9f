@@ -1,0 +1,15 @@
+
+<div id="message-modal" class="modal modal-message-overwrite modal-fixed-footer modal-fixed-footer-overwrite">
+	<form method="post">
+		<div class="modal-header">
+			<h5><b>ERROR</b></h5>
+		</div>
+		<div class="modal-content modal-content-overwrite">
+			Name: <input type="text" value="" name="nameGuest"/>
+			CPF: <input type="text" value="" name="cpf" id="cpfinput"/>
+		</div>
+		<div class="modal-footer">
+			<button class="modal-action modal-close btn waves-effect waves-light btn">Ok</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="css/local.css">
+		<link type="text/css" rel="stylesheet" href="css/admin-form.css">
+		<!-- Bootstrap core CSS-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<!--Glyphicons-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/glyph_css/glyph_bootstrap.css">
+		
+		<meta charset="UTF-8">
+		
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="nav-wrapper">
+				<a href="#" class="brand-logo brand-logo-overwrite">Event Registration</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="/events" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>List of Events</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header> 
+		<div class="mainbody-InsertEvent">
+<!-- 			<th:block th:include="messageValidation"></th:block> -->
+			<form class="container " method="post">
+				Name:<input type="text" value="" name="name" />
+				<div class="row">
+	 				<div class="input-field col s5">
+						Place:<input type="text" value="" name="place" />
+					</div>
+					<div class="input-field col s3">
+						Date:<input type="date" value="" name="date" />
+					</div>
+					<div class="input-field col s4">
+						Time:<input type="text" value="" name="time" id="timeinput" />
+					</div>
+				</div>
+				<div class="div-submitButton">
+					<button type="submit" class="waves-effect waves-light btn">Register Event</button>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){ registerInputMasks(); })
+	</script>
+</html>

@@ -1,0 +1,2 @@
+O Manual CHM as vezes fica bloqueado, não apresentando as informações corretamente.
+Para desbloquear, clique com o botão direito do mouse e acione o botão de desbloqueio.

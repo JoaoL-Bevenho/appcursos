@@ -1,0 +1,96 @@
+.brand-logo-overwrite
+{
+	margin-left:40px !important;
+}
+
+.mainbody-List
+{
+	margin-top:3% !important;
+ 	margin-left:7% !important;
+	margin-right:7% !important;
+	max-height: auto !important;
+	max-width: auto !important;
+}
+
+.mainbody-Guest
+{
+	margin-top:3% !important;
+ 	margin-left:7% !important;
+	margin-right:7% !important;
+	max-height: auto !important;
+	max-width: auto !important;
+	text-align: center !important;
+}
+
+.mainbody-InsertEvent
+{
+	margin-top:3% !important;
+ 	margin-left:10% !important;
+	margin-right:10% !important;
+	max-width:100% !important;
+	height:auto !important;
+	text-align: left !important;
+}
+
+.page-title
+{
+	max-width:100% !important;
+	height:auto !important;
+	text-align:center !important;
+}
+
+.div-submitButton
+{
+	max-width: 100% !important;
+	text-align:center !important;
+	right: 0;
+	padding-right: 180% !impotant;
+}
+
+.nav-btn
+{
+	background-color: #0f4ca8 !important;
+	color: #ffffff !important;
+	margin-left: 10px;
+}
+.navtitle-area
+{
+	max-width: 100% !important;
+}
+.navbtn-area
+{
+	max-width: 100% !important;
+	margin-right: 20px !important;
+	position:absolute;
+	right: 0;
+}
+
+.btn-primary-overwrite
+{
+	width: 30% !important;
+}
+
+.error-msg
+{
+	background-color: #cc0000 !important;
+	color:#ffffff !important;
+    border-radius: 3px !important;
+}
+
+.success-msg
+{
+	background-color: #009900 !important;
+	color:#ffffff !important;
+    border-radius: 3px !important;
+}
+
+.table-format
+{
+	text-align: center
+}
+
+.container-overwrite
+{
+	margin-right: 80% !important;
+	margin-leftt: 80% !important;
+}

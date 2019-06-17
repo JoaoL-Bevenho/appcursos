@@ -1,0 +1,74 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		
+		<!--Import Google Icon Font-->
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	    <link type="text/css" rel="stylesheet" href="css/local.css">
+	    
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8">
+		<title>Event List</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="navtitle-area">
+				<label class="navbar-brand" href="#">List of Events</label>
+			</div>
+			<ul class="navbar-nav navbtn-area">
+				<li class="nav-item active">
+					<button class="btn nav-btn nav-link modal-trigger" data-toggle="modal" data-target="#register-guest-modal">
+						<span class="glyphicon glyphicon-plus"></span> Add Guest
+					</button>
+				</li>
+				<li class="nav-item active">
+					<a class="btn nav-btn nav-link" href="/registerEvent">
+						<span class="glyphicon glyphicon-plus"></span> Register Event
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<header>
+			<nav>
+				<div class="nav-wrapper">
+				<a href="#" class="brand-logo brand-logo-overwrite">List of Events</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="/registerEvent" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Register Event</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<th:block th:include="modals/registerEventModal"></th:block>
+		<div class="mainbody-List">
+			<div>
+				<table class="container">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Place</th>
+							<th>Date</th>
+							<th>Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="event:${events}">
+							<td><a th:href="${(#mvc.url('EC#detailsEventGet').arg(0, event.idEvent)).build()}"><span th:text="${event.name}"></span></a></td>
+							<td><span th:text="${event.place}"></span></td>
+							<td><span th:text="${event.date}"></span></td>
+							<td><span th:text="${event.time}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

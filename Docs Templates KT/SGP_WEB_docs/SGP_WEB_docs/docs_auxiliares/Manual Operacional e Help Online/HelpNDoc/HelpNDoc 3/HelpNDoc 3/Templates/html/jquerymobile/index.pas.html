@@ -1,0 +1,219 @@
+<%
+var
+	aTopicList: THndTopicsInfoArray;
+	aKeywordList: THndKeywordsInfoArray;
+	nBlocLevel: integer = 0;
+	nCurTopic, nCurTopicLevel, nDif, nClose: integer;
+	nCurKeyword, nCurKeywordLevel, nCurKeywordTopic: integer;
+	sCurTopic, sCurKeyword, sProjectTitle: string;
+	sKeywordLink, sKeywordOnClick: string;
+	aAssociatedTopics: array of string;
+
+begin
+
+	// Setup the file name
+	HndGeneratorInfo.CurrentFile := ExtractFileName(HndGeneratorInfo.OutputFile);
+
+	sProjectTitle := HndProjects.GetProjectTitle();
+	aTopicList := HndTopics.GetTopicListVisible(False);
+	aKeywordList := HndKeywords.GetKeywordList(False);
+%>
+
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title><% print(HTMLEncode(sProjectTitle)); %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="js/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/hnd.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+		var bSearchDataLoaded = false;
+		
+		$(document).ready(function()
+		{
+			// Load search data
+			$.getScript("js/searchdata.js",	function() {
+				bSearchDataLoaded = true;
+			});
+		});
+
+		function ShowKwPopup(oSender, aLinks)
+		{
+			return true;
+		}
+		
+		function PerformSearch()
+		{
+			sValue = $("#search_input").val();
+			$("#search_results").html('Searching...');
+			$("#search_results").listview('refresh');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('<li>No results found.</li>');
+			}
+			else
+			{
+				$("#search_results").html('');
+				var oUl = $("#search_results");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt]][0] + "?search=" + escape(sValue) + "'>" + unescape(aTl[oSearchEngine.aResults[nCnt]][1]) + "</a></li>");
+				}
+			}
+			$("#search_results").listview('refresh');
+			return false;
+		}
+	
+	</script>
+</head>
+
+<body>
+
+	<div data-role="page" id="toc"> 
+	
+		<div data-role="header" data-id="header" data-position="fixed">
+			<h1><% print(HTMLEncode(sProjectTitle)); %></h1>
+
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#toc" class="ui-btn-active">Table of contents</a></li>
+					<li><a href="#index">Index</a></li>
+					<li><a href="#search">Search</a></li>
+				</ul>
+			</div>
+		</div> 
+		
+		<div data-role="content">
+			<ul data-role="listview">
+			
+				<%
+				for nCurTopic := 0 to length(aTopicList) - 1 do
+				begin
+					sCurTopic := aTopicList[nCurTopic].id;
+					nCurTopicLevel := HndTopics.GetTopicLevel(sCurTopic);
+				%>
+				
+					<li class="level<% print(inttostr(nCurTopicLevel)); %>">
+						<a href="<% printf('%s.html', [HndTopics.GetTopicHelpId(sCurTopic)]); %>">
+							<% print(HTMLEncode(HndTopics.GetTopicCaption(sCurTopic))); %>
+						</a>
+					</li>
+				
+				<%
+				end;
+				%>
+				
+			</ul>
+		</div> 
+		
+		<div data-role="footer">
+			<h4><% print(HTMLEncode(HndProjects.GetProjectCopyright())); %></h4>
+		</div> 
+		
+	</div><!-- /toc -->
+	
+	<div data-role="page" data-id="header" data-position="fixed" id="index"> 
+	
+		<div data-role="header">
+			<h1><% print(HTMLEncode(sProjectTitle)); %></h1>
+
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#toc">Table of contents</a></li>
+					<li><a href="#index" class="ui-btn-active">Index</a></li>
+					<li><a href="#search">Search</a></li>
+				</ul>
+			</div>
+		</div> 
+		
+		<div data-role="content">
+
+			<ul data-role="listview">
+			
+				<%
+				for nCurKeyword := 0 to length(aKeywordList) - 1 do
+				begin
+					sCurKeyword := aKeywordList[nCurKeyword].id;
+					nCurKeywordLevel := HndKeywords.GetKeywordLevel(sCurKeyword);
+					aAssociatedTopics := HndTopicsKeywords.GetTopicsAssociatedWithKeyword(sCurKeyword);
+					if Length(aAssociatedTopics) > 0 then
+					begin
+						sKeywordLink := format('%s.html', [HndTopics.GetTopicHelpId(aAssociatedTopics[0])]);
+						sKeywordOnClick := 'return ShowKwPopup(this, [';
+						for nCurKeywordTopic := 0 to Length(aAssociatedTopics) - 1 do
+						begin
+							if nCurKeywordTopic > 0 then sKeywordOnClick := sKeywordOnClick + ',';
+							sKeywordOnClick := sKeywordOnClick + format('[''%s'',''%s.html'']', [HndTopics.GetTopicCaption(aAssociatedTopics[nCurKeywordTopic]), HndTopics.GetTopicHelpId(aAssociatedTopics[nCurKeywordTopic])]);
+						end;
+						sKeywordOnClick := sKeywordOnClick  + ']);';
+					end
+					else begin
+						sKeywordLink := '';
+						sKeywordOnClick := 'return false;';
+					end;
+				%>
+				
+					<li class="level<% print(inttostr(nCurKeywordLevel)); %>">
+						<a href="<% print(sKeywordLink); %>" onclick="<% print(sKeywordOnClick); %>">
+							<% print(HTMLEncode(HndKeywords.GetKeywordCaption(sCurKeyword))); %>
+						</a>
+					</li>
+				
+				<%
+				end;
+				%>
+				
+			</ul>
+		
+		</div> 
+		
+		<div data-role="footer">
+			<h4><% print(HTMLEncode(HndProjects.GetProjectCopyright())); %></h4>
+		</div> 
+		
+	</div><!-- /index -->
+	
+	<div data-role="page" data-id="header" data-position="fixed" id="search"> 
+	
+		<div data-role="header">
+			<h1><% print(HTMLEncode(sProjectTitle)); %></h1>
+
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#toc">Table of contents</a></li>
+					<li><a href="#index">Index</a></li>
+					<li><a href="#search" class="ui-btn-active">Search</a></li>
+				</ul>
+			</div>
+		</div> 
+		
+		<div data-role="content">
+			<form action="" method="post" onsubmit="return PerformSearch();" data-ajax="false">
+				<input type="search" name="search_input" id="search_input" value="" />
+			</form>
+			
+			<h2>Search results</h2>
+			
+			<ul data-role="listview" id="search_results">
+				<li>No search performed.</li>
+			</ul>
+		</div> 
+		
+		<div data-role="footer">
+			<h4><% print(HTMLEncode(HndProjects.GetProjectCopyright())); %></h4>
+		</div> 
+
+</body>
+
+</html>
+
+<%
+end.
+%>

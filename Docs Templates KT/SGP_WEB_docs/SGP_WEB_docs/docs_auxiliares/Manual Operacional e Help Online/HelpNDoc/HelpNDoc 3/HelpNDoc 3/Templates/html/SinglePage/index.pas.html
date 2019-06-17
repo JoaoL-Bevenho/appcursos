@@ -1,0 +1,70 @@
+<%
+
+// ***
+// * This template is described as a tutorial in HelpNDoc's help file
+// ***
+
+// Variable declarations
+var
+	// List of topics available in the current project
+	aTopicList: THndTopicsInfoArray;
+	// 4. Current topic index
+	nCurTopic: Integer;
+	// 8. Topic level
+	nTopicLevel: integer;
+	
+// Main program
+begin
+	// 1. Output BOM for HTML UTF8 files
+	HndGeneratorInfo.BOMOutput := True;
+	// 2. Instruct the generator to generate the desired output file
+	HndGeneratorInfo.CurrentFile := ExtractFileName(HndGeneratorInfo.OutputFile);
+	// 3. Get the list of topics available
+	aTopicList := HndTopics.GetTopicListVisible(False);
+%>
+
+<html>
+<head>
+	<title><% print(HTMLEncode(HndProjects.GetProjectTitle())); %></title>
+	<style type="text/css">
+	<%
+		// 12. Output global CSS content
+		print(HndProjects.GetProjectCssContent());
+	%>
+	
+		.copyright {
+			font-style: italic;
+			padding-top: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<%
+	
+	// 5. Loop through all the topics
+	for nCurTopic := 0 to length(aTopicList) - 1 do
+	begin
+		// 6. Notify about the topic being generated
+		HndGeneratorInfo.CurrentTopic := aTopicList[nCurTopic].id;
+		// 9. Add an anchor to be able to link to that topic
+		printf('<a name="%s"></a>', [aTopicList[nCurTopic].helpid]);
+		// 10. Get the topic level
+		nTopicLevel := HndTopics.GetTopicLevel(HndGeneratorInfo.CurrentTopic);
+		// 11. Add the topic title
+		printf('<h%d>%s</h%d>', [nTopicLevel, HndTopics.GetTopicHeaderTextCalculated(HndGeneratorInfo.CurrentTopic), nTopicLevel]);
+		// 7. Output the topic content
+		print(HndTopics.GetTopicContentAsHtml(HndGeneratorInfo.CurrentTopic));
+	end;
+	
+	%>
+	
+	<p class="copyright">
+		<% print(HTMLEncode(HndProjects.GetProjectCopyright())); %>
+	</p>
+</body>
+</html>
+
+<%
+end.
+%>

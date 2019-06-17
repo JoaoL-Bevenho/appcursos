@@ -1,0 +1,74 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.2.0311.2600"
+    charSet    	0)
+
+(object Class_Category "<Mecanismo 1>"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"41781064037A"
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class_Category "Interface"
+	    quid       	"449FF97B0293"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Mechanism @1
+		    logical_models 	(list unit_reference_list)))
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Modelo Estático"
+		    quid       	"41781064037B"
+		    title      	"Modelo Estático"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list))
+		(object InteractionDiagram "Modelo Dinâmico"
+		    mechanism_ref 	@1
+		    quid       	"417810D40369"
+		    title      	"Modelo Dinâmico"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list))))
+	(object Class_Category "Implementação"
+	    quid       	"449FF98503D1"
+	    exportControl 	"Public"
+	    logical_models 	(list unit_reference_list
+		(object Mechanism @2
+		    logical_models 	(list unit_reference_list)))
+	    logical_presentations 	(list unit_reference_list
+		(object ClassDiagram "Modelo Estático"
+		    quid       	"449FF9B1007E"
+		    title      	"Modelo Estático"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list))
+		(object InteractionDiagram "Modelo Dinâmico"
+		    mechanism_ref 	@2
+		    quid       	"417810E7038B"
+		    title      	"Modelo Dinâmico"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list)))))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "Main"
+	    quid       	"44B02539024F"
+	    title      	"Main"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	0
+	    items      	(list diagram_item_list))))

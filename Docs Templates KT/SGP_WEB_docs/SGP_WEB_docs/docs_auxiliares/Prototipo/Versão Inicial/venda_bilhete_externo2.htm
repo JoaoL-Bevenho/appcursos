@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SGP WEB</title>
+	<link rel="stylesheet" href="css/sgpweb.css">
+
+	<script>
+		var assentosDisp     = 3;
+		var assentosIdaUso   = 3;
+		var assentosVoltaUso = 3;
+		
+		function reservarAssentoIda(assento){
+
+			if(assento.className == "assentoReservado"){
+				assentosIdaUso--;
+				assento.className = "assentoVazio"
+			}else if(assento.className == "assentoVazio"){
+				assentosIdaUso++;
+				if(assentosIdaUso <= assentosDisp){
+					assento.className = "assentoReservado"				
+				}else{assentosIdaUso=3;}
+			}
+				//alert(assento.className);			
+		} 
+		
+		function reservarAssentoVolta(assento){
+
+			if(assento.className == "assentoReservado"){
+				assentosVoltaUso--;
+				assento.className = "assentoVazio"
+			}else if(assento.className == "assentoVazio"){
+				assentosVoltaUso++;
+				if(assentosVoltaUso <= assentosDisp){
+					assento.className = "assentoReservado"				
+				}else{assentosVoltaUso=3;}
+			}
+				//alert(assento.className);			
+		} 	
+		function cancelar(){
+			if(confirm('Deseja realmente cancelar a venda?')){
+				window.location = 'venda_bilhete_externo1.htm';
+			}
+		}			
+	</script>
+    <style type="text/css">
+<!--
+.style1 {font-size: 12px}
+.style5 {font-size: 9px}
+.style6 {font-size: 10px}
+-->
+    </style>
+</head>
+
+<body>
+<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="middle" colspan="3">&nbsp;</td>
+  </tr>   
+  <tr>
+    <td width="73%" height="30" align="left" valign="middle" class="linhaHeader"><div align="left" class="style1"><u>Venda de passagens &gt;&gt; Clientes Externos &gt;&gt; Escolha de Assentos </u></div></td>
+    <td width="13%" nowrap="nowrap" class="linhaHeader style5"><div align="right">Outras vendas: </div></td>
+    <td width="14%" nowrap="nowrap" class="linhaHeader"><div align="right"><span class="style5"><a href="venda_bilhete_funcionario1.htm">Funcion&aacute;rios/Aposentados</a> <br />
+          <a href="venda_bilhete_funcionario1.htm">N&atilde;o Remunerada</a></span></div></td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle" colspan="3"><hr/></td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle" colspan="3">&nbsp;</td>
+  </tr>  
+  <tr>
+    <td align="center" valign="middle" colspan="3"><input type="image" name="imageField" src="img/bt_voltar.gif" onclick="history.go(-1)" />
+		  &nbsp;&nbsp;&nbsp;<input type="image" name="imageField4" src="img/bt_avancar.gif" onclick="javascript:window.location = 'venda_bilhete_externo3.htm'" />&nbsp;&nbsp;&nbsp;
+		  <img name="imageField2" src="img/bt_cancelar.gif" onclick="cancelar()"/></td>
+  </tr>  
+  <tr>
+    <td align="left" valign="middle" colspan="3">&nbsp;</td>
+  </tr>     
+</table>
+
+	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+	  <tr><td align="left" valign="middle" class="linhaHeader" height="30"><div align="left" class="style1">Assentos</div></td>
+	  </tr>
+	  <tr><td align="left" valign="middle"><hr onclick="reservarAssento(this)"/></td></tr>  
+	  <tr><td valign="middle">
+	  	<table border="0" align="center" cellspacing="2"  bordercolor="#000000">
+			<tr>
+				<td class="assentoCheio">&nbsp;</td>
+				<td class="textoDestacado style6">Assento Cheio</td>
+				<td class="assentoReservado">&nbsp;</td>
+				<td class="textoDestacado style6">Assento Reservado</td>
+				<td class="assentoVazio">&nbsp;</td>
+				<td class="textoDestacado style6">Assento Vazio</td>								
+			</tr>
+		</table>
+	  </td></tr>  
+	</table>
+	
+
+	
+	<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0"><tr>
+	  <td>
+	  
+	    <table width="90%" border="1" align="center" cellspacing="2" bordercolor="#000000">
+          <tr>
+            <td colspan="22" class="tableOddLineSmall"><strong> Carro 1 </strong></td>
+          </tr>
+          <tr>
+            <td rowspan="2">&nbsp;</td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento1" value="1" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento5" value="5" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento9" value="9" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento13" value="13" class="assentoReservado" alt="Reservado pelo sistema"onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento17" value="17" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento21" value="21" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento25" value="25" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento29" value="29" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento33" value="33" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento37" value="37" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento41" value="41" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento45" value="45" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento49" value="49" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento53" value="53" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento57" value="57" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td colspan="6" rowspan="2" align="center" valign="middle">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento2" value="2" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento6" value="6" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento10" value="10" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento14" value="14" class="assentoReservado" alt="Reservado pelo sistema"onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento18" value="18" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento22" value="22" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento26" value="26" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento30" value="30" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento34" value="34" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento38" value="38" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento42" value="42" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento46" value="46" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento50" value="50" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento54" value="54" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento58" value="58" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          </tr>
+          <tr>
+            <td colspan="22">&nbsp;</td>
+          </tr>
+          <tr>
+            <td rowspan="2">&nbsp;</td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento3" value="3" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento7" value="7" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento11" value="11" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento15" value="15" class="assentoReservado" alt="Reservado pelo sistema"onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento19" value="19" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento23" value="23" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento27" value="27" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento31" value="31" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento35" value="35" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento39" value="39" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento43" value="43" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento47" value="47" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento51" value="51" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento55" value="55" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento59" value="59" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td colspan="6" rowspan="2" align="center" valign="middle">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento4" value="4" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento8" value="8" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento12" value="12" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento16" value="16" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento20" value="20" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento24" value="24" class="assentoCheio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento28" value="28" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento32" value="32" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento36" value="36" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento40" value="40" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento44" value="44" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento48" value="48" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento52" value="52" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento56" value="56" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+            <td align="center" valign="middle"><input type="button" name="v1_ida_assento60" value="60" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          </tr>
+        </table>
+		<br />
+	    <table width="90%" border="1" align="center" cellspacing="2" bordercolor="#000000">
+		<tr>
+			<td colspan="22" class="tableOddLineSmall"><strong> Carro 2 </strong></td>
+		</tr>
+        <tr>
+          <td rowspan="2">&nbsp;</td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento1" value="1" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento5" value="5" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento9" value="9" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento13" value="13" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento17" value="17" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento21" value="21" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento25" value="25" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento29" value="29" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento33" value="33" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento37" value="37" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento41" value="41" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento45" value="45" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento49" value="49" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento53" value="53" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento57" value="57" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento61" value="61" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento65" value="65" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento69" value="69" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento73" value="73" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento77" value="77" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td rowspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento2" value="2" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento6" value="6" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento10" value="10" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento14" value="14" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento18" value="18" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento22" value="22" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento26" value="26" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento30" value="30" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento34" value="34" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento38" value="38" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento42" value="42" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento46" value="46" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento50" value="50" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento54" value="54" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento58" value="58" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento62" value="62" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento66" value="66" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento70" value="70" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento74" value="74" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento78" value="78" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          </tr>
+        <tr>
+          <td colspan="22">&nbsp;</td>
+        </tr>
+        <tr>
+          <td rowspan="2">&nbsp;</td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento3" value="3" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento7" value="7" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento11" value="11" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento15" value="15" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento19" value="19" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento23" value="23" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento27" value="27" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento31" value="31" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento35" value="35" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento39" value="39" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento43" value="43" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento47" value="47" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento51" value="51" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento55" value="55" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento59" value="59" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento63" value="63" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento67" value="67" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento71" value="71" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento75" value="75" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento79" value="79" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td rowspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento4" value="4" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento8" value="8" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento12" value="12" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento16" value="16" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento20" value="20" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento24" value="24" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento28" value="28" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento32" value="32" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento36" value="36" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento40" value="40" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento44" value="44" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento48" value="48" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento52" value="52" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento56" value="56" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento60" value="60" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento64" value="64" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento68" value="68" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento72" value="72" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento76" value="76" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          <td align="center" valign="middle"><input type="button" name="v2_ida_assento80" value="80" class="assentoVazio" onclick="reservarAssentoIda(this)"/></td>
+          </tr>
+      </table>
+	  </td>
+	</tr></table>
+
+</body>
+</html>

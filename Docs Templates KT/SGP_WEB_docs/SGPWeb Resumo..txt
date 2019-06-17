@@ -1,0 +1,29 @@
+Anotaçoes Gerais SGP WEB.
+- Processo de venda de bilhetes online para a linha ferroviaria da EFMV (estrada de ferro vitoria a minas)
+- Disponibilização através da CVRDNet.
+- Armazenagem: SGBD Oracle Server 10.1.0. 4/ Acesso a base de dados: JDBC utilizando driver nativo para Oracle.
+- Servidor de aplicação Oracle AS 10g rodando em Sun Solaris 8.
+- Linguagem JAVA J2EE/J2SE padrão MVC com frameworks (View - JSP / Controller - Struts / Model - EJB SessionBean Stateless)
+- Funçoes do produto: Cadastro basico, Administração de Trens, Administração Comercial, Passagens, Interface Financeira e relatorios.
+
+- Interfaces Com:
+
+* SEGUR - Autenticação e autorização
+
+* UNILOG FERROVIA - Planejamento, Programação, Acompanhamento da operação, oferta de demanda de carga e controle de ativos ferroviarios. ( A integração se da atraves
+da view T2_OS_SGPWEB (Ordem de Serviço da SGP WEB). Quando é criado um trem de passageiro na SGPWeb é obrigatorio informar uma O.S  e a partir desta ação os trens 
+estarão ligados à oficina, area responsavel por montar fisicamente os trens.
+
+* MALHA FERROVIARIA - informaçoes de Locais ferroviarios para uma rota e utilizado pelo SGPWeb para recuperar estas informaçoes e transformar em relatorios e consulta em tela.
+A integração ocorre através das views RHASGPWV (Ferrovia para SGPWeb), RIESGPWV (Local ferroviario para SGPWeb), RIOSGPWV (Rota para SGPWeb) e componente EJB que é
+criado e mantido pela OUTSI Accenture da Vale.
+
+* TCFL - A comunicação ocorre através do componente InterfaceTCFL onde o mesmo é responsavel por execuçoes fiscais e comerciais e tem como responsabilidade:
+> Atuar como centralizados de solicitaçoes de faturamento/estorno atuando como ponto unico de comunicação.
+> Gerenciar informaçoes comuns envolvidas na solicitação de faturamento (Solicitação, documentos, item etc...).
+> Abstrair as complexibilidades existente na integração com o TCFL , tal como troca de mensagens via TIBCO, Geração do XML respeitando as definiçoes.
+> Gerenciar o retorno do TCFL , atualizando o status da solicitação de faturamento e invocar o sistema de origem para execução de suas regras de negocio sobre as informaçoes.
+
+* PEOPLESOFT - Sistema de gestão de RH utilizando as integrações através das views B8CSGPWV (Empregado para SGPWeb), B8JSGPWV (Dependente empregado para SGPWeb),
+B8ISGPWV (Nucleo RH para SGPWeb) e B8KSGPWV (Sindicato para SGPWeb).Utilizando estas informaçoes para venda de bilhetes e controle do ACT (Acordo Coletivo de Trabalho)
+dos funcionarios da VALE.
