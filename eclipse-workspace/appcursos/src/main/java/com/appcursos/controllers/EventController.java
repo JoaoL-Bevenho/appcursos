@@ -76,6 +76,7 @@ public class EventController {
 		modAView.addObject("guests", guests);
 		return modAView;
 	}
+	
 
 	@RequestMapping(value = "/{idEvent}", method = RequestMethod.POST)
 	public String detailsEventPost(@PathVariable("idEvent") long idEvent, @Valid Guest guest, BindingResult result,
@@ -96,4 +97,13 @@ public class EventController {
 		attributes.addFlashAttribute("class", "success-msg");
 		return "redirect:/{idEvent}";
 	}
+	
+	@RequestMapping(value = "/delete")
+	public String deleteEvent(long idEvent)
+	{
+		Event event = eventRep.findByidEvent(idEvent);
+		eventRep.delete(event);
+		return "redirect:/events";
+	}
+	
 }

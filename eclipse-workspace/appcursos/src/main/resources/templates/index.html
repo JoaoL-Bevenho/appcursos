@@ -27,7 +27,7 @@
 				<li class="nav-item active">
 					<button class="btn nav-btn nav-link modal-trigger" data-toggle="modal" data-target="#register-event-modal">
 						<span class="glyphicon glyphicon-plus"></span> Register Event
-					</a>
+					</button>
 				</li>
 			</ul>
 		</nav>
@@ -41,6 +41,8 @@
 							<th>Place</th>
 							<th>Date</th>
 							<th>Time</th>
+							<th>Edit</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -49,15 +51,19 @@
 							<td><span th:text="${event.place}"></span></td>
 							<td><span th:text="${event.date}"></span></td>
 							<td><span th:text="${event.time}"></span></td>
+							<td class="td-center-content"><a href="#" data-toggle="modal" data-target="#editModal"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
+							<td class="spanDelete td-center-content"><a href="#" data-toggle="modal" data-target="#delete-event-modal"><span class="glyphicon glyphicon-trash"></span> hello</a></td> <!-- th:href="${(#mvc.url('EC#deleteEvent').arg(0, event.idEvent)).build()}" -->
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
+		
 		<th:block th:include="modals/registerEventModal"></th:block>
+		<th:block th:include="modals/deleteEventModal"></th:block>
 		<th:block th:include="modals/messageModal"></th:block>
 	</body>
-		<script>
+	<script>
 		$(document).ready(function()
 		{
 			registerInputMasks();	
@@ -77,6 +83,19 @@
 				$modalHeader.className += " success-msg";
 				$('#message-modal').openModal;
 			}
+		});
+		$(".spanDelete").click(function()
+		{
+			alert('hello');
+			var $rowDelete = $(this).closest("tr"),
+			$tdNameEventDelete = $rowDelete.find("td:eq(0)");
+			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
+			$tdNameEventDelete = $rowDelete.find("td:eq(1)");
+			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
+			$tdNameEventDelete = $rowDelete.find("td:eq(2)");
+			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
+			$tdNameEventDelete = $rowDelete.find("td:eq(3)");
+			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
 		});
 	</script>
 </html>

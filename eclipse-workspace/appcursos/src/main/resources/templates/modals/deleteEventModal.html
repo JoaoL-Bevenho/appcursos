@@ -1,0 +1,58 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>		
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	<div class="modal fade" id="delete-event-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Event Deletion</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<form method="POST">
+					<div class="modal-body">
+						Click on "Delete Event" if you wish to delete the following Event:
+						<div class="form-row">
+							<div class="col-md-6">
+								<label>Name:</label>
+								<label id="nameEventDelete"></label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-6">
+								<label>Place:</label>
+								<label id="placeEventDelete"></label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-6">
+								<label>Date:</label>
+								<label  name="dateEventDelete"></label>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-6">
+								<label>Time:</label>
+								<label id="timeEventDelete"></label>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="submit"
+							class="btn btn-primary btn-block btn-primary-overwrite"
+							id="deleteSubmit" value="Apagar Registro" />
+						<button class="btn btn-secondary" type="button"
+							data-dismiss="modal">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
