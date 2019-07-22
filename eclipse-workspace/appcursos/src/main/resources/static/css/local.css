@@ -17,8 +17,6 @@
 	margin-top:3% !important;
  	margin-left:7% !important;
 	margin-right:7% !important;
-	max-height: auto !important;
-	max-width: auto !important;
 	text-align: center !important;
 }
 
@@ -87,13 +85,10 @@
 
 .table-format
 {
-	text-align: center;
-	margin-left: 20% !important;
-	margin-right: 20% !important;
+	width: auto;
+	height: auto;
+	margin: auto;
 }
 
-.container-overwrite
-{
-	margin-right: 80% !important;
-	margin-leftt: 80% !important;
-}
+.th-guest { padding-right: 100px; padding-left:100px;width: 100%;}
+.td-guest { padding-right: 100px; padding-left:100px;width: 100%;}

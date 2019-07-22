@@ -1,0 +1,59 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>		
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<!-- Edit Guest Modal-->
+		<div class="modal fade" id="edit-event-modal" tabindex="-1"
+			 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Edit Event</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-label-group">
+								<input type="text" id="nameEventEdit" class="form-control" name="name" placeholder="Name" required/>
+								<label for="nameEventEdit">Name</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-label-group">
+								<input type="text" id="placeEventEdit" class="form-control" name="place" placeholder="Place" required/>
+								<label for="placeEventEdit">Place</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-label-group">
+										<input type="date" id="dateEventEdit" class="form-control" name="date" placeholder="Date" required/>
+										<label for="dateEventEdit">Date</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-label-group">
+										<input type="text" id="timeEventEdit" class="form-control" name="time" placeholder="Time" required/>
+										<label for="timeEventEdit">Time</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<label id="idEventEdit" hidden></label>
+					</div>
+					<div class="modal-footer">
+						<a id="editEventSubmit" href="#" onclick="changeEventEditHref(nameEventEdit.value, placeEventEdit.value, dateEventEdit.value, timeEventEdit.value, idEventEdit.value)" class="btn btn-primary btn-block btn-primary-overwrite">Editar Registro</a>
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

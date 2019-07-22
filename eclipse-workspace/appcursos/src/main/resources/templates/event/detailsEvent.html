@@ -20,7 +20,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navtitle-area">
-				<label class="navbar-brand" href="#">Event Details</label>
+				<label class="navbar-brand">Event Details</label>
 			</div>
 			<ul class="navbar-nav navbtn-area">
 				<li class="nav-item active">
@@ -48,17 +48,22 @@
 				</div>
 				<h4>List of Guests</h4>
 				<div class="table-format">
-					<table class="container container-overwrite">
+					<table class="table-format">
 						<thead>
 							<tr>
-								<th>Name of Guest</th>
-								<th>CPF</th>
+								<th class="th-guest">Name of Guest</th>
+								<th class="th-guest">CPF</th>
+								<th class="text-center th-guest">Edit</th>
+								<th class="text-center th-guest">Delete</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr th:each="guest:${guests}">
-								<td><span th:text="${guest.nameGuest}"></span></td>
-								<td><span th:text="${guest.cpf}"></span></td>
+								<td class="td-guest"><span th:text="${guest.nameGuest}"></span></td>
+								<td class="td-guest"><span th:text="${guest.cpf}"></span></td>
+								<td hidden><span th:text="${event.idEvent}"></span></td>
+								<td class="spanEdit td-guest"><a href="#" data-toggle="modal" data-target="#edit-guest-modal"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
+								<td class="spanDelete td-guest"><a href="#" data-toggle="modal" data-target="#delete-guest-modal"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -66,7 +71,10 @@
 			</div>
 		</div>
 		<th:block th:include="modals/registerGuestModal"></th:block>
+		<th:block th:include="modals/editGuestModal"></th:block>
+		<th:block th:include="modals/deleteGuestModal"></th:block>
 		<th:block th:include="modals/messageModal"></th:block>
+		
 	</body>
 	<script>
 		$(document).ready(function()
@@ -89,6 +97,33 @@
 				$('#message-modal').openModal;
 			}
 		});
-		
+		$(".spanEdit").click(function()
+		{
+			var $rowEdit = $(this).closest("tr"),
+			$tdNameGuestEdit = $rowEdit.find("td:eq(0)");
+			document.getElementById('nameGuestEdit').value = $tdNameGuestEdit.text();
+			$tdCpfGuestEdit = $rowEdit.find("td:eq(1)");
+			document.getElementById('cpfGuestEdit').value = $tdCpfGuestEdit.text();
+			$tdIdEventGuestEdit = $rowEdit.find("td:eq(2)");
+			document.getElementById('idEventGuestEdit').value = $tdIdEventGuestEdit.text();
+		});
+		$(".spanDelete").click(function()
+		{
+			var $rowDelete = $(this).closest("tr"),
+			$tdNameGuestDelete = $rowDelete.find("td:eq(0)");
+			document.getElementById('nameGuestDelete').innerHTML = $tdNameGuestDelete.text();
+			$tdCpfGuestDelete = $rowDelete.find("td:eq(1)");
+			document.getElementById('cpfGuestDelete').innerHTML = $tdCpfGuestDelete.text();
+			$tdIdEventDelete = $rowDelete.find("td:eq(2)");
+			document.getElementById('idEventGuestDelete').value = $tdIdEventDelete.text();
+		});
+		function changeGuestEditHref($nameGuestEdit, $cpfGuestEdit, $idEventEdit)
+		{
+			document.getElementById('editGuestSubmit').href = "/edit/guest/"+$nameGuestEdit+"/"+$cpfGuestEdit+"/"+$idEventEdit;
+		}
+		function changeGuestDeleteHref($cpfGuestDelete, $idEventDelete)
+		{
+			document.getElementById('deleteGuestSubmit').href = "/delete/guest/"+$cpfGuestDelete+"/"+$idEventDelete;
+		}
 	</script>
 </html>

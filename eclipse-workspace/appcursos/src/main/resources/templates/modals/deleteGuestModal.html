@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<!-- Delete Guest Modal-->
-		<div class="modal fade" id="delete-event-modal" tabindex="-1"
+		<div class="modal fade" id="delete-guest-modal" tabindex="-1"
 			 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -18,35 +18,23 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						Click on "Delete Event" if you wish to delete the following Event:
+						Click on "Delete Guest" if you wish to delete the following Guest:
 						<div class="form-row">
 							<div class="col-md-6">
 								<label>Name:</label>
-								<label id="nameEventDelete"></label>
+								<label id="nameGuestDelete"></label>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col-md-6">
-								<label>Place:</label>
-								<label id="placeEventDelete"></label>
+								<label>CPF:</label>
+								<label id="cpfGuestDelete"></label>
 							</div>
 						</div>
-						<div class="form-row">
-							<div class="col-md-6">
-								<label>Date:</label>
-								<label id="dateEventDelete"></label>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="col-md-6">
-								<label>Time:</label>
-								<label id="timeEventDelete"></label>
-							</div>
-						</div>
-						<label id="idEventDelete" hidden></label>
+						<label id="idEventGuestDelete" hidden></label>
 					</div>
 					<div class="modal-footer">
-						<a id="deleteEventSubmit" href="#" onclick="changeEventDeleteHref(idEventDelete.value)" class="btn btn-primary btn-block btn-primary-overwrite">Apagar Registro</a>
+						<a id="deleteGuestSubmit" href="#" onclick="changeGuestDeleteHref(cpfGuestDelete.innerHTML, idEventGuestDelete.value)" class="btn btn-primary btn-block btn-primary-overwrite">Apagar Registro</a>
 						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
 					</div>
 				</div>

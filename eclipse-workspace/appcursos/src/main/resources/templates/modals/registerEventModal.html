@@ -7,8 +7,8 @@
 	</head>
 	<body>
 		<!-- Add Guest Modal-->
-		<div id="register-event-modal" class="modal fade" tabindex="-1"
-			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="register-event-modal" tabindex="-1"
+			 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -21,14 +21,13 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<div class="form-label-group">
-									<input type="text" id="nameEventInsert" class="form-control" name="name"  placeholder="Name"/>
+									<input type="text" id="nameEventInsert" class="form-control" name="name"  placeholder="Name" required/>
 									<label for="nameEventInsert">Name</label>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-label-group">
-									<input type="text" id="placeEventInsert" class="form-control" name="place" 
-										placeholder="Place"/>
+									<input type="text" id="placeEventInsert" class="form-control" name="place" placeholder="Place" required/>
 									<label for="placeEventInsert">Place</label>
 								</div>
 							</div>
@@ -36,13 +35,13 @@
 								<div class="form-row">
 									<div class="col-md-6">
 										<div class="form-label-group">
-											<input type="date" id="dateEventInsert" class="form-control" name="date" placeholder="Date"/>
+											<input type="date" id="dateEventInsert" class="form-control" name="date" placeholder="Date" required/>
 											<label for="dateEventInsert">Date</label>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-label-group">
-											<input type="text" id="timeEventInsert" class="form-control" name="time" placeholder="Time"/>
+											<input type="text" id="timeEventInsert" class="form-control" name="time" placeholder="Time" required/>
 											<label for="timeEventInsert">Time</label>
 										</div>
 									</div>
