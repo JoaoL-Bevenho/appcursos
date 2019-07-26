@@ -17,8 +17,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "event")
-public class Event implements Serializable {
-
+public class Event implements Serializable
+{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@NotNull
@@ -39,15 +39,20 @@ public class Event implements Serializable {
 	private Time time;
 
 	@OneToMany
-	private List<Guest> guest;
+	private List<EventGuest> guest;
 
-	public long getIdEvent() {
-		return idEvent;
+	
+	@Override
+	public String toString()
+	{
+		String toStrVar = "";
+		toStrVar = "Event [idEvent=" + this.idEvent + ", name=" + this.name + ", place=" + this.place;
+		toStrVar += ", date=" + this.date + ", time=" + this.time + ", guest=" + this.guest + "]";
+		return  toStrVar;
 	}
-
-	public void setIdEvent(long idEvent) {
-		this.idEvent = idEvent;
-	}
+	
+	public long getIdEvent() { return idEvent; }
+	public void setIdEvent(long idEvent) { this.idEvent = idEvent; }
 
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
@@ -66,6 +71,6 @@ public class Event implements Serializable {
 	public String getTime() { return String.valueOf(time); }
 	public void setTime(String time) { this.time = Time.valueOf(time); }
 
-	public List<Guest> getGuest() { return guest; }
-	public void setGuest(List<Guest> guest) { this.guest = guest; }
+	public List<EventGuest> getGuest() { return guest; }
+	public void setGuest(List<EventGuest> guest) { this.guest = guest; }
 }

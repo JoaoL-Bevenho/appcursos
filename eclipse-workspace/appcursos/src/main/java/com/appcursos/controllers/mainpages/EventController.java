@@ -1,4 +1,4 @@
-package com.appcursos.controllers;
+package com.appcursos.controllers.mainpages;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,33 +16,31 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.appcursos.models.Event;
-import com.appcursos.models.Guest;
-import com.appcursos.models.StatusInviteGuest;
+import com.appcursos.models.EventGuest;
+import com.appcursos.models.GuestStatusInvite;
 import com.appcursos.repository.EventRepository;
 import com.appcursos.repository.GuestRepository;
-import com.appcursos.repository.StatusInviteGuestRepository;
-
+import com.appcursos.repository.StatusInviteRepository;
 @Controller
 public class EventController {
 	@Autowired
 	public EventRepository eventRep;
 	@Autowired
 	public GuestRepository guestRep;
-	
 	@Autowired
-	public StatusInviteGuestRepository statusInviteGuestRep;
+	public StatusInviteRepository statInvRep;
 	
 	@RequestMapping(value = "/events")
 	public ModelAndView listEventsGet()
 	{
-		ModelAndView modAView = new ModelAndView("index");
+		ModelAndView modAView = new ModelAndView("main-pages/eventList");
 		Iterable<Event> events = eventRep.findAll();
 		modAView.addObject("events", events);
 		return modAView;
 	}
 	
 	@RequestMapping(value = "/events", method = RequestMethod.POST)
-	public String listEventsPost(@Valid Event pEvent, BindingResult result, RedirectAttributes attributes)
+	public String registerEvent(@Valid Event event, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -53,47 +51,48 @@ public class EventController {
 		}
 		else
 		{
-			eventRep.save(pEvent);
+			eventRep.save(event);
 			attributes.addFlashAttribute("messageheader", "Event Created");
 			attributes.addFlashAttribute("message", "Event created with success!");
 			attributes.addFlashAttribute("class", "success-msg");
 			return "redirect:/events";
 		}
 	}
-
-	@RequestMapping(value = "/{idEvent}", method = RequestMethod.GET)
-	public ModelAndView detailsEventGet(@PathVariable("idEvent") long idEvent, @Valid Guest guest, BindingResult result, RedirectAttributes attributes)
+	
+	@RequestMapping(value = "/events/{idEvent}", method = RequestMethod.GET)
+	public ModelAndView detailsEventGet(@PathVariable("idEvent") long idEvent, @Valid EventGuest guest, BindingResult result, RedirectAttributes attributes)
 	{
 		Event event = eventRep.findByidEvent(idEvent);
-		ModelAndView modAView = new ModelAndView("event/detailsEvent");
+		ModelAndView modAView = new ModelAndView("main-pages/eventDetails");
 		modAView.addObject("event", event);
 		
-		Iterable<Guest> guests = guestRep.findByEvent(event);
+		EventGuest guestObj = new EventGuest();
+		Iterable<EventGuest> guests = guestRep.findByEvent(event);
 		modAView.addObject("guests", guests);
 		
-		int checkStatusInviteGuest=0;
-		Iterable<StatusInviteGuest> statusInvite = statusInviteGuestRep.findAll();
-		Iterator<StatusInviteGuest> statusInviteIt = statusInvite.iterator();
-		while(statusInviteIt.hasNext()){statusInviteIt.next(); checkStatusInviteGuest=checkStatusInviteGuest+1; }
-		if(checkStatusInviteGuest==0)
+		int checkStatInvs=0;
+		Iterable<GuestStatusInvite> statusInvites = statInvRep.findAll();
+		Iterator<GuestStatusInvite> statInvIt = statusInvites.iterator();
+		while(statInvIt.hasNext()) { statInvIt.next(); checkStatInvs=checkStatInvs+1; }
+		if(checkStatInvs==0)
 		{
-			List<StatusInviteGuest> stsInvtList = new ArrayList<StatusInviteGuest>();
-			stsInvtList.add(new StatusInviteGuest("Comparecerá"));
-			stsInvtList.add(new StatusInviteGuest("Interessado"));
-			stsInvtList.add(new StatusInviteGuest("Não irá Comparecer"));
-			stsInvtList.add(new StatusInviteGuest("Não Confirmou"));
-			for(StatusInviteGuest stsInvt: stsInvtList)
+			String[] statInvList = {"Confirmed", "Interested", "Not Confirmed", "Refused", "Cancelled"};
+			GuestStatusInvite statInvObj;
+			for(int i=0;i<statInvList.length;i++)
 			{
-				statusInviteGuestRep.save(stsInvt);
-				statusInvite = statusInviteGuestRep.findAll();				
+				statInvObj = new GuestStatusInvite();
+				statInvObj.setStatusInvite(statInvList[i]);
+				statInvRep.save(statInvObj);
 			}
+			statusInvites = statInvRep.findAll();
 		}
-		modAView.addObject("statusinvites", statusInvite);
+		modAView.addObject("statInvsList", statusInvites);
+		modAView.addObject("guestObj", guestObj);
 		return modAView;
 	}
 	
-	@RequestMapping(value = "/{idEvent}", method = RequestMethod.POST)
-	public String detailsEventPost(@PathVariable("idEvent") long idEvent, @Valid Guest guest, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/register/guest/{name}/{cpf}/{idEvent}/{idStatusInvite}")
+	public String registerGuest(@PathVariable("name") String name, @PathVariable("cpf") String cpf, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInvite") long idStatusInvite, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -105,7 +104,12 @@ public class EventController {
 		else
 		{
 			Event event = eventRep.findByidEvent(idEvent);
+			GuestStatusInvite statusInvite = statInvRep.findByidStatusInvite(idStatusInvite);
+			EventGuest guest = new EventGuest();
+			guest.setNameGuest(name);
+			guest.setCpf(cpf);
 			guest.setEvent(event);
+			guest.setStatusInvite(statusInvite);
 			guestRep.save(guest);
 			attributes.addFlashAttribute("messageheader", "Guest Added");
 			attributes.addFlashAttribute("message", "Guest added with success!");
@@ -134,8 +138,8 @@ public class EventController {
 		}
 	}
 	
-	@RequestMapping(value = "/edit/guest/{name}/{cpf}/{idEvent}")
-	public String editGuest(@PathVariable("name") String name, @PathVariable("cpf") String cpf, @PathVariable("idEvent") long idEvent, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/edit/guest/{name}/{cpf}/{idEvent}/{idStatusInvite}")
+	public String editGuest(@PathVariable("name") String name, @PathVariable("cpf") String cpf, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInvite") long idStatusInvite, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -146,7 +150,7 @@ public class EventController {
 		}
 		else
 		{
-			guestRep.editGuest(name, cpf, idEvent, cpf);
+			guestRep.editGuest(name, cpf, idEvent, idStatusInvite, cpf);
 			attributes.addFlashAttribute("messageheader", "Guest Edited");
 			attributes.addFlashAttribute("message", "Guest edited with success!");
 			attributes.addFlashAttribute("class", "success-msg");
@@ -167,8 +171,8 @@ public class EventController {
 		else
 		{
 			Event event = eventRep.findByidEvent(idEvent);
-			Iterable<Guest> guests = guestRep.findByEvent(event);
-			for(Guest guest: guests)
+			Iterable<EventGuest> guests = guestRep.findByEvent(event);
+			for(EventGuest guest: guests)
 			{
 				guestRep.delete(guest);
 			}
@@ -199,7 +203,7 @@ public class EventController {
 		}
 		else
 		{
-			Guest guest = guestRep.findByCpf(cpf, idEvent);
+			EventGuest guest = guestRep.findByCpf(cpf);
 			guestRep.delete(guest);
 			attributes.addFlashAttribute("messageheader", "Guest Deleted");
 			attributes.addFlashAttribute("message", "Guest deleted with success!");

@@ -11,7 +11,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.appcursos.models.Event;
 
-public interface EventRepository extends CrudRepository<Event, String> {
+public interface EventRepository extends CrudRepository<Event, String>
+{
 	Event event = new Event();
 	long idEvent = event.getIdEvent();
 

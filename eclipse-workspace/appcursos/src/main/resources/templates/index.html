@@ -16,117 +16,27 @@
 		<link type="text/css" rel="stylesheet" href="bootstrap/css/glyph_css/glyph_bootstrap.css">
 		
 		<meta charset="UTF-8">
-		<title>Event List</title>
+		<title>Home Page</title>
 	</head>
 	<body>
-		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="navtitle-area">
-				<label class="navbar-brand" href="#">List of Events</label>
+				<label class="navbar-brand">Event Planner</label>
 			</div>
 			<ul class="navbar-nav navbtn-area">
 				<li class="nav-item active">
-					<button class="btn nav-btn nav-link modal-trigger" data-toggle="modal" data-target="#register-event-modal">
-						<span class="glyphicon glyphicon-plus"></span> Register Event
+					<button class="spanRegister btn nav-btn nav-link modal-trigger" data-toggle="modal" data-target="#register-guest-modal">
+						<span class="glyphicon glyphicon-plus"></span> Login
 					</button>
+				</li>
+				<li class="nav-item active">
+					<a class="btn nav-btn nav-link" href="/events">
+						<span class="glyphicon glyphicon-list"></span> List of Events
+					</a>
 				</li>
 			</ul>
 		</nav>
-		<div hidden id="checkInsertMessage" th:class="${class}" th:if="${not #strings.isEmpty(message)}"></div>
-		<div class="mainbody-List">
-			<div>
-				<table class="container">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Place</th>
-							<th>Date</th>
-							<th>Time</th>
-							<th>Edit</th>
-							<th>Delete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="event:${events}">
-							<td><a th:href="${(#mvc.url('EC#detailsEventGet').arg(0, event.idEvent)).build()}"><span th:text="${event.name}"></span></a></td>
-							<td><span th:text="${event.place}"></span></td>
-							<td><span th:text="${event.date}"></span></td>
-							<td><span th:text="${event.time}"></span></td>
-							<td hidden><span th:text="${event.idEvent}"></span></td>
-							<td class="spanEdit"><a href="#" data-toggle="modal" data-target="#edit-event-modal"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
-							<td class="spanDelete"><a href="#" data-toggle="modal" data-target="#delete-event-modal"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		
-		<th:block th:include="modals/registerEventModal"></th:block>
-		<th:block th:include="modals/editEventModal"></th:block>
-		<th:block th:include="modals/deleteEventModal"></th:block>
-		<th:block th:include="modals/messageModal"></th:block>
-		
 	</body>
 	<script>
-		$(document).ready(function()
-		{
-			registerInputMasks();	
-			
-			$classCheck = document.getElementById("checkInsertMessage");
-			if($classCheck.classList.contains('error-msg'))
-			{
-				$('#message-modal').modal();
-				$modalHeader = document.getElementById('message-header');
-				$modalHeader.className += " error-msg";
-				$('#message-modal').openModal;
-			}
-			if($classCheck.classList.contains('success-msg'))
-			{
-				$('#message-modal').modal();
-				$modalHeader = document.getElementById('message-header');
-				$modalHeader.className += " success-msg";
-				$('#message-modal').openModal;
-			}
-		});
-		$(".spanEdit").click(function()
-		{
-			var $rowEdit = $(this).closest("tr"),
-			$tdNameEventEdit = $rowEdit.find("td:eq(0)");
-			document.getElementById('nameEventEdit').value = $tdNameEventEdit.text();
-			$tdPlaceEventEdit = $rowEdit.find("td:eq(1)");
-			document.getElementById('placeEventEdit').value = $tdPlaceEventEdit.text();
-			$tdDateEventEdit = $rowEdit.find("td:eq(2)");
-			var $dateArray = $tdDateEventEdit.text().split('/');
-			var $newDate = $dateArray[2]+"-"+$dateArray[1]+"-"+$dateArray[0]
-			document.getElementById('dateEventEdit').value = $newDate;
-			$tdTimeEventEdit = $rowEdit.find("td:eq(3)");
-			document.getElementById('timeEventEdit').value = $tdTimeEventEdit.text();
-			$tdIdEventEdit = $rowEdit.find("td:eq(4)");
-			document.getElementById('idEventEdit').value = $tdIdEventEdit.text();
-		});
-		$(".spanDelete").click(function()
-		{
-			var $rowDelete = $(this).closest("tr"),
-			$tdNameEventDelete = $rowDelete.find("td:eq(0)");
-			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
-			$tdPlaceEventDelete = $rowDelete.find("td:eq(1)");
-			document.getElementById('placeEventDelete').innerHTML = $tdPlaceEventDelete.text();
-			$tdDateEventDelete = $rowDelete.find("td:eq(2)");
-			document.getElementById('dateEventDelete').innerHTML = $tdDateEventDelete.text();
-			$tdTimeEventDelete = $rowDelete.find("td:eq(3)");
-			document.getElementById('timeEventDelete').innerHTML = $tdTimeEventDelete.text();
-			$tdIdEventDelete = $rowDelete.find("td:eq(4)");
-			document.getElementById('idEventDelete').value = $tdIdEventDelete.text();
-		});
-		
-		function changeEventEditHref($nameEventEdit, $placeEventEdit,$dateEventEdit, $timeEventEdit, $idEventEdit)
-		{
-			document.getElementById('editEventSubmit').href = "/edit/event"+$nameEventEdit+"/"+$placeEventEdit+"/"+$dateEventEdit+"/"+$timeEventEdit+"/" + $idEventEdit;
-		}
-		
-		function changeEventDeleteHref($idEventDelete)
-		{
-			document.getElementById('deleteEventSubmit').href = "/delete/event/"+$idEventDelete;
-		}
-		
 	</script>
 </html>

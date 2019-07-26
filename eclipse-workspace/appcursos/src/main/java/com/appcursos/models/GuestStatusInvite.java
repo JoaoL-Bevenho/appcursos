@@ -10,35 +10,30 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "statusinvite_guest")
-public class StatusInviteGuest
+@Table(name = "status_invite")
+public class GuestStatusInvite
 {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@NotNull
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private long idStatusInviteGuest;
-	
+	private long idStatusInvite;
 	@NotEmpty
 	@Column(length = 255)
 	private String statusInvite;
 	
-	public StatusInviteGuest(long idStatusInviteGuest, String statusInvite) {
-        super();
-        this.idStatusInviteGuest = idStatusInviteGuest;
-        this.statusInvite = statusInvite;
-    }
-
 	@Override
 	public String toString()
 	{
-		return "StatusInviteGuest [idStatusInviteGuest=" + idStatusInviteGuest + ", statusInvite=" + statusInvite + "]";
+		String toStrVar = "";
+		toStrVar = "StatusInvite [idStatusInvite=" + this.idStatusInvite + ", statusInvite=" + this.statusInvite + "]";
+		return toStrVar;
 	}
-
-	public long getIdStatusInviteGuest() { return idStatusInviteGuest; }
-	public void setIdStatusInviteGuest(long idStatusInviteGuest) { this.idStatusInviteGuest = idStatusInviteGuest; }
-
+	
+	public long getIdStatusInvite() { return idStatusInvite; }
+	public void setIdStatusInvite(long idStatusInvite) { this.idStatusInvite = idStatusInvite;  }
+	
 	public String getStatusInvite() { return statusInvite; }
 	public void setStatusInvite(String statusInvite) { this.statusInvite = statusInvite; }
 	

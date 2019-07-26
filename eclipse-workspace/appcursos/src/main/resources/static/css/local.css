@@ -83,12 +83,5 @@
     border-radius: 3px !important;
 }
 
-.table-format
-{
-	width: auto;
-	height: auto;
-	margin: auto;
-}
-
-.th-guest { padding-right: 100px; padding-left:100px;width: 100%;}
-.td-guest { padding-right: 100px; padding-left:100px;width: 100%;}
+.th-guest { padding-right: 20px; padding-left:20px;width: auto;}
+.td-guest { padding-right: 20px; padding-left:20px;width: auto;}

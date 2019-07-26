@@ -30,10 +30,23 @@
 								<label for="cpfGuestEdit">CPF</label>
 							</div>
 						</div>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-md-6">
+									<label>Status do Convite</label>
+									<div class="form-label-group">
+										<select id="statusInviteEdit" name="statusInvite">
+											<option th:value="0">-- Selecione uma opção --</option>
+											<option th:each="statusInvite:${statInvsList}"  th:value="${statusInvite.idStatusInvite}" th:text="${statusInvite.statusInvite}"/>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
 						<label id="idEventGuestEdit" hidden></label>
 					</div>
 					<div class="modal-footer">
-						<a id="editGuestSubmit" href="#" onclick="changeGuestEditHref(nameGuestEdit.value, cpfGuestEdit.value, idEventGuestEdit.value)" class="btn btn-primary btn-block btn-primary-overwrite">Edit Guest</a>
+						<a id="editGuestSubmit" href="#" onclick="changeGuestEditHref(nameGuestEdit.value, cpfGuestEdit.value, idEventGuestEdit.innerHTML, statusInviteEdit.value)" class="btn btn-primary btn-block btn-primary-overwrite">Edit Guest</a>
 						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
 					</div>
 				</div>
