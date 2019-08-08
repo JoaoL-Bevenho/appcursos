@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<title>Details Event</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<label class="navbar-brand">Event Details</label>
+				</div>
+				<ul class="nav navbar-nav right">
+					<li class="nav-item active">
+						<button class="spanRegister btn nav-btn nav-link modal-trigger" data-toggle="modal" data-target="#register-guest-modal">
+							<span class="glyphicon glyphicon-plus"></span> Add Guest
+						</button>
+					</li>
+					<li class="nav-item active">
+						<a class="btn nav-btn nav-link" th:href="${(#mvc.url('EC#eventList')).build()}">
+							<span class="glyphicon glyphicon-list"></span> List of Events
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="mainbody-Guest">
+			<h3>
+				<span th:text="${event.name}"></span>
+			</h3>
+			<div th:each="event:${event}">
+				<div>
+					<p><span th:text="${event.place}"></span></p>
+					<p><span th:text="${event.date}"></span></p>
+					<p><span th:text="${event.time}"></span></p>
+					<p id="eventIdEvent" th:text="${event.idEvent}" hidden></p>
+				</div>
+				<h4>List of Guests</h4>
+				<div class="row align-items-center justify-content-center">
+					<table>
+						<thead>
+							<tr>
+								<th class="th-guest">Name of Guest</th>
+								<th class="th-guest">CPF</th>
+								<th class="th-guest">Status Invite</th>
+								<th class="text-center th-guest">Edit</th>
+								<th class="text-center th-guest">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="guest:${guests}">
+								<td class="td-guest"><span th:text="${guest.nameGuest}"></span></td>
+								<td class="td-guest"><span th:text="${guest.cpf}"></span></td>
+								<td th:text="${guest.statusInvite.idStatusInvite}" hidden></td>
+								<td th:text="${guest.event.idEvent}" hidden></td>
+								<td class="td-guest"><span th:text="${guest.statusInvite.statusInvite}"></span></td>
+								<td class="spanEdit td-guest"><a href="#" data-toggle="modal" data-target="#edit-guest-modal"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
+								<td class="spanDelete td-guest"><a href="#" data-toggle="modal" data-target="#delete-guest-modal"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<th:block th:include="modals/aux-modals/linksAndScripts"></th:block>
+		<th:block th:include="modals/guest/guestRegisterModal"></th:block>
+		<th:block th:include="modals/guest/guestEditModal"></th:block>
+		<th:block th:include="modals/guest/guestDeleteModal"></th:block>
+	</body>
+	<script>
+	$(document).ready(function()
+	{
+		
+	});
+		$(".spanRegister").click(function()
+		{
+			document.getElementById('idEventGuestInsert').innerHTML = document.getElementById('eventIdEvent').innerHTML;
+		});
+		$(".spanEdit").click(function()
+		{
+			var $rowEdit = $(this).closest("tr"),
+			$tdNameGuestEdit = $rowEdit.find("td:eq(0)");
+			document.getElementById('nameGuestEdit').value = $tdNameGuestEdit.text();
+			$tdCpfGuestEdit = $rowEdit.find("td:eq(1)");
+			document.getElementById('cpfGuestEdit').value = $tdCpfGuestEdit.text();
+			$tdIdStatusInviteEdit = $rowEdit.find("td:eq(2)");
+			var $tdIdStatusInviteEditValue =  $tdIdStatusInviteEdit.text();
+			for (var i=0; i <document.getElementById('statusInviteEdit').length; i++)
+			{
+				var $statusInviteOption = document.getElementById('statusInviteEdit')[i].value;
+				if($statusInviteOption == $tdIdStatusInviteEditValue)
+				{
+					document.getElementById('statusInviteEdit').selectedIndex  = i;
+				}
+			}
+			$tdIdEventGuestEdit = $rowEdit.find("td:eq(3)");
+			document.getElementById('idEventGuestEdit').innerHTML = $tdIdEventGuestEdit.text();
+			
+		});
+		$(".spanDelete").click(function()
+		{
+			var $rowDelete = $(this).closest("tr"),
+			$tdNameGuestDelete = $rowDelete.find("td:eq(0)");
+			document.getElementById('nameGuestDelete').innerHTML = $tdNameGuestDelete.text();
+			$tdCpfGuestDelete = $rowDelete.find("td:eq(1)");
+			document.getElementById('cpfGuestDelete').innerHTML = $tdCpfGuestDelete.text();
+			$tdIdEventDelete = $rowDelete.find("td:eq(3)");
+			document.getElementById('idEventGuestDelete').innerHTML = $tdIdEventDelete.text();
+		});
+		function changeGuestRegisterHref($nameGuestRegister, $cpfGuestRegister, $idEventRegister, $idStatusInviteRegister)
+		{
+			document.getElementById('registerGuestSubmit').href = "/register/guest/"+$nameGuestRegister+"/"+$cpfGuestRegister+"/"+$idEventRegister+"/"+$idStatusInviteRegister;
+		}
+		function changeGuestEditHref($nameGuestEdit, $cpfGuestEdit, $idEventEdit, $idStatusInviteEdit)
+		{
+			document.getElementById('editGuestSubmit').href = "/edit/guest/"+$nameGuestEdit+"/"+$cpfGuestEdit+"/"+$idEventEdit+"/"+$idStatusInviteEdit;
+		}
+		function changeGuestDeleteHref($cpfGuestDelete, $idEventDelete)
+		{
+			document.getElementById('deleteGuestSubmit').href = "/delete/guest/"+$cpfGuestDelete+"/"+$idEventDelete;
+		}
+	</script>
+</html>

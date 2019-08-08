@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.appcursos.models.Event;
+import com.appcursos.models.events.Event;
 
 public interface EventRepository extends CrudRepository<Event, String>
 {

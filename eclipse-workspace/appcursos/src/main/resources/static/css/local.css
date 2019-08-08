@@ -58,7 +58,6 @@
 }
 .navbtn-area
 {
-	max-width: 100% !important;
 	margin-right: 20px !important;
 	position:absolute;
 	right: 0;
@@ -85,3 +84,12 @@
 
 .th-guest { padding-right: 20px; padding-left:20px;width: auto;}
 .td-guest { padding-right: 20px; padding-left:20px;width: auto;}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 80%;               
+  background-color: #000000;
+  height: 1px;
+}

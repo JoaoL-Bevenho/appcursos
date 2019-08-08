@@ -5,3 +5,4 @@ function registerInputMasks()
 	$('#cpfGuestInsert').mask('000.000.000-00');
 	$('#cpfGuestEdit').mask('000.000.000-00');
 }
+

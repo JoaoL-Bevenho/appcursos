@@ -1,0 +1,58 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/events.js"></script>
+		<title>Event List</title>
+	</head>
+	<body>
+		<nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<label class="navbar-brand">List of Events</label>
+				</div>
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a href="#" class="modal-trigger nav-link" data-toggle="modal" data-target="#register-event-modal">
+							<span class="glyphicon glyphicon-plus"></span> Register Event
+						</a>
+					</li>
+				</ul>
+				<div><th:block th:include="utils/userDdownMenu"></th:block></div>
+			</div>
+		</nav>
+		<div class="mainbody-List">
+			<div>
+				<table class="container">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Place</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="event:${events}">
+							<td><a th:href="${(#mvc.url('GC#eventDetails').arg(0, event.idEvent)).build()}"><span th:text="${event.name}"></span></a></td>
+							<td><span th:text="${event.place}"></span></td>
+							<td><span th:text="${event.date}"></span></td>
+							<td><span th:text="${event.time}"></span></td>
+							<td th:text="${event.idEvent}" hidden></td>
+							<td class="spanEdit" id="eventEdit"><a href="#" data-toggle="modal" data-target="#edit-event-modal" onclick="clickEventEdit();"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
+							<td class="spanDelete" id="eventDelete"><a href="#" data-toggle="modal" data-target="#delete-event-modal" onclick="clickEventDelete();"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<th:block th:include="utils/linksAndScripts"></th:block>
+		<th:block th:include="modals/event/eventRegisterModal"></th:block>
+		<th:block th:include="modals/event/eventEditModal"></th:block>
+		<th:block th:include="modals/event/eventDeleteModal"></th:block>
+	</body>
+</html>

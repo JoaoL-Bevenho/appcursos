@@ -1,0 +1,51 @@
+<!DOCTYPE html> 	
+<html lang="en"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<script type="text/javascript" src="js/local.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="css/local.css">
+		<link type="text/css" rel="stylesheet" href="css/admin-form.css">
+		<!-- Bootstrap core CSS-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<!--Glyphicons-->
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/glyph_css/glyph_bootstrap.css">
+		<!--Font-Awesome Icons-->
+		<link type="text/css" rel="stylesheet" href="fontawesome/css/all.min.css">
+		
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div hidden id="checkInsertMessage" th:class="${class}" th:if="${not #strings.isEmpty(message)}"></div>
+		<th:block th:include="modals/aux-modals/messageModal"></th:block>
+	</body>
+	<script>
+	$(document).ready(function()
+	{
+		registerInputMasks();	
+		
+		$classCheck = document.getElementById("checkInsertMessage");
+		if($classCheck != null)
+		{
+			if($classCheck.classList.contains('error-msg'))
+			{
+				$('#message-modal').modal();
+				$modalHeader = document.getElementById('message-header');
+				$modalHeader.className += " error-msg";
+				$('#message-modal').openModal;
+			}
+			if($classCheck.classList.contains('success-msg'))
+			{
+				$('#message-modal').modal();
+				$modalHeader = document.getElementById('message-header');
+				$modalHeader.className += " success-msg";
+				$('#message-modal').openModal;
+			}
+		}
+	});
+	</script>
+</html>
