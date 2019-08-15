@@ -41,7 +41,7 @@
 			</ul>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="imgs/solid_1.jpg">
+					<img src="imgs/solid_1.jpg"//>
 					<div class="carousel-caption">
 						<h1 class="display-2"> Welcome!</h1>
 						<h3>Complete Website Layout</h3>
@@ -50,10 +50,10 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="imgs/solid_2.jpg">
+					<img src="imgs/solid_2.jpg"/>
 				</div>
 				<div class="carousel-item">
-					<img src="imgs/solid_3.jpg">
+					<img src="imgs/solid_3.jpg"/>
 				</div>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 				<div class="col-12">
 					<h1 class="display-4">Built with ease.</h1>
 				</div>
-				<hr/>
+				<hr class="my-4"/>
 				<div class="col-12">
 					<p class="lead">
 						Welcome to my Bootstrap 4 website tutorial! Bootstrap is a free
@@ -103,6 +103,48 @@
 				</div>
 			</div>
 		</div>
+		<div class="container-fluid padding">
+			<div class="row padding">
+				<div class="col-md-12 col-lg">
+					<h2>If you could build it...</h2>
+					<p>The column will automatically stack on top of each other when
+					the screen is less than 576px wide.</p>
+					<p>Resize the browser window to se the effect. Responsive web
+					design has become more important as the amount of mobile traffic now
+					accounts for more than half of total internet traffic</p>
+					<p>It can also display the web page differently depending on the
+					screen size or viewing device.</p>
+					<a href="#" class="btn btn-primary">Learn More</a>
+					<br/>
+					<br/>
+				</div>
+				<br>
+				<div class="col-lg-6">
+					<img src="imgs/desk_work.jpg" class="img-fluid"/>
+				</div>
+			</div>
+		</div>
+		<hr class="my-4"/>
+		<figure>
+			<div>
+				<div id="fixed">
+				</div>
+			</div>
+		</figure>
+		<button class="fun" data-toggle="collapse" data-target="#gifs"> click for fun. </button>
+		<div id="gifs" class="collapse">
+			<div class="container-fluid padding">
+				<div class="row text-center">
+					<div class="col-sm-6 col-md-3">
+						<img class="gif" src="imgs/gifs/gif_1_1.gif"/>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<img class="gif" src="imgs/gifs/gif_4_4.gif"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<th:block th:include="utils/linksAndScripts"></th:block>
 	</body>
 </html>

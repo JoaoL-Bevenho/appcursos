@@ -93,3 +93,9 @@ hr {
   background-color: #000000;
   height: 1px;
 }
+
+.carousel-item img
+{
+	width:100%;
+    height: 400px;
+}
