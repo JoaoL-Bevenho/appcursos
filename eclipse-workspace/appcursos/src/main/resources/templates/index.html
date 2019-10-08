@@ -3,6 +3,7 @@
 	  xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
+		<link type="text/css" rel="stylesheet" href="css/index-style.css">
 		<title>Home Page</title>
 	</head>
 	<body>
@@ -41,7 +42,7 @@
 			</ul>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="imgs/solid_1.jpg"//>
+					<img src="imgs/solid_1.jpg"/>
 					<div class="carousel-caption">
 						<h1 class="display-2"> Welcome!</h1>
 						<h3>Complete Website Layout</h3>
@@ -125,29 +126,98 @@
 			</div>
 		</div>
 		<hr class="my-4"/>
-		<figure>
-			<div>
-				<div id="fixed">
+		<div>
+			<figure>
+				<div class="fixed-wrap">
+					<div id="fixed"></div>
 				</div>
-			</div>
-		</figure>
+			</figure>
+		</div>
 		<button class="fun" data-toggle="collapse" data-target="#gifs"> click for fun. </button>
-		<div  id="gifs" class="container-fluid collapse">
-			<div class="container-fluid text-center padding">
-				<div class="row">
-					<div class="col-sm-6 col-md-3">
-						<img class="gif" src="imgs/gifs/gif_1_1.gif"/>
-					</div>
-					<div class="col-sm-6 col-md-3">
-						<img class="gif" src="imgs/gifs/gif_2_2.gif"/>
-					</div>
-					<div class="col-sm-6 col-md-3">
-						<img class="gif" src="imgs/gifs/gif_4_4.gif"/>
+		<div class="container-fluid padding">
+			<div class="row col-md-offset-3">
+				<div  id="gifs" class="container-fluid collapse">
+					<div class="container-fluid text-center padding">
+						<div class="row">
+							<div class="col-sm-6 col-md-3">
+								<img class="gif" src="imgs/gifs/gif_1_1.gif"/>
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<img class="gif" src="imgs/gifs/gif_2_2.gif"/>
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<img class="gif" src="imgs/gifs/gif_3_3.gif"/>
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<img class="gif" src="imgs/gifs/gif_4_4.gif"/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+		<div class="container-fluid padding">
+			<div class="row welcome text-center">
+				<div class="col-12"><h1 class="display-4"> Meet the Team</h1></div>
+			</div>
+			<hr class="my-4"/>
+		</div>
+		<div class="container-fluid padding">
+			<div class="row padding">
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" src="imgs/team_1_1.jpg"/>
+						<div class="card-body">
+							<h4 class="card-title">Hugh Mungus</h4>
+							<p class="card-text">Hugh is an Internet entrepreneur with
+							almost 20 years of experience.</p>
+							<a href="#" class="btn btn-outline-secondary">See Profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" src="imgs/team_2_2.jpg"/>
+						<div class="card-body">
+							<h4 class="card-title">Mary Jane</h4>
+							<p class="card-text">Mary is a designer with almost 10 years
+							of digital design experience.</p>
+							<a href="#" class="btn btn-outline-secondary">See Profile</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" src="imgs/team_3_3.jpg"/>
+						<div class="card-body">
+							<h4 class="card-title">Hong Lo</h4>
+							<p class="card-text">Hong is a developer with over 5 years
+							of web development experience.</p>
+							<a href="#" class="btn btn-outline-secondary">See Profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid padding">
+			<div class="row padding">
+				<div class="col-lg-6">
+					<h2>Our Philosophy</h2>
+					<p>We know that greatness in a disruptive era requires bold
+					ambition, curious talent and a culture that believes we're
+					smarter together.</p>
+					<p>We approach every challenge without fear, with the best of the
+					best in data processing, media creation, technology, creativity
+					and more. We call this Alchemy. It has the power to build our
+					clients' brands and transform their business. And while it may
+					seem like magic, we've got it down to a science.</p>
+					<br/>
+				</div>
+				<div class="col-lg-6">
+					<img class="img-fluid" src="imgs/btstrp.png"/>
+				</div>
+			</div>
+		</div>
 		<th:block th:include="utils/linksAndScripts"></th:block>
 	</body>
 </html>
