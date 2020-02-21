@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.appcursos.models.users.UserLanguage;
 import com.appcursos.utils.PasswordUtils;
 
 @Entity
