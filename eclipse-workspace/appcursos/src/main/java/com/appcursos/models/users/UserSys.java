@@ -70,7 +70,7 @@ public class UserSys
 		String md5Pw = this.getMd5EncodedPassword();
 		String saltVar = PasswordUtils.getSaltVar(30);
 		String encodedSecurePw = PasswordUtils.generateSaltPw(md5Pw, saltVar);
-		this.saltEncodedPassword = saltEncodedPassword;
+		this.saltEncodedPassword = encodedSecurePw;
 		setSaltVar(saltVar);
 	}
 
