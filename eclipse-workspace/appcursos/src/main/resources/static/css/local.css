@@ -1,4 +1,4 @@
-''.brand-logo-overwrite
+.brand-logo-overwrite
 {
 	margin-left:40px !important;
 }
@@ -14,11 +14,9 @@
 
 .mainbody-Guest
 {
-	margin-top: 7% !important;
+	margin-top:3% !important;
  	margin-left:7% !important;
 	margin-right:7% !important;
-	max-height: auto !important;
-	max-width: auto !important;
 	text-align: center !important;
 }
 
