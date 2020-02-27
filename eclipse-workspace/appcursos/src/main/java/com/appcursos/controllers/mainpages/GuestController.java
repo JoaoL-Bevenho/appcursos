@@ -89,8 +89,8 @@ public class GuestController
 		}
 	}
 	
-	@RequestMapping(value = "/edit/guest/{name}/{cpf}/{idEvent}/{idStatusInvite}")
-	public String guestEdit(@PathVariable("name") String name, @PathVariable("cpf") String cpf, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInvite") long idStatusInvite, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/edit/guest/{name}/{cpfnew}/{cpfold}/{idEvent}/{idStatusInvite}")
+	public String guestEdit(@PathVariable("name") String name, @PathVariable("cpfnew") String cpfnew, @PathVariable("cpfold") String cpfold, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInvite") long idStatusInvite, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -101,7 +101,7 @@ public class GuestController
 		}
 		else
 		{
-			guestRep.editGuest(name, cpf, idEvent, idStatusInvite, cpf);
+			guestRep.editGuest(name, cpfnew, idEvent, idStatusInvite, cpfold);
 			attributes.addFlashAttribute("messageheader", "Guest Edited");
 			attributes.addFlashAttribute("message", "Guest edited with success!");
 			attributes.addFlashAttribute("class", "success-msg");

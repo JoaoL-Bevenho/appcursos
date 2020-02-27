@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		
-		<th:block th:include="modals/aux-modals/linksAndScripts"></th:block>
+		<th:block th:include="utils/linksAndScripts"></th:block>
 		<th:block th:include="modals/guest/guestRegisterModal"></th:block>
 		<th:block th:include="modals/guest/guestEditModal"></th:block>
 		<th:block th:include="modals/guest/guestDeleteModal"></th:block>
@@ -84,6 +84,7 @@
 			document.getElementById('nameGuestEdit').value = $tdNameGuestEdit.text();
 			$tdCpfGuestEdit = $rowEdit.find("td:eq(1)");
 			document.getElementById('cpfGuestEdit').value = $tdCpfGuestEdit.text();
+			document.getElementById('hiddenCpfGuestEdit').value = $tdCpfGuestEdit.text();
 			$tdIdStatusInviteEdit = $rowEdit.find("td:eq(2)");
 			var $tdIdStatusInviteEditValue =  $tdIdStatusInviteEdit.text();
 			for (var i=0; i <document.getElementById('statusInviteEdit').length; i++)
@@ -112,9 +113,9 @@
 		{
 			document.getElementById('registerGuestSubmit').href = "/register/guest/"+$nameGuestRegister+"/"+$cpfGuestRegister+"/"+$idEventRegister+"/"+$idStatusInviteRegister;
 		}
-		function changeGuestEditHref($nameGuestEdit, $cpfGuestEdit, $idEventEdit, $idStatusInviteEdit)
+		function changeGuestEditHref($nameGuestEdit, $cpfGuestEdit, $hiddenCpfGuestEdit, $idEventEdit, $idStatusInviteEdit)
 		{
-			document.getElementById('editGuestSubmit').href = "/edit/guest/"+$nameGuestEdit+"/"+$cpfGuestEdit+"/"+$idEventEdit+"/"+$idStatusInviteEdit;
+			document.getElementById('editGuestSubmit').href = "/edit/guest/"+$nameGuestEdit+"/"+$cpfGuestEdit+"/"+$hiddenCpfGuestEdit+"/"+$idEventEdit+"/"+$idStatusInviteEdit;
 		}
 		function changeGuestDeleteHref($cpfGuestDelete, $idEventDelete)
 		{
