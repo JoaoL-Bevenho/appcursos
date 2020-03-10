@@ -1,21 +1,3 @@
-function clickEventEdit()
-{
-	var $idEdit = document.getElementById('eventEdit');
-	var $rowEdit = $idEdit.closest("tr"),
-	$tdNameEventEdit = $($rowEdit).find("td:eq(0)");
-	document.getElementById('nameEventEdit').value = $tdNameEventEdit.text();
-	$tdPlaceEventEdit = $($rowEdit).find("td:eq(1)");
-	document.getElementById('placeEventEdit').value = $tdPlaceEventEdit.text();
-	$tdDateEventEdit = $($rowEdit).find("td:eq(2)");
-	var $dateArray = $tdDateEventEdit.text().split('/');
-	var $newDate = $dateArray[2]+"-"+$dateArray[1]+"-"+$dateArray[0]
-	document.getElementById('dateEventEdit').value = $newDate;
-	$tdTimeEventEdit = $($rowEdit).find("td:eq(3)");
-	document.getElementById('timeEventEdit').value = $tdTimeEventEdit.text();
-	$tdIdEventEdit = $($rowEdit).find("td:eq(4)");
-	document.getElementById('idEventEdit').innerHTML = $tdIdEventEdit.text();
-}
-
 function clickEventDelete()
 {
 	var $idDelete = document.getElementById('eventDelete');

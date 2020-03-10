@@ -18,7 +18,7 @@ import com.appcursos.models.guests.Guest;
 import com.appcursos.models.guests.GuestStatusInvite;
 import com.appcursos.repository.EventRepository;
 import com.appcursos.repository.GuestRepository;
-import com.appcursos.repository.StatusInviteRepository;
+import com.appcursos.repository.StatusInviteGuestRepository;
 
 @Controller
 public class GuestController
@@ -28,18 +28,18 @@ public class GuestController
 	@Autowired
 	public GuestRepository guestRep;
 	@Autowired
-	public StatusInviteRepository statInvRep;
+	public StatusInviteGuestRepository statInvRep;
 	
 	@RequestMapping(value = "/event-{idEvent}", method = RequestMethod.GET)
-	public ModelAndView eventDetails(@PathVariable("idEvent") long idEvent, @Valid Guest guest, BindingResult result, RedirectAttributes attributes)
+	public ModelAndView eventDetails(@PathVariable("idEvent") long idEvent, @Valid Guest guestEvent, BindingResult result, RedirectAttributes attributes)
 	{
 		Event event = eventRep.findByidEvent(idEvent);
 		ModelAndView modAView = new ModelAndView("main-pages/event/eventDetails");
 		modAView.addObject("event", event);
 		
 		Guest guestObj = new Guest();
-		Iterable<Guest> guests = guestRep.findByEvent(event);
-		modAView.addObject("guests", guests);
+		Iterable<Guest> guestsEvent = guestRep.findByEventGuest(event);
+		modAView.addObject("guests", guestsEvent);
 		
 		int checkStatInvs=0;
 		Iterable<GuestStatusInvite> statusInvites = statInvRep.findAll();
@@ -52,7 +52,7 @@ public class GuestController
 			for(int i=0;i<statInvList.length;i++)
 			{
 				statInvObj = new GuestStatusInvite();
-				statInvObj.setStatusInvite(statInvList[i]);
+				statInvObj.setStatusInviteGuest(statInvList[i]);
 				statInvRep.save(statInvObj);
 			}
 			statusInvites = statInvRep.findAll();
@@ -62,8 +62,8 @@ public class GuestController
 		return modAView;
 	}
 	
-	@RequestMapping(value = "/register/guest/{name}/{cpf}/{idEvent}/{idStatusInvite}")
-	public String guestRegister(@PathVariable("name") String name, @PathVariable("cpf") String cpf, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInvite") long idStatusInvite, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/register/guest/{nameGuest}/{cpfGuest}/{idEvent}/{idStatusInviteGuest}")
+	public String guestRegister(@PathVariable("nameGuest") String nameGuest, @PathVariable("cpfGuest") String cpfGuest, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInviteGuest") long idStatusInviteGuest, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -75,12 +75,12 @@ public class GuestController
 		else
 		{
 			Event event = eventRep.findByidEvent(idEvent);
-			GuestStatusInvite statusInvite = statInvRep.findByidStatusInvite(idStatusInvite);
+			GuestStatusInvite statusInviteGuest = statInvRep.findByidStatusInviteGuest(idStatusInviteGuest);
 			Guest guest = new Guest();
-			guest.setNameGuest(name);
-			guest.setCpf(cpf);
-			guest.setEvent(event);
-			guest.setStatusInvite(statusInvite);
+			guest.setNameGuest(nameGuest);
+			guest.setCpfGuest(cpfGuest);
+			guest.setEventGuest(event);
+			guest.setStatusInviteGuest(statusInviteGuest);
 			guestRep.save(guest);
 			attributes.addFlashAttribute("messageheader", "Guest Added");
 			attributes.addFlashAttribute("message", "Guest added with success!");
@@ -89,8 +89,8 @@ public class GuestController
 		}
 	}
 	
-	@RequestMapping(value = "/edit/guest/{name}/{cpfnew}/{cpfold}/{idEvent}/{idStatusInvite}")
-	public String guestEdit(@PathVariable("name") String name, @PathVariable("cpfnew") String cpfnew, @PathVariable("cpfold") String cpfold, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInvite") long idStatusInvite, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/edit/guest/{nameGuest}/{cpfnewGuest}/{cpfoldGuest}/{idEvent}/{idStatusInviteGuest}")
+	public String guestEdit(@PathVariable("nameGuest") String nameGuest, @PathVariable("cpfnewGuest") String cpfnewGuest, @PathVariable("cpfoldGuest") String cpfoldGuest, @PathVariable("idEvent") long idEvent, @PathVariable("idStatusInviteGuest") long idStatusInviteGuest, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -101,7 +101,7 @@ public class GuestController
 		}
 		else
 		{
-			guestRep.editGuest(name, cpfnew, idEvent, idStatusInvite, cpfold);
+			guestRep.editGuest(nameGuest, cpfnewGuest, idEvent, idStatusInviteGuest, cpfoldGuest);
 			attributes.addFlashAttribute("messageheader", "Guest Edited");
 			attributes.addFlashAttribute("message", "Guest edited with success!");
 			attributes.addFlashAttribute("class", "success-msg");
@@ -109,8 +109,8 @@ public class GuestController
 		}
 	}
 	
-	@RequestMapping(value = "/delete/guest/{cpf}/{idEvent}")
-	public String guestDelete(@PathVariable("cpf") String cpf, @PathVariable("idEvent") long idEvent, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/delete/guest/{cpfGuest}/{idEvent}")
+	public String guestDelete(@PathVariable("cpfGuest") String cpfGuest, @PathVariable("idEvent") long idEvent, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -121,7 +121,7 @@ public class GuestController
 		}
 		else
 		{
-			Guest guest = guestRep.findByCpf(cpf);
+			Guest guest = guestRep.findByCpfGuest(cpfGuest);
 			guestRep.delete(guest);
 			attributes.addFlashAttribute("messageheader", "Guest Deleted");
 			attributes.addFlashAttribute("message", "Guest deleted with success!");

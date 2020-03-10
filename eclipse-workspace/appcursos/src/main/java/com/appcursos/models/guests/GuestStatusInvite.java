@@ -18,24 +18,24 @@ public class GuestStatusInvite
 	@NotNull
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private long idStatusInvite;
+	private long idStatusInviteGuest;
 	@NotEmpty
 	@Column(length = 255)
-	private String statusInvite;
+	private String statusInviteGuest;
 	
 	@Override
 	public String toString()
 	{
 		String toStrVar = "";
-		toStrVar = "StatusInvite [idStatusInvite=" + this.idStatusInvite + ", statusInvite=" + this.statusInvite + "]";
+		toStrVar = "StatusInvite [idStatusInviteGuest=" + this.idStatusInviteGuest + ", statusInviteGuest=" + this.statusInviteGuest + "]";
 		return toStrVar;
 	}
 	
-	public long getIdStatusInvite() { return idStatusInvite; }
-	public void setIdStatusInvite(long idStatusInvite) { this.idStatusInvite = idStatusInvite;  }
+	public long getIdStatusInviteGuest() { return idStatusInviteGuest; }
+	public void setIdStatusInviteGuest(long idStatusInviteGuest) { this.idStatusInviteGuest = idStatusInviteGuest;  }
 	
-	public String getStatusInvite() { return statusInvite; }
-	public void setStatusInvite(String statusInvite) { this.statusInvite = statusInvite; }
+	public String getStatusInviteGuest() { return statusInviteGuest; }
+	public void setStatusInviteGuest(String statusInviteGuest) { this.statusInviteGuest = statusInviteGuest; }
 	
 	
 	

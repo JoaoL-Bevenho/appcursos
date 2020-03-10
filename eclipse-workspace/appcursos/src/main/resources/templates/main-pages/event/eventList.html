@@ -3,7 +3,7 @@
 	  xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
-		<script type="text/javascript" src="js/events.js"></script>
+		<!-- <script type="text/javascript" src="js/events.js"></script> -->
 		<title>Event List</title>
 	</head>
 	<body>
@@ -37,13 +37,13 @@
 					</thead>
 					<tbody>
 						<tr th:each="event:${events}">
-							<td><a th:href="${(#mvc.url('GC#eventDetails').arg(0, event.idEvent)).build()}"><span th:text="${event.name}"></span></a></td>
-							<td><span th:text="${event.place}"></span></td>
-							<td><span th:text="${event.date}"></span></td>
-							<td><span th:text="${event.time}"></span></td>
+							<td><a th:href="${(#mvc.url('GC#eventDetails').arg(0, event.idEvent)).build()}"><span th:text="${event.nameEvent}"></span></a></td>
+							<td><span th:text="${event.placeEvent}"></span></td>
+							<td><span th:text="${event.dateEvent}"></span></td>
+							<td><span th:text="${event.timeEvent}"></span></td>
 							<td th:text="${event.idEvent}" hidden></td>
-							<td class="spanEdit" id="eventEdit"><a href="#" data-toggle="modal" data-target="#edit-event-modal" onclick="clickEventEdit();"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
-							<td class="spanDelete" id="eventDelete"><a href="#" data-toggle="modal" data-target="#delete-event-modal" onclick="clickEventDelete();"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
+							<td class="spanEdit" id="eventEdit"><a href="#" data-toggle="modal" data-target="#edit-event-modal"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
+							<td class="spanDelete" id="eventDelete"><a href="#" data-toggle="modal" data-target="#delete-event-modal"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -55,4 +55,36 @@
 		<th:block th:include="modals/event/eventEditModal"></th:block>
 		<th:block th:include="modals/event/eventDeleteModal"></th:block>
 	</body>
+	<script>
+		$(document).ready(function()
+		{
+			
+		});
+		$(".spanEdit").click(function()
+		{
+			var $rowEdit = $(this).closest("tr"),
+			$tdNameEventEdit = $rowEdit.find("td:eq(0)");
+			document.getElementById('nameEventEdit').value = $tdNameEventEdit.text();
+			$tdPlaceEventEdit = $rowEdit.find("td:eq(1)");
+			document.getElementById('placeEventEdit').value = $tdPlaceEventEdit.text();
+			$tdDateEventEdit = $($rowEdit).find("td:eq(2)");
+			var $dateArray = $tdDateEventEdit.text().split('/');
+			var $newDate = $dateArray[2]+"-"+$dateArray[1]+"-"+$dateArray[0]
+			document.getElementById('dateEventEdit').value = $newDate;
+			$tdTimeEventEdit = $($rowEdit).find("td:eq(3)");
+			document.getElementById('timeEventEdit').value = $tdTimeEventEdit.text();
+			$tdIdEventEdit = $($rowEdit).find("td:eq(4)");
+			document.getElementById('idEventEdit').innerHTML = $tdIdEventEdit.text();
+		});
+		$(".spanDelete").click(function()
+		{
+			var $rowDelete = $(this).closest("tr"),
+			$tdNameEventDelete = $($rowDelete).find("td:eq(0)");
+			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
+			$tdCpfGuestDelete = $rowDelete.find("td:eq(1)");
+			document.getElementById('cpfGuestDelete').innerHTML = $tdCpfGuestDelete.text();
+			$tdIdEventDelete = $rowDelete.find("td:eq(3)");
+			document.getElementById('idEventGuestDelete').innerHTML = $tdIdEventDelete.text();
+		});
+	</script>
 </html>

@@ -29,50 +29,50 @@ public class Event implements Serializable
 	private long idEvent;
 	@NotEmpty
 	@Column(length = 255)
-	private String name;
+	private String nameEvent;
 	@NotEmpty
 	@Column(length = 255)
-	private String place;
+	private String placeEvent;
 	@NotNull
 	@Column
-	private Date date;
+	private Date dateEvent;
 	@NotNull
 	@Column
-	private Time time;
+	private Time timeEvent;
 
 	@OneToMany
-	private List<Guest> guest;
+	private List<Guest> guestEvent;
 
 	
 	@Override
 	public String toString()
 	{
 		String toStrVar = "";
-		toStrVar = "Event [idEvent=" + this.idEvent + ", name=" + this.name + ", place=" + this.place;
-		toStrVar += ", date=" + this.date + ", time=" + this.time + ", guest=" + this.guest + "]";
+		toStrVar = "Event [idEvent=" + this.idEvent + ", namEvent=" + this.nameEvent + ", placeEvent" + this.placeEvent;
+		toStrVar += ", dateEvent=" + this.dateEvent + ", timeEvent=" + this.timeEvent + ", guestEvent=" + this.guestEvent + "]";
 		return  toStrVar;
 	}
 	
 	public long getIdEvent() { return idEvent; }
 	public void setIdEvent(long idEvent) { this.idEvent = idEvent; }
 
-	public String getName() { return name; }
-	public void setName(String name) { this.name = name; }
+	public String getNameEvent() { return nameEvent; }
+	public void setNameEvent(String nameEvent) { this.nameEvent = nameEvent; }
 
-	public String getPlace() { return place; }
-	public void setPlace(String place) { this.place = place; }
+	public String getPlaceEvent() { return placeEvent; }
+	public void setPlaceEvent(String placeEvent) { this.placeEvent = placeEvent; }
 
-	public String getDate()
+	public String getDateEvent()
 	{
-		String dtStr[] = (String.valueOf(date)).split("-");
+		String dtStr[] = (String.valueOf(dateEvent)).split("-");
 		String newDt = dtStr[2] + "/" + dtStr[1] + "/" + dtStr[0]; 
 		return newDt;
 	}
-	public void setDate(String date) { this.date = Date.valueOf(date); }
+	public void setDateEvent(String date) { this.dateEvent = Date.valueOf(date); }
 
-	public String getTime() { return String.valueOf(time); }
-	public void setTime(String time) { this.time = Time.valueOf(time); }
+	public String getTimeEvent() { return String.valueOf(timeEvent); }
+	public void setTimeEvent(String timeEvent) { this.timeEvent = Time.valueOf(timeEvent); }
 
-	public List<Guest> getGuest() { return guest; }
-	public void setGuest(List<Guest> guest) { this.guest = guest; }
+	public List<Guest> getGuestEvent() { return guestEvent; }
+	public void setGuestEvent(List<Guest> guestEvent) { this.guestEvent = guestEvent; }
 }

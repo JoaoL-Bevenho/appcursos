@@ -26,13 +26,13 @@
 		</nav>
 		<div class="mainbody-Guest">
 			<h3>
-				<span th:text="${event.name}"></span>
+				<span th:text="${event.nameEvent}"></span>
 			</h3>
 			<div th:each="event:${event}">
 				<div>
-					<p><span th:text="${event.place}"></span></p>
-					<p><span th:text="${event.date}"></span></p>
-					<p><span th:text="${event.time}"></span></p>
+					<p><span th:text="${event.placeEvent}"></span></p>
+					<p><span th:text="${event.dateEvent}"></span></p>
+					<p><span th:text="${event.timeEvent}"></span></p>
 					<p id="eventIdEvent" th:text="${event.idEvent}" hidden></p>
 				</div>
 				<h4>List of Guests</h4>
@@ -50,10 +50,10 @@
 						<tbody>
 							<tr th:each="guest:${guests}">
 								<td class="td-guest"><span th:text="${guest.nameGuest}"></span></td>
-								<td class="td-guest"><span th:text="${guest.cpf}"></span></td>
-								<td th:text="${guest.statusInvite.idStatusInvite}" hidden></td>
-								<td th:text="${guest.event.idEvent}" hidden></td>
-								<td class="td-guest"><span th:text="${guest.statusInvite.statusInvite}"></span></td>
+								<td class="td-guest"><span th:text="${guest.cpfGuest}"></span></td>
+								<td th:text="${guest.StatusInviteGuest.idStatusInviteGuest}" hidden></td>
+								<td th:text="${guest.eventGuest.idEvent}" hidden></td>
+								<td class="td-guest"><span th:text="${guest.StatusInviteGuest.statusInviteGuest}"></span></td>
 								<td class="spanEdit td-guest"><a href="#" data-toggle="modal" data-target="#edit-guest-modal"><span class="spanEdit glyphicon glyphicon-pencil"></span></a></td>
 								<td class="spanDelete td-guest"><a href="#" data-toggle="modal" data-target="#delete-guest-modal"><span class="spanDelete glyphicon glyphicon-trash"></span></a></td>
 							</tr>
@@ -109,9 +109,9 @@
 			$tdIdEventDelete = $rowDelete.find("td:eq(3)");
 			document.getElementById('idEventGuestDelete').innerHTML = $tdIdEventDelete.text();
 		});
-		function changeGuestRegisterHref($nameGuestRegister, $cpfGuestRegister, $idEventRegister, $idStatusInviteRegister)
+		function changeGuestRegisterHref($nameGuestRegister, $cpfGuestRegister, $idEventRegister, $idStatusInviteGuestRegister)
 		{
-			document.getElementById('registerGuestSubmit').href = "/register/guest/"+$nameGuestRegister+"/"+$cpfGuestRegister+"/"+$idEventRegister+"/"+$idStatusInviteRegister;
+			document.getElementById('registerGuestSubmit').href = "/register/guest/"+$nameGuestRegister+"/"+$cpfGuestRegister+"/"+$idEventRegister+"/"+$idStatusInviteGuestRegister;
 		}
 		function changeGuestEditHref($nameGuestEdit, $cpfGuestEdit, $hiddenCpfGuestEdit, $idEventEdit, $idStatusInviteEdit)
 		{

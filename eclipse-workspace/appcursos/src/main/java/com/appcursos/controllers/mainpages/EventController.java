@@ -17,10 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.appcursos.models.events.Event;
 import com.appcursos.models.guests.Guest;
-import com.appcursos.models.guests.GuestStatusInvite;
 import com.appcursos.repository.EventRepository;
 import com.appcursos.repository.GuestRepository;
-import com.appcursos.repository.StatusInviteRepository;
+import com.appcursos.repository.StatusInviteGuestRepository;
 
 @Controller
 public class EventController
@@ -30,7 +29,7 @@ public class EventController
 	@Autowired
 	public GuestRepository guestRep;
 	@Autowired
-	public StatusInviteRepository statInvRep;
+	public StatusInviteGuestRepository statInvRep;
 	
 	@RequestMapping(value = "/events")
 	public ModelAndView eventList()
@@ -61,8 +60,8 @@ public class EventController
 		}
 	}
 	
-	@RequestMapping(value = "/edit/event/{name}/{place}/{date}/{time}/{idEvent}")
-	public String editEvent(@PathVariable("name") String name, @PathVariable("place") String place, @PathVariable("date") String date, @PathVariable("time") String time, @PathVariable("idEvent") long idEvent, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
+	@RequestMapping(value = "/edit/event/{nameEvent}/{placeEvent}/{dateEvent}/{timeEvent}/{idEvent}")
+	public String editEvent(@PathVariable("nameEvent") String nameEvent, @PathVariable("placeEvent") String placeEvent, @PathVariable("dateEvent") String dateEvent, @PathVariable("timeEvent") String timeEvent, @PathVariable("idEvent") long idEvent, @Valid Object objEx, BindingResult result, RedirectAttributes attributes)
 	{
 		if (result.hasErrors())
 		{
@@ -73,7 +72,7 @@ public class EventController
 		}
 		else
 		{
-			eventRep.editEvent(name, place, date, time,idEvent);
+			eventRep.editEvent(nameEvent, placeEvent, dateEvent, timeEvent, idEvent);
 			attributes.addFlashAttribute("messageheader", "Event Edited");
 			attributes.addFlashAttribute("message", "Event edited with success!");
 			attributes.addFlashAttribute("class", "success-msg");
@@ -94,8 +93,8 @@ public class EventController
 		else
 		{
 			Event event = eventRep.findByidEvent(idEvent);
-			Iterable<Guest> guests = guestRep.findByEvent(event);
-			for(Guest guest: guests)
+			Iterable<Guest> guestsEvent = guestRep.findByEventGuest(event);
+			for(Guest guest: guestsEvent)
 			{
 				guestRep.delete(guest);
 			}

@@ -12,7 +12,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Edit Event</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Edit Guest</h5>
 						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">×</span>
 						</button>
@@ -26,9 +26,9 @@
 						</div>
 						<div class="form-group">
 							<div class="form-label-group">
-								<input type="text" id="cpfGuestEdit" name="cpfNew" class="form-control" placeholder="CPF" required/>
+								<input type="text" id="cpfGuestEdit" name="cpfGuest" class="form-control" placeholder="CPF" required/>
 								<label for="cpfGuestEdit">CPF</label>
-								<input type="text" id="hiddenCpfGuestEdit" name="cpfOld" class="form-control" placeholder="CPF" hidden/>
+								<input type="text" id="hiddenCpfGuestEdit" name="cpfGuest" class="form-control" placeholder="CPF" hidden/>
 							</div>
 						</div>
 						<div class="form-group">
@@ -38,7 +38,7 @@
 									<div class="form-label-group">
 										<select id="statusInviteEdit" name="statusInvite">
 											<option th:value="0">-- Selecione uma opção --</option>
-											<option th:each="statusInvite:${statInvsList}"  th:value="${statusInvite.idStatusInvite}" th:text="${statusInvite.statusInvite}"/>
+											<option th:each="StatusInviteGuest:${statInvsList}" th:value="${StatusInviteGuest.idStatusInviteGuest}" th:text="${StatusInviteGuest.statusInviteGuest}"/>
 										</select>
 									</div>
 								</div>
@@ -48,7 +48,7 @@
 					</div>
 					<div class="modal-footer">
 						<a id="editGuestSubmit" href="#" onclick="changeGuestEditHref(nameGuestEdit.value, cpfGuestEdit.value, hiddenCpfGuestEdit.value, idEventGuestEdit.innerHTML, statusInviteEdit.value)" class="btn btn-primary btn-block btn-primary-overwrite">Edit Guest</a>
-						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 					</div>
 				</div>
 			</div>

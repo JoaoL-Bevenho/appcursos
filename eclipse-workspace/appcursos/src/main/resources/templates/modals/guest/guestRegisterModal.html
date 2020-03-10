@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<meta charset="UTF-8">
-</head>
-<body>
-	<!-- Add Guest Modal-->
-	<div id="register-guest-modal" class="modal fade" tabindex="-1"
-		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Add Guest</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<div class="form-label-group">
-							<input type="text" id="nameGuestInsert" name="nameGuest"
-								class="form-control" placeholder="Name"required/> <label
-								for="nameGuestInsert">Name</label>
-						</div>
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<!-- Add Guest Modal-->
+		<div id="register-guest-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Add Guest</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
 					</div>
-					<div class="form-group">
-						<div class="form-label-group">
-							<input type="text" id="cpfGuestInsert" name="cpf"
-								class="form-control" placeholder="CPF" required /> <label
-								for="cpfGuestInsert">CPF</label>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-label-group">
+								<input type="text" id="nameGuestInsert" name="nameGuest" class="form-control" placeholder="Name"required/>
+								<label for="nameGuestInsert">Name</label>
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<div class="form-row">
-							<div class="col-md-6">
-								<label>Status do Convite</label>
-								<div class="form-label-group">
-									<select id="statusInviteInsert" name="statusInvite">
-										<option th:value="0">-- Selecione uma opção --</option>
-										<option th:each="statusInvite:${statInvsList}"  th:value="${statusInvite.idStatusInvite}" th:text="${statusInvite.statusInvite}"/>
-									</select>
+						<div class="form-group">
+							<div class="form-label-group">
+								<input type="text" id="cpfGuestInsert" name="cpfGuest" class="form-control" placeholder="CPF" required />
+								<label for="cpfGuestInsert">CPF</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-md-6">
+									<label>Status do Convite</label>
+									<div class="form-label-group">
+										<select id="statusInviteInsert" name="statusInvite">
+											<option th:value="0">-- Selecione uma opção --</option>
+											<option th:each="GuestStatusInvite:${statInvsList}"  th:value="${GuestStatusInvite.idStatusInviteGuest}" th:text="${GuestStatusInvite.statusInviteGuest}"/>
+										</select>
+									</div>
 								</div>
 							</div>
 						</div>
+						<label id="idEventGuestInsert" hidden></label>
 					</div>
-					<label id="idEventGuestInsert" hidden></label>
-				</div>
-				<div class="modal-footer">
-					<a id="registerGuestSubmit" href="#" onclick="changeGuestRegisterHref(nameGuestInsert.value, cpfGuestInsert.value, idEventGuestInsert.innerHTML, statusInviteInsert.value)" class="btn btn-primary btn-block btn-primary-overwrite">Register Guest</a>
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
+					<div class="modal-footer">
+						<a id="registerGuestSubmit" href="#" onclick="changeGuestRegisterHref(nameGuestInsert.value, cpfGuestInsert.value, idEventGuestInsert.innerHTML, statusInviteInsert.value)" class="btn btn-primary btn-block btn-primary-overwrite">Register Guest</a>
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </html>
