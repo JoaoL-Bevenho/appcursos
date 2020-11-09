@@ -9,3 +9,5 @@ public class AppcursosApplication {
 		SpringApplication.run(AppcursosApplication.class, args);
 	}
 }
+//https://www.baeldung.com/spring-security-logout
+
