@@ -40,9 +40,9 @@ function changeGuestRegisterHref($nameGuestRegister, $cpfGuestRegister, $idEvent
 	document.getElementById('registerGuestSubmit').href = "/register/guest/"+$nameGuestRegister+"/"+$cpfGuestRegister+"/"+$idEventRegister+"/"+$idStatusInviteRegister;
 }
 
-function changeGuestEditHref($nameGuestEdit, $cpfGuestEdit, $idEventEdit, $idStatusInviteEdit)
+function changeGuestEditHref($nameGuestEdit, $newCpfGuestEdit, $oldCpfGuestEdit, $idEventEdit, $idStatusInviteEdit)
 {
-	document.getElementById('editGuestSubmit').href = "/edit/guest/"+$nameGuestEdit+"/"+$cpfGuestEdit+"/"+$idEventEdit+"/"+$idStatusInviteEdit;
+	document.getElementById('editGuestSubmit').href = "/edit/guest/"+$nameGuestEdit+"/"+$newCpfGuestEdit+"/"+$oldCpfGuestEdit+"/"+$idEventEdit+"/"+$idStatusInviteEdit;
 }
 
 function changeGuestDeleteHref($cpfGuestDelete, $idEventDelete)

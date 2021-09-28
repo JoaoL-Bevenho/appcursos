@@ -26,9 +26,9 @@
 						</div>
 						<div class="form-group">
 							<div class="form-label-group">
-								<input type="text" id="cpfGuestEdit" name="cpfGuest" class="form-control" placeholder="CPF" required/>
+								<input type="text" id="newCpfGuestEdit" name="cpfGuest" class="form-control" placeholder="CPF" required/>
 								<label for="cpfGuestEdit">CPF</label>
-								<input type="text" id="hiddenCpfGuestEdit" name="cpfGuest" class="form-control" placeholder="CPF" hidden/>
+								<input type="text" id="oldCpfGuestEdit" name="cpfGuest" class="form-control" placeholder="CPF" hidden/>
 							</div>
 						</div>
 						<div class="form-group">
@@ -47,7 +47,7 @@
 						<label id="idEventGuestEdit" hidden></label>
 					</div>
 					<div class="modal-footer">
-						<a id="editGuestSubmit" href="#" onclick="changeGuestEditHref(nameGuestEdit.value, cpfGuestEdit.value, hiddenCpfGuestEdit.value, idEventGuestEdit.innerHTML, statusInviteEdit.value)" class="btn btn-primary btn-block btn-primary-overwrite">Edit Guest</a>
+						<a id="editGuestSubmit" href="#" onclick="changeGuestEditHref(nameGuestEdit.value, newCpfGuestEdit.value, oldCpfGuestEdit.value, idEventGuestEdit.innerHTML, statusInviteEdit.value)" class="btn btn-primary btn-block btn-primary-overwrite">Edit Guest</a>
 						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 					</div>
 				</div>

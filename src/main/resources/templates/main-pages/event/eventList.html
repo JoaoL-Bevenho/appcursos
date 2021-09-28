@@ -81,10 +81,16 @@
 			var $rowDelete = $(this).closest("tr"),
 			$tdNameEventDelete = $($rowDelete).find("td:eq(0)");
 			document.getElementById('nameEventDelete').innerHTML = $tdNameEventDelete.text();
-			$tdCpfGuestDelete = $rowDelete.find("td:eq(1)");
-			document.getElementById('cpfGuestDelete').innerHTML = $tdCpfGuestDelete.text();
-			$tdIdEventDelete = $rowDelete.find("td:eq(3)");
-			document.getElementById('idEventGuestDelete').innerHTML = $tdIdEventDelete.text();
+			$tdPlaceEventDelete = $rowDelete.find("td:eq(1)");
+			document.getElementById('placeEventDelete').value = $tdPlaceEventDelete.text();
+			$tdDateEventDelete = $($rowDelete).find("td:eq(2)");
+			var $dateArray = $tdDateEventDelete.text().split('/');
+			var $newDate = $dateArray[2]+"-"+$dateArray[1]+"-"+$dateArray[0]
+			document.getElementById('dateEventDelete').value = $newDate;
+			$tdTimeEventDelete = $($rowDelete).find("td:eq(3)");
+			document.getElementById('timeEventDelete').value = $tdTimeEventDelete.text();
+			$tdIdEventDelete = $($rowDelete).find("td:eq(4)");
+			document.getElementById('idEventDelete').innerHTML = $tdIdEventDelete.text();
 		});
 	</script>
 </html>
