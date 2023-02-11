@@ -16,9 +16,9 @@ public class DataConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/appcursos?useTimezone=true&serverTimezone=GMT-3");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/appcursos?useTimezone=true&serverTimezone=GMT-3&createDatabaseIfNotExist=true");
 		dataSource.setUsername("root");
-		dataSource.setPassword("drfsew@201456M");
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 
